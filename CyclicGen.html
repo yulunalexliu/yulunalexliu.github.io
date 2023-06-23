@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0027)./ -->
+<head>
+	<title>Deep Video Frame Interpolation using Cyclic Frame Generation</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body bgcolor="white">
+
+<center>
+<H2>Deep Video Frame Interpolation using Cyclic Frame Generation</H2>
+
+<a href="http://www.cmlab.csie.ntu.edu.tw/~yulunliu/">Yu-Lun Liu</a><SUP>1,2,3</SUP> &nbsp;&nbsp;&nbsp;
+<a href="http://www.cmlab.csie.ntu.edu.tw/~queenieliaw/">Yi-Tung Liao</a><SUP>1,2</SUP> &nbsp;&nbsp;&nbsp;
+<a href="https://www.citi.sinica.edu.tw/pages/yylin/">Yen-Yu Lin</a><SUP>1</SUP> &nbsp;&nbsp;&nbsp;
+<a href="https://www.csie.ntu.edu.tw/~cyy/">Yung-Yu Chuang</a><SUP>1,2</SUP> &nbsp;&nbsp;&nbsp;
+<br>
+<SUP>1</SUP><a href="https://www.sinica.edu.tw/">Academia Sinica,</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<SUP>2</SUP><a href="https://www.ntu.edu.tw/">National Taiwan University,</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<SUP>3</SUP><a href="https://www.mediatek.tw/">MediaTek</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<br>
+33rd AAAI Conference on Artificial Intelligence (<a href="https://aaai.org/Conferences/AAAI-19/">AAAI</a> 2019)
+<br>
+<br>
+<img src="./CyclicGen_/teaser.png" width=556 height=270>
+<br>
+</center>
+<br>
+
+<font size=+1><b>Abstract</b></font><br>
+Video frame interpolation algorithms predict intermediate
+frames to produce videos with higher frame rates and smooth
+view transitions given two consecutive frames as inputs. We
+propose that: synthesized frames are more reliable if they
+can be used to reconstruct the input frames with high quality.
+Based on this idea, we introduce a new loss term, the
+<i>cycle consistency loss</i>. The cycle consistency loss can better
+utilize the training data to not only enhance the interpolation
+results, but also maintain the performance better with
+less training data. It can be integrated into any frame interpolation
+network and trained in an end-to-end manner. In addition
+to the cycle consistency loss, we propose two extensions:
+<i>motion linearity loss</i> and <i>edge-guided training</i>. The
+motion linearity loss approximates the motion between two
+input frames to be linear and regularizes the training. By applying
+edge-guided training, we further improve results by integrating
+edge information into training. Both qualitative and
+quantitative experiments demonstrate that our model outperforms
+the state-of-the-art methods.
+<br>
+<br>
+
+<font size=+1><b>Citation</b></font> (<a href="./CyclicGen_/aaai2019.bib">bibTex</a>)<br>
+<br>
+
+<font size=+1><b>Paper</b></font><br>
+Yu-Lun Liu, Yi-Tung Liao, Yen-Yu Lin, and Yung-Yu Chuang. <b>Deep Video Frame Interpolation using Cyclic Frame Generation.</b><br>
+AAAI 2019.<br>
+<a href="./CyclicGen_/liu.pdf"><img src="./CyclicGen_/thumb.png" border=0 style="width: 90%; height: 90%"></a><br>
+<br>
+<br>
+
+<a href="./CyclicGen_/aaai19_cyclic_gen_poster.pdf"><font size=+1><b>Poster</b></font></a><br>
+<br>
+<br>
+
+<a href="./CyclicGen_/CyclicGen_yylin_20190127.pptx"><font size=+1><b>Slides</b></font></a><br>
+<br>
+<br>
+
+<font size=+1><b>Code and Models</b></font><br>
+<a href="https://github.com/alex04072000/CyclicGen">Code and Models (TensorFlow)<br></a>
+<br>
+<br>
+
+<font size=+1><b>Results</b></font>
+<br>
+<a href="https://drive.google.com/open?id=1fOSd3qQxktyT8QATmmsRW2sUbY5p8qxD">Video Interpolation Results (UCF-101)</a><br>
+<a href="https://drive.google.com/open?id=1Sv_t6-3sRyNlIaLEcSK3jMEOHmRqpyDx">Video Interpolation Results (Middlebury)</a><br>
+<br>
+<br>
+
+<font size=+1><b>Related Paper</b></font><br>
+Ziwei Liu, Raymond Yeh, Xiaoou Tang, Yiming Liu, and Aseem Agarwala. <b>Video Frame Synthesis using Deep Voxel Flow.</b><br>
+IEEE ICCV 2017. <a href="https://arxiv.org/abs/1702.02463">PDF</a> <a href="https://liuziwei7.github.io/projects/VoxelFlow">Project Website</a> <a href="https://github.com/liuziwei7/voxel-flow">Code</a>
+<br>
+<br>
+Xie, Saining and Tu, Zhuowen. <b>Holistically-Nested Edge Detection.</b><br>
+IEEE ICCV 2015. <a href="https://arxiv.org/pdf/1504.06375.pdf">PDF</a> <a href="https://github.com/moabitcoin/holy-edge">Code</a>
+<br>
+<br>
+
+<font size=+1><b>Video</b></font>
+<br>
+<center>
+	  <iframe width="1263" height="480" src="https://www.youtube.com/embed/R8vQjgAtPOE" frameborder="0" allowfullscreen></iframe>
+	</video>
+	    </center>
+<br>
+<br>
+
+
+
+</body>
+      </html>
