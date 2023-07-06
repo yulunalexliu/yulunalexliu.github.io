@@ -99,6 +99,27 @@ subheading {
   font-size: 18px;
 }
 
+.people{
+  /* width: 90%;
+  max-width: 840px; */
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap; 
+  /*justify-content: space-between;*/
+}
+.people p{
+  text-align: center;
+
+}
+
+.person{
+  /*width: 120px;*/
+  width: 25%;
+  text-align: center;
+}
+
+
 papertitle {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
@@ -133,4 +154,11 @@ name {
 
 span.highlight {
   background-color: #ffffd0;
+}
+
+.row.centered {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
