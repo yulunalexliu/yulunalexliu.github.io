@@ -119,6 +119,20 @@ subheading {
   text-align: center;
 }
 
+.person img{
+  display: inline-block;
+  width: 80%;/*100px;*/
+  margin: 5px auto;
+  height: auto;
+  border-radius: 50%;
+}
+
+.sponsor{
+  /*width: 120px;*/
+  width: 25%;
+  text-align: center;
+}
+
 
 papertitle {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
