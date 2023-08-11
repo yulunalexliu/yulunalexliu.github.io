@@ -176,3 +176,78 @@ span.highlight {
   align-items: center;
   justify-content: center;
 }
+
+
+
+
+
+#timeline {
+  font-size: 18px;
+  font-weight: 300;
+ /* background-color: #f7f7f7; */
+}
+@media (min-width: 768px) {
+  .timelineitem:nth-child(odd) {
+    margin-left: 50%;
+    border-left: 5px solid #333;
+    text-align: left;
+  }
+  .timelineitem:nth-child(even) {
+    margin-right: 50%;
+    margin-left: 0px;
+    border-right: 5px solid #333;
+    text-align: right;
+  }
+  .timelineitem {
+    width: 45.5%;
+    position: relative;
+    padding: 18px;
+  }
+  .timelineitem:nth-child(odd):before {
+   left: -8px;
+  }
+  .timelineitem:nth-child(even):before {
+    right: -8px;
+  }
+}
+
+.timelineitem:before {
+  width: 11px;
+  height: 11px;
+  background: #333;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .timelineitem {
+    border-left: 5px solid #333;
+    text-align: left;
+    margin-left: 10px;
+    padding: 5px;
+    position: relative;
+  }
+  .timelineitem:before {
+    left: -8px;
+  }
+}
+.tdate {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: -5px;
+  color: rgb(132,0,0);
+}
+.ttitle {
+  font-size: 18px;
+  font-weight: 400;
+}
+.tdesc {
+  font-size: 14px;
+  font-weight: 300;
+}
+.thigh {
+  color: #000266;
+}
