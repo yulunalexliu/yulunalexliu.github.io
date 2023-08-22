@@ -131,6 +131,17 @@ subheading {
   /*width: 120px;*/
   width: 25%;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsor img{
+  display: inline-block;
+  width: 80%;/*100px;*/
+  margin: 5px auto;
+  height: auto;
+  /* border-radius: 50%; */
 }
 
 
