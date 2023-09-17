@@ -10,7 +10,10 @@
   <!-- <link rel="icon" type="image/png" href="images/yulunliu_2_square.jpg"> -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦊</text></svg>">
 </head>
-
+<!-- 
+  ffmpeg -i input.mp4 -vf "fps=30,scale=320:-1:flags=lanczos,palettegen" -y palette.png
+ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]; [x][1:v] paletteuse" output.gif
+ -->
 <body>
   <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
@@ -471,9 +474,14 @@
           <tr onmouseout="Wang2023DCOstop()" onmouseover="Wang2023DCO_start()"  bgcolor="#ffffff">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-                <br>
-                <div class="two" id='Wang2023DCO_image'><img src='images/Wang2023DCO.gif' width="160"></div>
+                <!-- <div class="two" id='Wang2023DCO_image'><img src='images/Wang2023DCO.gif' width="160"></div>
                 <img src='images/Wang2023DCO.jpg' width="160">
+              </div> -->
+                <div class="two" id='Wang2023DCO_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Wang2023DCO.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                <img src='images/Wang2023DCO.jpg' width="160" alt="Description" style="margin-top: 20px;">
               </div>
               <script type="text/javascript">
                 function Wang2023DCO_start() {
@@ -514,10 +522,14 @@
           <tr onmouseout="Meuleman2023POLstop()" onmouseover="Meuleman2023POL_start()"  bgcolor="#ffffff">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-        <br>
-        <br>
-                <div class="two" id='Meuleman2023POL_image'><img src='images/Meuleman2023POL.gif' width="160"></div>
+                <!-- <div class="two" id='Meuleman2023POL_image'><img src='images/Meuleman2023POL.gif' width="160"></div>
                 <img src='images/Meuleman2023POL.jpg' width="160" height="90">
+              </div> -->
+                <div class="two" id='Meuleman2023POL_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Meuleman2023POL.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                <img src='images/Meuleman2023POL.jpg' width="160" alt="Description" style="margin-top: 35px;">
               </div>
               <script type="text/javascript">
                 function Meuleman2023POL_start() {
@@ -562,10 +574,13 @@
         <tr onmouseout="Liu2023RDR_stop()" onmouseover="Liu2023RDR_start()"  bgcolor="#ffffd0">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-        <br>
-        <br>
-                <div class="two" id='Liu2023RDR_image'><img src='images/Liu2023RDR.gif' width="160"></div>
-                <img src='images/Liu2023RDR.jpg' width="160" height="90">
+                <!-- <div class="two" id='Liu2023RDR_image'><img src='images/Liu2023RDR.gif' width="160"></div>
+                <img src='images/Liu2023RDR.jpg' width="160" height="90"> -->
+                <div class="two" id='Liu2023RDR_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Liu2023RDR.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                <img src='images/Liu2023RDR.jpg' width="160" alt="Description" style="margin-top: 35px;">
               </div>
               <script type="text/javascript">
                 function Liu2023RDR_start() {
@@ -649,11 +664,15 @@
           <tr onmouseout="Liu2021SOLD_stop()" onmouseover="Liu2021SOLD_start()"  bgcolor="#ffffd0">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-				<br>
-				<br>
-                <div class="two" id='Liu2021SOLD_image'><img src='images/cvpr20_reflection.gif' width="160"></div>
+                <!-- <div class="two" id='Liu2021SOLD_image'><img src='images/cvpr20_reflection.gif' width="160"></div>
                 <img src='images/pamiobstruction.jpg' width="160" height="90">
-              </div>
+              </div> -->
+              <div class="two" id='Liu2021SOLD_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/cvpr20_reflection.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+              <img src='images/pamiobstruction.jpg' width="160" alt="Description" style="margin-top: 35px;" height="90">
+            </div>
               <script type="text/javascript">
                 function Liu2021SOLD_start() {
                   document.getElementById('Liu2021SOLD_image').style.opacity = "1";
@@ -732,10 +751,15 @@
 		  <tr onmouseout="Liu2021HNF_stop()" onmouseover="Liu2021HNF_start()"  bgcolor="#ffffd0">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-				<br>
-                <div class="two" id='Liu2021HNF_image'><br><img src='images/iccv21_nervis.gif' width="160"></div>
+                <!-- <div class="two" id='Liu2021HNF_image'><br><img src='images/iccv21_nervis.gif' width="160"></div>
                 <img src='images/FuSta.jpg' width="160" id='fusta_image'>
-              </div>
+              </div> -->
+              <div class="two" id='Liu2021HNF_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/iccv21_nervis.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+              <img src='images/FuSta.jpg' width="160" alt="Description" style="margin-top: 20px;" id='fusta_image'>
+            </div>
               <script type="text/javascript">
                 function Liu2021HNF_start() {
                   document.getElementById('Liu2021HNF_image').style.opacity = "1";
@@ -851,9 +875,14 @@
           <tr onmouseout="Liu2020SID_stop()" onmouseover="Liu2020SID_start()"  bgcolor="#ffffd0">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-				<br>
-                <div class="two" id='Liu2020SID_image'><img src='images/cvpr20_hdr.gif' width="160"></div>
+                <!-- <div class="two" id='Liu2020SID_image'><img src='images/cvpr20_hdr.gif' width="160"></div>
                 <img src='images/shdr.jpg' width="160">
+              </div> -->
+              <div class="two" id='Liu2020SID_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/cvpr20_hdr.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                <img src='images/shdr.jpg' width="160" alt="Description" style="margin-top: 20px;">
               </div>
               <script type="text/javascript">
                 function Liu2020SID_start() {
@@ -902,11 +931,15 @@
           <tr onmouseout="Liu2020LST_stop()" onmouseover="Liu2020LST_start()"  bgcolor="#ffffd0">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-				<br>
-				<br>
-                <div class="two" id='Liu2020LST_image'><img src='images/cvpr20_reflection.gif' width="160"></div>
+                <!-- <div class="two" id='Liu2020LST_image'><img src='images/cvpr20_reflection.gif' width="160"></div>
                 <img src='images/reflection.jpg' width="160">
-              </div>
+              </div> -->
+              <div class="two" id='Liu2020LST_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/cvpr20_reflection.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+              <img src='images/reflection.jpg' width="160" alt="Description" style="margin-top: 35px;">
+            </div>
               <script type="text/javascript">
                 function Liu2020LST_start() {
                   document.getElementById('Liu2020LST_image').style.opacity = "1";
@@ -988,9 +1021,15 @@
           <tr onmouseout="cyclic_stop()" onmouseover="cyclic_start()"  bgcolor="#ffffd0">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='cyclic_image'><img src='images/aaai-liu19.gif' width="160"></div>
+                <!-- <div class="two" id='cyclic_image'><img src='images/aaai-liu19.gif' width="160"></div>
 				<br>
-                <img src='images/cyclic.jpg' width="160">
+                <img src='images/cyclic.jpg' width="160"> -->
+                <div class="two" id='cyclic_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/aaai-liu19.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                  <!-- <br> -->
+                <img src='images/cyclic.jpg' width="160" alt="Description" style="margin-top: 20px;">
               </div>
               <script type="text/javascript">
                 function cyclic_start() {
