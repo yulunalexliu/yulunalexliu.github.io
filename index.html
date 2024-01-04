@@ -172,6 +172,7 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
             <td style="padding:20px;width:100%;vertical-align:middle">
               <center><heading>News</heading></center>
               <ul>
+                <li>Jan 2024: One Journal paper accepted in <a href="https://link.springer.com/journal/11263">IJCV</a> 2024</li>
                 <li>Dec 2023: One conference paper accepted in <a href="https://aaai.org/aaai-conference/">AAAI 2024</a></li>
                 <li>Aug 2023: Honored to receive Google's Research Grant!</li>
                 <li>Aug 2023: Honored to receive the <a href="https://140.125.183.142/wp-content/uploads/2023/08/%E7%AC%AC16%E5%B1%86%E5%8D%9A%E7%A2%A9%E5%A3%AB%E8%AB%96%E6%96%87%E7%8D%8E%E7%8D%B2%E7%8D%8E%E5%90%8D%E5%96%AE.pdf">中華民國影像處理與圖形識別學會博士優等論文獎 (IPPR Best Ph.D. Thesis Award)</a>!</li>
@@ -434,6 +435,54 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
 
+          
+
+          <tr onmouseout="Wang2023DCOstop()" onmouseover="Wang2023DCO_start()"  bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <!-- <div class="two" id='Wang2023DCO_image'><img src='images/Wang2023DCO.gif' width="160"></div>
+                <img src='images/Wang2023DCO.jpg' width="160">
+              </div> -->
+                <div class="two" id='Wang2023DCO_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Wang2023DCO.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                <img src='images/Wang2023DCO.jpg' width="160" alt="Description" style="margin-top: 20px;">
+              </div>
+              <script type="text/javascript">
+                function Wang2023DCO_start() {
+                  document.getElementById('Wang2023DCO_image').style.opacity = "1";
+                }
+
+                function Wang2023DCOstop() {
+                  document.getElementById('Wang2023DCO_image').style.opacity = "0";
+                }
+                Wang2023DCOstop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://portrait-disco.github.io/">
+                <papertitle>DisCO: Portrait Distortion Correction with Perspective-Aware 3D GANs</papertitle>
+              </a>
+              <br>
+              <a href="https://lightchaserx.github.io/">Zhixiang Wang</a>, 
+              <strong>Yu-Lun Liu</strong>, 
+              <a href="https://jbhuang0604.github.io/">Jia-Bin Huang</a>, 
+              <a href="http://www.satoh-lab.nii.ac.jp/index.html">Shin'ichi Satoh</a>, 
+              <a href="https://sizhuoma.netlify.app/">Sizhuo Ma</a>, 
+              <a href="https://www.linkedin.com/in/krishnanguru/">Guru Krishnan</a>, 
+              <a href="https://jianwang-cmu.github.io/">Jian Wang</a>
+              <br>
+              <em>IJCV</em>, 2024 &nbsp
+              <br>
+              <a href="https://portrait-disco.github.io/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2302.12253">arXiv</a>
+              <p></p>
+              <p>
+                We build a pipeline to use pre-trained 3D GANs for correcting face perspective distortion in close-up portraits.
+            </td>
+          </tr>
 
           <tr bgcolor="#ffffff">
             <td style="padding:20px;width:25%;vertical-align:middle">
@@ -506,54 +555,6 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
               <p></p>
               <p>
                 In contrast to prior works that disregard the underlying geometry by directly averaging feature volume across multiple views, our proposed successfully preserves the geometric structure with respect to the ground truth while effectively reducing the number of voxels in free space.
-            </td>
-          </tr>
-          
-
-          <tr onmouseout="Wang2023DCOstop()" onmouseover="Wang2023DCO_start()"  bgcolor="#ffffff">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <!-- <div class="two" id='Wang2023DCO_image'><img src='images/Wang2023DCO.gif' width="160"></div>
-                <img src='images/Wang2023DCO.jpg' width="160">
-              </div> -->
-                <div class="two" id='Wang2023DCO_image'><video  width=100% height=100% muted autoplay loop>
-                  <source src="images/Wang2023DCO.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                  </video></div>
-                <img src='images/Wang2023DCO.jpg' width="160" alt="Description" style="margin-top: 20px;">
-              </div>
-              <script type="text/javascript">
-                function Wang2023DCO_start() {
-                  document.getElementById('Wang2023DCO_image').style.opacity = "1";
-                }
-
-                function Wang2023DCOstop() {
-                  document.getElementById('Wang2023DCO_image').style.opacity = "0";
-                }
-                Wang2023DCOstop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://portrait-disco.github.io/">
-                <papertitle>DisCO: Portrait Distortion Correction with Perspective-Aware 3D GANs</papertitle>
-              </a>
-              <br>
-              <a href="https://lightchaserx.github.io/">Zhixiang Wang</a>, 
-              <strong>Yu-Lun Liu</strong>, 
-              <a href="https://jbhuang0604.github.io/">Jia-Bin Huang</a>, 
-              <a href="http://www.satoh-lab.nii.ac.jp/index.html">Shin'ichi Satoh</a>, 
-              <a href="https://sizhuoma.netlify.app/">Sizhuo Ma</a>, 
-              <a href="https://www.linkedin.com/in/krishnanguru/">Guru Krishnan</a>, 
-              <a href="https://jianwang-cmu.github.io/">Jian Wang</a>
-              <br>
-              <em>arXiv</em>, 2023 &nbsp
-              <br>
-              <a href="https://portrait-disco.github.io/">project page</a>
-              /
-              <a href="https://arxiv.org/abs/2302.12253">arXiv</a>
-              <p></p>
-              <p>
-                We build a pipeline to use pre-trained 3D GANs for correcting face perspective distortion in close-up portraits.
             </td>
           </tr>
 
@@ -1287,7 +1288,7 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
               <p style="text-align:right;font-size:small;">
         Stolen from <a href="https://jonbarron.info/">Jon Barron</a>'s website.
                 <br>
-                Last updated December 2023.
+                Last updated Janurary 2024.
         </p>
             </td>
           </tr>
