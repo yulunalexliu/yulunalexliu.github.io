@@ -532,7 +532,49 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
             </td>
           </tr>
 
-          <tr bgcolor="#ffffff">
+          <tr onmouseout="Cheng2024IRJstop()" onmouseover="Cheng2024IRJ_start()"  bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Cheng2024IRJ_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Cheng2024IRJ.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                  <br><img src='images/aaai24_jointtensorf.jpg' width="160" alt="Description" style="margin-top: 20px;">
+              </div>
+              <script type="text/javascript">
+                function Cheng2024IRJ_start() {
+                  document.getElementById('Cheng2024IRJ_image').style.opacity = "1";
+                }
+
+                function Cheng2024IRJstop() {
+                  document.getElementById('Cheng2024IRJ_image').style.opacity = "0";
+                }
+                Cheng2024IRJstop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://alex04072000.github.io/Joint-TensoRF/">
+                <papertitle>Improving Robustness for Joint Optimization of Camera Poses and Decomposed Low-Rank Tensorial Radiance Fields</papertitle>
+              </a>
+              <br>
+              Bo-Yu Cheng, 
+              <a href="https://walonchiu.github.io/">Wei-Chen Chiu</a>, 
+			        <strong>Yu-Lun Liu</strong>
+              <br>
+              <em>AAAI</em>, 2024 &nbsp
+              <br>
+              <a href="https://alex04072000.github.io/Joint-TensoRF/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2402.13252">arXiv</a>
+              /
+              <a href="https://github.com/Nemo1999/Joint-TensoRF">code</a>
+              <p></p>
+              <p>
+                In this paper, we propose an algorithm that allows joint refinement of camera pose and scene geometry represented by decomposed low-rank tensor, using only 2D images as supervision.
+			      </td>
+          </tr>
+
+          <!-- <tr bgcolor="#ffffff">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
                 <br>
@@ -561,7 +603,7 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
               <p>
                 In this paper, we propose an algorithm that allows joint refinement of camera pose and scene geometry represented by decomposed low-rank tensor, using only 2D images as supervision.
 			      </td>
-          </tr>
+          </tr> -->
 
           <tr bgcolor="#ffffff">
             <td style="padding:20px;width:25%;vertical-align:middle">
