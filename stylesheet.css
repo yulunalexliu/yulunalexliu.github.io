@@ -262,3 +262,87 @@ span.highlight {
 .thigh {
   color: #000266;
 }
+
+
+
+#slideshow{
+    width: 75%;
+    margin: auto;
+    overflow: hidden;
+}
+#slideshow figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: slideshow 20s infinite;
+}
+#slideshow figure img{
+    width: 20%;
+    float: left;
+}
+
+/* @keyframes slideshow{
+  0% {
+      left:0;
+  }
+  17% {
+      left:0;
+  }
+  25% {
+      left:-100%;
+  }
+  37% {
+      left:-100%;
+  }
+  45% {
+      left:-200%;
+  }
+  57% {
+      left:-200%;
+  }
+  65% {
+      left:-300%;
+  }
+  67% {
+      left:-300%;
+  }
+  85% {
+      left:-400%;
+  }
+  100% {
+      left:-400%;
+  }
+} */
+@keyframes slideshow{
+    0% {
+        left:0;
+    }
+    11% {
+        left:0;
+    }
+    22% {
+        left:-100%;
+    }
+    33% {
+        left:-100%;
+    }
+    44% {
+        left:-200%;
+    }
+    56% {
+        left:-200%;
+    }
+    67% {
+        left:-300%;
+    }
+    78% {
+        left:-300%;
+    }
+    89% {
+        left:-400%;
+    }
+    100% {
+        left:-400%;
+    }
+}
