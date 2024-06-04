@@ -494,6 +494,48 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
 
+          <tr onmouseout="Wu2024DNV_stop()" onmouseover="Wu2024DNV_start()"  bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Wu2024DNV_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Wu2024DNV.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                <img src='images/Wu2024DNV.jpg' width="160" alt="Description" style="margin-top: 0px;">
+              </div>
+              <script type="text/javascript">
+                function Wu2024DNV_start() {
+                  document.getElementById('Wu2024DNV_image').style.opacity = "1";
+                }
+
+                function Wu2024DNV_stop() {
+                  document.getElementById('Wu2024DNV_image').style.opacity = "0";
+                }
+                Wu2024DNV_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://robust-dynrf.github.io/">
+                <papertitle>DeNVeR: Deformable Neural Vessel Representations for Unsupervised Video Vessel Segmentation</papertitle>
+              </a>
+              <br>
+              Chun-Hung Wu, Shih-Hong Chen, Chih-Yao Hu, Hsin-Yu Wu, Kai-Hsin Chen, Yu-You Chen, <a href="https://su-terry.github.io/">Chih-Hai Su</a>,, Chih-Kuo Lee, <strong>Yu-Lun Liu</strong>
+              <br>
+              <em>arXiv</em>, 2024 &nbsp
+              <br>
+              <a href="https://kirito878.github.io/DeNVeR/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2406.01591">arXiv</a>
+              /
+              <a href="">code & dataset [coming soon]</a>
+              /
+              <a href="https://colab.research.google.com/drive/1IYGiJECwAaoLPq7KGHQE_dvtrdHz9fUA?authuser=2&hl=zh-tw#scrollTo=n1ppvOhqbRkV">colab</a>
+              <p></p>
+              <p>
+                This paper presents Deformable Neural Vessel Representations (DeNVeR), an unsupervised approach for vessel segmentation in X-ray videos without annotated ground truth.
+            </td>
+          </tr>
+
           <tr bgcolor="#ffffff">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
