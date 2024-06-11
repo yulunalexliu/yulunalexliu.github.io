@@ -494,6 +494,50 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
 
+
+
+          <tr onmouseout="Chen2024NRC_stop()" onmouseover="Chen2024NRC_start()"  bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Chen2024NRC_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Chen2024NRC.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                <img src='images/Chen2024NRC.jpg' width="160" alt="Description" style="margin-top: 35px;">
+              </div>
+              <script type="text/javascript">
+                function Chen2024NRC_start() {
+                  document.getElementById('Chen2024NRC_image').style.opacity = "1";
+                }
+
+                function Chen2024NRC_stop() {
+                  document.getElementById('Chen2024NRC_image').style.opacity = "0";
+                }
+                Chen2024NRC_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://koi953215.github.io/NaRCan_page/">
+                <papertitle>NaRCan: Natural Refined Canonical Image with Integration of Diffusion Prior for Video Editing</papertitle>
+              </a>
+              <br>
+              <a href="https://koi953215.github.io/">Ting-Hsuan Chen</a>, Jiewen Chan, Hau-Shiang Shiu, Shih-Han Yen, <a href="https://jimmycv07.github.io/">Chang-Han Yeh</a>, <strong>Yu-Lun Liu</strong>
+              <br>
+              <em>arXiv</em>, 2024 &nbsp
+              <br>
+              <a href="https://koi953215.github.io/NaRCan_page/">project page</a>
+              /
+              <a href="http://arxiv.org/abs/2406.06523">arXiv</a>
+              /
+              <a href="https://drive.google.com/file/d/1Ur6HEP2MizFe3z7iSXoaMQmC5_qHUn1S/view?usp=sharing">results</a>
+              /
+              <a href="">code [coming soon]</a>
+              <p></p>
+              <p>
+                By introducing a diffusion prior from the early stages of training, our model ensures that the generated images retain a high-quality natural appearance, making the produced canonical images suitable for various downstream tasks in video editing, a capability not achieved by current canonical-based methods. 
+            </td>
+          </tr>
+
           <tr onmouseout="Wu2024DNV_stop()" onmouseover="Wu2024DNV_start()"  bgcolor="#ffffff">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -519,7 +563,7 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
                 <papertitle>DeNVeR: Deformable Neural Vessel Representations for Unsupervised Video Vessel Segmentation</papertitle>
               </a>
               <br>
-              Chun-Hung Wu, Shih-Hong Chen, Chih-Yao Hu, Hsin-Yu Wu, Kai-Hsin Chen, Yu-You Chen, <a href="https://su-terry.github.io/">Chih-Hai Su</a>,, Chih-Kuo Lee, <strong>Yu-Lun Liu</strong>
+              Chun-Hung Wu, Shih-Hong Chen, Chih-Yao Hu, Hsin-Yu Wu, Kai-Hsin Chen, Yu-You Chen, <a href="https://su-terry.github.io/">Chih-Hai Su</a>, Chih-Kuo Lee, <strong>Yu-Lun Liu</strong>
               <br>
               <em>arXiv</em>, 2024 &nbsp
               <br>
