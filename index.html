@@ -496,6 +496,46 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
 
 
 
+          <tr onmouseout="Wang2024DAE_stop()" onmouseover="Wang2024DAE_start()"  bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Wang2024DAE_image'>
+                  <img src='images/Wang2024DAE_output.jpg' width="160" style="margin-top: 35px;"></div>
+                <img src='images/Wang2024DAE_input.jpg' width="160" alt="Description" style="margin-top: 35px;">
+              </div>
+              <script type="text/javascript">
+                function Wang2024DAE_start() {
+                  document.getElementById('Wang2024DAE_image').style.opacity = "1";
+                }
+
+                function Wang2024DAE_stop() {
+                  document.getElementById('Wang2024DAE_image').style.opacity = "0";
+                }
+                Wang2024DAE_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://albert100121.github.io/Depth-Anywhere/">
+                <papertitle>Depth Anywhere: Enhancing 360 Monocular Depth Estimation via Perspective Distillation and Unlabeled Data Augmentation</papertitle>
+              </a>
+              <br>
+              <a href="http://albert100121.github.io/">Ning-Hsu Wang</a>, <strong>Yu-Lun Liu</strong>
+              <br>
+              <em>arXiv</em>, 2024 &nbsp
+              <br>
+              <a href="https://albert100121.github.io/Depth-Anywhere/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2406.12849">arXiv</a>
+              /
+              <a href="">code [coming soon]</a>
+              /
+              <a href="https://huggingface.co/spaces/Albert-NHWang/Depth-Anywhere-App">demo</a>
+              <p></p>
+              <p>
+                Depth Anywhere distills the knowledge from the state-of-the-art perspective depth model and improves 360 depth models.
+            </td>
+          </tr>
+
           <tr onmouseout="Chen2024NRC_stop()" onmouseover="Chen2024NRC_start()"  bgcolor="#ffffff">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
