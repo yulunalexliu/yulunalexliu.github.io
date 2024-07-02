@@ -502,6 +502,48 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
 
 
 
+          <tr onmouseout="Yeh2024DIR_stop()" onmouseover="Yeh2024DIR_start()"  bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Yeh2024DIR_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Yeh2024DIR.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                <img src='images/Yeh2024DIR.jpg' width="160" alt="Description" style="margin-top: 35px;">
+              </div>
+              <script type="text/javascript">
+                function Yeh2024DIR_start() {
+                  document.getElementById('Yeh2024DIR_image').style.opacity = "1";
+                }
+
+                function Yeh2024DIR_stop() {
+                  document.getElementById('Yeh2024DIR_image').style.opacity = "0";
+                }
+                Yeh2024DIR_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://jimmycv07.github.io/DiffIR2VR_web/">
+                <papertitle>DiffIR2VR-Zero: Zero-Shot Video Restoration with Diffusion-based Image Restoration Models</papertitle>
+              </a>
+              <br>
+              <a href="https://jimmycv07.github.io/">Chang-Han Yeh</a>, <a href="https://linjohnss.github.io/">Chin-Yang Lin</a>, <a href="https://lightchaserx.github.io/">Zhixiang Wang</a>, <a href="https://chiweihsiao.github.io/">Chi-Wei Hsiao</a>, <a href="https://koi953215.github.io/">Ting-Hsuan Chen</a>, <strong>Yu-Lun Liu</strong>
+              <br>
+              <em>arXiv</em>, 2024 &nbsp
+              <br>
+              <a href="https://jimmycv07.github.io/DiffIR2VR_web/">project page</a>
+              /
+              <a href="http://arxiv.org/abs/2407.01519">arXiv</a>
+              /
+              <a href="https://github.com/jimmycv07/DiffIR2VR-Zero">code</a>
+              /
+              <a href="https://huggingface.co/spaces/Koi953215/DiffIR2VR">demo</a>
+              <p></p>
+              <p>
+                This paper introduces a method for zero-shot video restoration using pre-trained image restoration diffusion models.
+            </td>
+          </tr>
+
           <tr onmouseout="Wang2024DAE_stop()" onmouseover="Wang2024DAE_start()"  bgcolor="#ffffff">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -538,7 +580,7 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
               <a href="https://huggingface.co/spaces/Albert-NHWang/Depth-Anywhere-App">demo</a>
               <p></p>
               <p>
-                Depth Anywhere distills the knowledge from the state-of-the-art perspective depth model and improves 360 depth models.
+                This work proposes a new depth estimation framework that utilizes unlabeled 360-degree data effectively and uses state-of-the-art perspective depth estimation models as teacher models to generate pseudo labels through a six-face cube projection technique, enabling efficient labeling of depth in 360-degree images.
             </td>
           </tr>
 
