@@ -406,7 +406,7 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
                   <p>謝侑哲<br>NYCU CS<br></p>
                 </div>
                 <div class="person">
-                  <img src="images/avatar_scholar_256.png" />
+                  <img src="students/yuweitsai.jpg" />
                   <p>蔡聿瑋<br>NYCU CS<br></p>
                 </div>
               </div>
@@ -715,6 +715,53 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
               <p></p>
               <p>
                 The DriveEnv-NeRF framework, which leverages Neural Radiance Fields (NeRF) to enable the validation and faithful forecasting of the efficacy of autonomous driving agents in a targeted real-world scene, can serve as a training environment for autonomous driving agents under various lighting conditions.
+			      </td>
+          </tr>
+
+          <tr onmouseout="Su2024BMNstop()" onmouseover="Su2024BMN_start()"  bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Su2024BMN_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Su2024BMN.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                  <img src='images/Su2024BMN.jpg' width="160" alt="Description" style="margin-top: 20px;">
+              </div>
+              <script type="text/javascript">
+                function Su2024BMN_start() {
+                  document.getElementById('Su2024BMN_image').style.opacity = "1";
+                }
+
+                function Su2024BMNstop() {
+                  document.getElementById('Su2024BMN_image').style.opacity = "0";
+                }
+                Su2024BMNstop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://su-terry.github.io/BoostMVSNeRFs/">
+                <papertitle>BoostMVSNeRFs: Boosting MVS-based NeRFs to Generalizable View Synthesis in Large-scale Scenes</papertitle>
+              </a>
+              <br>
+              <a href="https://su-terry.github.io/">Chih-Hai Su</a>, 
+              <a href="https://orcid.org/0009-0008-5968-6322">Chih-Yao Hu</a>, 
+              <a href="https://orcid.org/0009-0002-2707-0095">Shr-Ruei Tsai</a>, 
+              <a href="https://orcid.org/0009-0008-0826-4664">Jie-Ying Lee</a>, 
+              <a href="https://linjohnss.github.io/">Chin-Yang Lin</a>, 
+			        <strong>Yu-Lun Liu</strong>
+              <br>
+              <em>SIGGRAPH</em>, 2024 &nbsp
+              <br>
+              <a href="https://su-terry.github.io/BoostMVSNeRFs/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2407.15848">arXiv</a>
+              /
+              <a href="https://www.youtube.com/watch?v=tX4EkFgm0ng">video</a>
+              /
+              <a href="https://github.com/Su-Terry/BoostMVSNeRFs">code</a>
+              <p></p>
+              <p>
+                Our method does not require training and can adapt to any MVS-based NeRF methods in a feed-forward fashion to improve rendering quality.
 			      </td>
           </tr>
 
