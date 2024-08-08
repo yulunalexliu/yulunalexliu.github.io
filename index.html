@@ -176,6 +176,7 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
             <td style="padding:20px;width:100%;vertical-align:middle">
               <center><heading>News</heading></center>
               <ul>
+                <li>Aug 2024: BS student 鄭伯俞 won the <a href="https://ippr.org.tw/wp-content/uploads/2024/08/%E7%AC%AC17%E5%B1%86%E5%8D%9A%E7%A2%A9%E5%A3%AB%E8%AB%96%E6%96%87%E7%8D%8E%E7%8D%B2%E7%8D%8E%E5%90%8D%E5%96%AE.pdf">中華民國影像處理與圖形識別學會碩士佳作論文獎 (IPPR Excellent Master Thesis Award)</a>!</li>
                 <li>July 2024: BS student <a href="https://www.linkedin.com/in/jayinnn">李杰穎</a> won the <a href="https://www.cs.nycu.edu.tw/storage/materials/xeXTWKdsG4IkteKZGx3lxO6WdeZv4Qi0mgaomFJr.pdf">陽明交大資工系專題競賽佳作 (3rd place of the NYCU CS Undergraduate Research Competition)</a>!</li>
                 <li>July 2024: BS students 吳俊宏, 陳士弘, 陳凱昕, and 陳昱佑 won the <a href="https://www.cs.nycu.edu.tw/storage/materials/xeXTWKdsG4IkteKZGx3lxO6WdeZv4Qi0mgaomFJr.pdf">陽明交大資工系專題競賽優等 (2nd place of the NYCU CS Undergraduate Research Competition)</a>!</li>
                 <li>July 2024: One conference paper accepted to <a href="https://eccv.ecva.net/">ECCV 2024</a></li>
@@ -398,7 +399,7 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
                   <p>翁晨昱<br>NTHU PHYS<br></p>
                 </div>
                 <div class="person">
-                  <img src="images/avatar_scholar_256.png" />
+                  <img src="students/yihsiangho.jpg" />
                   <p>何義翔<br>NYCU CS<br></p>
                 </div>
                 <div class="person">
@@ -749,6 +750,54 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
 			      </td>
           </tr>
 
+          <tr onmouseout="Wang2024MBG_stop()" onmouseover="Wang2024MBG_start()"  bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Wang2024MBG_image'>
+                  <img src='images/Wang2024MBG_output.jpg' width="160" style="margin-top: 10px;"></div>
+                <img src='images/Wang2024MBG_input.jpg' width="160" alt="Description" style="margin-top: 10px;">
+              </div>
+              <script type="text/javascript">
+                function Wang2024MBG_start() {
+                  document.getElementById('Wang2024MBG_image').style.opacity = "1";
+                }
+
+                function Wang2024MBG_stop() {
+                  document.getElementById('Wang2024MBG_image').style.opacity = "0";
+                }
+                Wang2024MBG_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://lightchaserx.github.io/matting-by-generation/">
+                <papertitle>Matting by Generation</papertitle>
+              </a>
+              <br>
+              <a href="https://lightchaserx.github.io/">Zhixiang Wang</a>, 
+              Baiang Li, 
+              <a href="https://jianwang-cmu.github.io/">Jian Wang</a>, 
+              <strong>Yu-Lun Liu</strong>, 
+              <a href="https://www.gujinwei.org/">Jinwei Gu</a>, 
+              <a href="https://www.csie.ntu.edu.tw/~cyy/">Yung-Yu Chuang</a>, 
+              <a href="http://www.satoh-lab.nii.ac.jp/index.html">Shin'ichi Satoh</a>, 
+              <br>
+              <em>SIGGRAPH</em>, 2024 &nbsp
+              <br>
+              <a href="https://lightchaserx.github.io/matting-by-generation/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2407.21017">arXiv</a>
+              /
+              <a href="">code [coming soon]</a>
+              /
+              <a href="https://drive.google.com/file/d/1S6vpkuQs3I1pAX7FNRUy_ADtTudn7YJP/view">slides</a>
+              /
+              <a href="https://dl.acm.org/doi/suppl/10.1145/3641519.3657519/suppl_file/_SIGGRAPH24__Matting_by_Generation%20(10).pdf">supplement</a>
+              <p></p>
+              <p>
+                An innovative approach for image matting that redefines the traditional regression-based task as a generative modeling challenge and harnesses the capabilities of latent diffusion models, enriched with extensive pre-trained knowledge, to regularize the matting process.
+            </td>
+          </tr>
+
           <tr onmouseout="Su2024BMNstop()" onmouseover="Su2024BMN_start()"  bgcolor="#ffffd0">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -792,7 +841,7 @@ ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]
               <a href="https://github.com/Su-Terry/BoostMVSNeRFs">code</a>
               <p></p>
               <p>
-                Our method does not require training and can adapt to any MVS-based NeRF methods in a feed-forward fashion to improve rendering quality.
+                This paper presents a novel approach called BoostMVSNeRFs to enhance the rendering quality of MVS-based NeRFs in large-scale scenes, and identifies limitations in MVS-based NeRF methods, such as restricted viewport coverage and artifacts due to limited input views.
 			      </td>
           </tr>
 
