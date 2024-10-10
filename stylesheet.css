@@ -99,6 +99,11 @@ subheading {
   font-size: 18px;
 }
 
+subsubheading {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
 .people{
   /* width: 90%;
   max-width: 840px; */
@@ -356,4 +361,159 @@ hr.soft {
   background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
   padding: 0;
   margin: 0;
+}
+
+.publication[style*="display: none"] {
+  display: none !important;
+}
+
+/* Navigation Pills */
+.nav-pills {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav-pills .method-pill {
+  margin: 0.25rem;
+}
+
+.nav-pills .method-pill a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #007bff;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-pills .method-pill a:hover {
+  background-color: #f8f9fa;
+}
+
+.nav-pills .method-pill.active a {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+
+/* .nav-pills {
+  display: flex;
+  flex-wrap: wrap;  
+  justify-content: center;
+}
+
+.nav-pills .nav-item {
+  margin: 0.25rem;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #007bff;
+  background-color: transparent;
+  border: 0px transparent;
+  cursor: pointer;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: transparent;
+}
+
+.nav-pills .nav-link.active {
+  color: #fff;
+  background-color: #007bff;
+}
+
+.nav-pills .nav-link.disabled {
+  color: #6c757d;
+  background-color: transparent;
+  border-color: transparent;
+} */
+
+
+
+/* Link Styles */
+a {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: #f09228;
+  text-decoration: none;
+}
+
+/* Navigation Pills */
+.nav-pills {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.nav-pills .method-pill {
+  margin: 1px;
+}
+
+.nav-pills .method-pill a {
+  display: block;
+  padding: 10px;
+  /* margin: 5px; */
+  /* font-size: 0.9rem; */
+  color: #1772d0; /* Match the link color */
+  background-color: transparent;
+  border: 1px transparent;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.0s, color 0.0s;
+}
+
+.nav-pills .method-pill a:hover {
+  color: #f09228; /* Match the hover color */
+  background-color: #eeeeee;
+}
+
+.nav-pills .method-pill.active a {
+  color: #fff;
+  background-color: #1772d0; /* Use the link color for background */
+  border-color: #1772d0;
+}
+
+.nav-pills .method-pill.active a:hover {
+  background-color: #145a9e; /* Slightly darker on hover when active */
+}
+
+/* New CSS to Start a New Line */
+.nav-pills .new-line {
+  flex-basis: 100%;
+}
+
+/* Line Break Element */
+.nav-pills .line-break {
+  flex-basis: 100%;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Default background color for all publications */
+.publication {
+  background-color: #ffffff;
+}
+
+/* Highlighted background color for representative papers */
+.paperhi.highlighted {
+  background-color: #ffffd0;
 }

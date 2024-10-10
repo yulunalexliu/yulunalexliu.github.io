@@ -1,0 +1,2085 @@
+<!DOCTYPE HTML>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Yu-Lun Liu</title>
+  
+  <meta name="author" content="Yu-Lun Liu">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <!-- <link rel="icon" type="image/png" href="images/yulunliu_2_square.jpg"> -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦊</text></svg>">
+  <script src="js/hidebib.js" type="text/javascript"></script>
+</head>
+<!-- 
+  ffmpeg -i input.mp4 -vf "fps=30,scale=320:-1:flags=lanczos,palettegen" -y palette.png
+ffmpeg -i input.mp4 -i palette.png -lavfi "fps=30,scale=320:-1:flags=lanczos [x]; [x][1:v] paletteuse" output.gif
+ -->
+<body>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:0px">
+            <td style="padding:2.5%;width:63%;vertical-align:middle">
+              <p style="text-align:center">
+                <name>Yu-Lun (Alex) Liu | 劉育綸</name>
+              </p>
+              <p style="text-align:justify;">
+                <!-- I am a fifth year PhD student working with <a href="https://www.csie.ntu.edu.tw/~cyy/">Yung-Yu Chuang</a> in the <a href="https://www.csie.ntu.edu.tw/">CSIE</a> department at <a href="https://www.ntu.edu.tw/">National Taiwan University</a>. I work on problems in computer vision, machine learning, and multimedia. -->
+                I am an Assistant Professor in the <a href="https://www.cs.nycu.edu.tw/">Department of Computer Science</a> at <a href="https://www.nycu.edu.tw/">National Yang Ming Chiao Tung University</a>. I work on <b>image/video processing</b>, <b>computer vision</b>, and <b>computational photography</b>, particularly on essential problems requiring <b>machine learning</b> with insights from <b>geometry</b> and <b>domain-specific knowledge</b>.
+              </p>
+              <p style="text-align:justify;">
+                <!-- I am a fifth year PhD student working with <a href="https://www.csie.ntu.edu.tw/~cyy/">Yung-Yu Chuang</a> in the <a href="https://www.csie.ntu.edu.tw/">CSIE</a> department at <a href="https://www.ntu.edu.tw/">National Taiwan University</a>. I work on problems in computer vision, machine learning, and multimedia. -->
+                Prior to joining NYCU, I was a Research Scientist Intern at <a href="https://about.meta.com/realitylabs/">Meta Reality Labs Research</a> and a senior software engineer at <a href="https://www.mediatek.tw/">MediaTek Inc</a>. I received my PhD from <a href="https://www.csie.ntu.edu.tw/">NTU, CSIE</a> in 2022, where I was a member of <a href="https://www.cmlab.csie.ntu.edu.tw/new_cml_website/index.php">CMLab</a>.
+              </p>
+              <p style="text-align:justify;">
+                I received the <a href="https://yushan.project.edu.tw/TopTalent">教育部玉山青年學者</a>, <a href="https://www.nstc.gov.tw/folksonomy/list/b783c8f8-92fd-444b-a3dd-c9f026124319?l=ch">國科會 2030 新秀學者</a>, <a href="https://research.google/programs-and-events/research-scholar-program/recipients/">Google Research Scholar Award</a>, and <a href="https://x.com/CVPR/status/1793616950314369239">CVPR 2024 Outstanding Reviewer</a> award.
+              </p>
+              <p style="text-align:justify;">
+              <b>Dear prospective students:</b><i> I am looking for undergraduate / master's / Ph.D. / postdoc students to join my group. If you are interested in working with me and want to conduct research in image processing, computer vision, and machine learning, don't hesitate to contact me directly with your CV and transcripts.</i>
+              </p>
+              <!-- <p style="text-align:justify;">
+                From 2014 to 2022, I was an algorithm development engineer at <a href="https://www.mediatek.tw/">MediaTek Inc.</a> and joined <a href="https://about.meta.com/realitylabs/">Meta Reality Labs Research</a> as a Research Scientist Intern in 2022. I received my Ph.D. from <a href="https://www.ntu.edu.tw/">National Taiwan University</a>, where I was advised by <a href="https://www.csie.ntu.edu.tw/~cyy/">Yung-Yu Chuang</a>. I did my undergrad and master's at <a href="https://www.nctu.edu.tw/">National Chiao Tung University</a>, where I worked with <a href="https://mcube.nctu.edu.tw/~hmhang/">Hsueh-Ming Hang</a>.
+                
+              </p> -->
+        <!-- <p>I was a research scientist intern at Meta Reality Labs Research, where I worked on computational photography and dynamic novel view synthesis.
+        </p>
+        <p>I was also a senior algorithm development engineer at MediaTek Inc., where I worked on computational photography, computer vision, and machine learning.
+        </p> -->
+              <p style="text-align:center">
+                <a href="mailto:yulunliu@cs.nycu.edu.tw">Email</a> &nbsp/&nbsp
+                <a href="CV.pdf">CV</a> &nbsp/&nbsp
+                <a href="https://scholar.google.com/citations?user=gliihzoAAAAJ">Google Scholar</a> &nbsp/&nbsp
+                <a href="https://www.facebook.com/profile.php?id=1837672300">Facebook</a> &nbsp/&nbsp
+                <a href="https://www.instagram.com/alex04072000/">Instagram</a> &nbsp/&nbsp
+                <a href="https://github.com/alex04072000">Github</a> &nbsp/&nbsp
+                <a href="https://www.youtube.com/channel/UCpyNUU40gFm6_p3MVmFT01g">YouTube</a>
+              </p>
+            </td>
+            <td style="padding:2.5%;width:40%;max-width:40%">
+              <!-- <img style="width:100%;max-width:100%" alt="profile photo" src="images/yulunliu_2_square.jpg" class="hoverZoomLink">
+              For those who personally know me, I know what you're thinking: Who is this guy? <br> Hover over to see what I usually look like before a paper submission deadline. -->
+              <!-- <img style="width:100%;max-width:100%" alt="profile photo"  onmouseover="document.getElementById('yulunliu').src='images/yulunliu_tired.jpg';document.getElementById('text-display').innerHTML='<center>Me, with a paper submission deadline approaching.</center>';"
+                onmouseout="document.getElementById('yulunliu').src='images/yulunliu_2_square.jpg';document.getElementById('text-display').innerHTML='';"
+                src="images/yulunliu_2_square.jpg" id="yulunliu">
+                <div id="text-display" ></div> -->
+              <img style="width:100%;max-width:100%" alt="profile photo"  onmouseover="document.getElementById('yulunliu').src='images/yulunliu_tired.jpg';"
+              onmouseout="document.getElementById('yulunliu').src='images/yulunliu_2_square.jpg';document.getElementById('text-display').innerHTML='';"
+              src="images/yulunliu_2_square.jpg" id="yulunliu">
+              For those who personally know me, that might be thinking: Who is this guy? <br> Hover over to see how I usually look like before a paper submission deadline.
+              <br><br>Meet <a href="images/both.jpg">my cats</a>: <a href="images/tiger.jpg">虎皮捲</a> and <a href="images/chicken.jpg">雞蛋糕</a>!
+            </td>
+          </tr>
+        </tbody></table>
+        <!-- <div class="container">
+        <p style="text-align:justify;">
+          <i>I am looking for undergraduate / master's / Ph.D. / postdoc students to join my group. If you are interested in working with me and want to conduct research in image processing, computer vision, and machine learning, don't hesitate to contact me directly with your CV and transcripts.</i>
+        </p>
+        </div> -->
+
+        <hr class="soft">
+        <br>
+        <div class="container quote2">
+          <center><heading>Timeline</heading></center>
+        </div>
+        <div class="container">
+          <div id="timeline">
+            <div class="timelineitem">
+              <div class="tdate"> 2023 - </div>
+              <img src="images/National_Yang_Ming_Chiao_Tung_University_seal_(2023).svg.png" alt="image" height="80"/>
+              <div class="ttitle">Assistant Professor at NYCU</div>
+            <div class="tdesc">Comp Photo Lab, <a href="https://www.cs.nycu.edu.tw/">Department of Computer Science</a></div>
+            </div>
+            <div class="timelineitem">
+              <div class="tdate">2022</div>
+              <img src="images/Meta_Platforms_Inc._logo.svg.png" alt="image" height="36"/>
+              <div class="ttitle">Research Scientist Intern at Meta</div>
+            <div class="tdesc"> Worked with <a href="https://jbhuang0604.github.io/">Prof. Jia-Bin Huang</a> and <a href="http://johanneskopf.de/">Dr. Johannes Kopf</a></div>
+            <div class="tdesc">Computational Photography Group</div>
+            <div class="tdesc">Seattle, WA, USA</div>
+            </div>
+            <div class="timelineitem">
+              <div class="tdate">2017 - 2022</div>
+              <img src="images/2880px-MediaTek_logo.svg.png" alt="image" height="41"/>
+              <div class="ttitle">Senior Software Engineer at MediaTek Inc.</div>
+            <div class="tdesc">Multimedia Technology Development (MTD) Division</div>
+            <div class="tdesc">Intelligent Vision Processing (IVP) Department</div>
+            </div>
+            <div class="timelineitem">
+              <div class="tdate">2017 - 2022</div>
+              <img src="images/500px-National_Taiwan_University_logo.svg.png" alt="image" height="80"/>
+              <div class="ttitle">NTU: PhD</div>
+              <!-- <div class="tdesc"><a href="https://www.cmlab.csie.ntu.edu.tw/new_cml_website/index.php">CMLab</a>, Department of Computer Science & Information Engineering (<a href="https://www.csie.ntu.edu.tw/">CSIE</a>)</div> -->
+              <div class="tdesc">CMLab, CSIE</div>
+              <div class="tdesc">Worked with <a href="https://www.csie.ntu.edu.tw/~cyy/">Prof. Yung-Yu Chuang</a></div>
+              <div class="tdesc">Thesis: <a href="https://hdl.handle.net/11296/8zg4aq">Restoring and Enhancing Images and Videos by Combining Modeling and Learning</a></div>
+            </div>
+            <div class="timelineitem">
+              <div class="tdate">2014 - 2017</div>
+              <img src="images/2880px-MediaTek_logo.svg.png" alt="image" height="41"/>
+              <div class="ttitle">Software Engineer at MediaTek Inc.</div>
+            <div class="tdesc">Multimedia Technology Development (MTD) Division</div>
+            <div class="tdesc">Intelligent Vision Processing (IVP) Department</div>
+            </div>
+            <div class="timelineitem">
+              <div class="tdate">2012 - 2014</div>
+              <img src="images/NCTU_emblem.png" alt="image" height="80"/>
+              <div class="ttitle">NCTU: MS</div>
+              <!-- <div class="tdesc"><a href="https://mcube.lab.nycu.edu.tw/">CommLab</a>, <a href="https://eenctu.nctu.edu.tw/index.php">Institute of Electronics</a></div> -->
+              <div class="tdesc">CommLab, Institute of Electronics</div>
+              <div class="tdesc">Worked with <a href="https://mcube.lab.nycu.edu.tw/~hmhang/">Prof. Hsueh-Ming Hang</a></div>
+              <div class="tdesc">Thesis: <a href="https://hdl.handle.net/11296/889ms7">Wide-Angle Virtual View Synthesis with Depth-Based Background Modeling</a></div>
+            </div>
+            <div class="timelineitem">
+              <div class="tdate">2008 - 2012</div>
+              <img src="images/NCTU_emblem.png" alt="image" height="80"/>
+              <div class="ttitle">NCTU: BS</div>
+              <div class="tdesc">Department of Electronics Engineering</div>
+            </div>
+            <!-- <div class="timelineitem">
+              <div class="tdate">2017 - 2018</div>
+              <div class="ttitle">PostDoc at TU Graz</div>
+            <div class="tdesc"> Institute of Electrical Measurement and Sensor Systems (<a href="https://www.tugraz.at/en/institutes/emt/home/">EMS</a>), Graz, Austria <span class="thigh"> </span> </div>
+            </div>
+            <div class="timelineitem">
+              <div class="tdate">2014 - 2017</div>
+              <div class="ttitle">Visiting Researcher at York University </div>
+            <div class="tdesc"> Worked with <span class="thigh">Prof. Richard P. Wildes </span> </div>
+            <div class="tdesc"> YorkU <a href="http://vision.eecs.yorku.ca/main/">Vision Lab</a>, Toronto, Canada</div>
+            </div>
+            <div class="timelineitem">
+              <div class="tdate">2014 - 2017</div>
+              <div class="ttitle">TU Graz: PhD</div>
+              <div class="tdesc">Thesis: <span class="thigh">Deep Learning for Video Recognition</span></div>
+            </div>
+            <div class="timelineitem">
+              <div class="tdate">2012 - 2013</div>
+              <div class="ttitle">TU Graz: MSc </div>
+              <div class="tdesc">Thesis: <span class="thigh"><a href="pubs/Feichtenhofer_MScThesis_5Nov13.pdf">Dynamic Scene Recognition with Oriented Spacetime Energies</a> </span></div>
+            </div>
+            <div class="timelineitem">
+              <div class="tdate">2013</div>
+            <div class="ttitle">Visiting Researcher at York University </div>
+            <div class="tdesc"> Worked with <span class="thigh">Prof. Richard P. Wildes </span> </div>
+            <div class="tdesc"> YorkU <a href="http://vision.eecs.yorku.ca/main/">Vision Lab</a>, Toronto, Canada</div>
+            </div>
+            <div class="timelineitem">
+              <div class="tdate">2008 - 2011
+              </div>
+              <div class="ttitle">TU Graz: BSc </div>
+              <div class="tdesc">Thesis: <span class="thigh"><a href="pubs/BSc_thesis_feichtenhofer_sharpness_10-2011.pdf">No-Reference Sharpness Metric based on Local Gradient Analysis</a> </span></div>
+            </div> -->
+          </div>
+        </div>
+
+        <hr class="soft">
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <center><heading>News</heading></center>
+              <ul>
+                <!-- <li>Sep 2024: Three conference papers accepted to <a href="https://neurips.cc/">NeurIPS 2024</a></li>
+                <li>Sep 2024: Talk at NYCU Library</li>
+                <li>Aug 2024: MS student 鄭伯俞 won the <a href="https://ippr.org.tw/wp-content/uploads/2024/08/%E7%AC%AC17%E5%B1%86%E5%8D%9A%E7%A2%A9%E5%A3%AB%E8%AB%96%E6%96%87%E7%8D%8E%E7%8D%B2%E7%8D%8E%E5%90%8D%E5%96%AE.pdf">中華民國影像處理與圖形識別學會碩士佳作論文獎 (IPPR Excellent Master Thesis Award)</a>!</li>
+                <li>July 2024: BS student <a href="https://jayinnn.dev/">李杰穎</a> won the <a href="https://www.cs.nycu.edu.tw/storage/materials/xeXTWKdsG4IkteKZGx3lxO6WdeZv4Qi0mgaomFJr.pdf">陽明交大資工系專題競賽佳作 (3rd place of the NYCU CS Undergraduate Research Competition)</a>!</li>
+                <li>July 2024: BS students 吳俊宏, 陳士弘, 陳凱昕, and 陳昱佑 won the <a href="https://www.cs.nycu.edu.tw/storage/materials/xeXTWKdsG4IkteKZGx3lxO6WdeZv4Qi0mgaomFJr.pdf">陽明交大資工系專題競賽優等 (2nd place of the NYCU CS Undergraduate Research Competition)</a>!</li>
+                <li>July 2024: One conference paper accepted to <a href="https://eccv.ecva.net/">ECCV 2024</a></li>
+                <li>June 2024: One conference paper accepted to <a href="https://iros2024-abudhabi.org/">IROS 2024</a></li>
+                <li>June 2024: Excited and honored to have been selected as a <a href="https://www.nstc.gov.tw/folksonomy/list/b783c8f8-92fd-444b-a3dd-c9f026124319?l=ch">2030 新秀學者 (NSTC 2030 Emerging Young Scholar)</a>!</li>
+                <li>June 2024: BS students <a href="https://su-terry.github.io/">蘇智海</a> and <a href="https://jayinnn.dev/">李杰穎</a> are awarded the <a href="https://www.nstc.gov.tw/folksonomy/list/2af9ad9a-1f47-450d-b5a1-2cb43de8290c?l=ch">國科會大專學生研究計畫 (NSTC Research Grant for University Students)</a>!</li>
+                <li>May 2024: Honored to win a CVPR 2024 <a href="https://x.com/CVPR/status/1793616950314369239/photo/1">Outstanding Reviewer</a> award!</li>
+                <li>April 2024: Excited and honored to receive a <a href="https://research.google/programs-and-events/research-scholar-program/recipients/">Google Research Scholar Award</a>!</li>
+                <li>Mar 2024: Two conference papers conditionally accepted to <a href="https://s2024.siggraph.org/">SIGGRAPH 2024</a></li>
+                <li>Mar 2024: Invited <a href="https://csie.ntu.edu.tw/zh_tw/Announcements/Announcement7/%5B2024-03-01%5D%C2%A0Prof-Yu-Lun-Alex-Liu-National-Yang-Ming-Chiao-Tung-University-Enhancing-3D-Scene-Reconstruction-in-NeRFs-36521134">Seminar</a> at NTU</li>
+                <li>Feb 2024: Two conference papers accepted to <a href="https://cvpr.thecvf.com/Conferences/2024">CVPR 2024</a></li>
+                <li>Feb 2024: Keynote at <a href="http://mislab.cs.nthu.edu.tw/explorecsr-3/index.html#program">2024 Fun AI Winter Camp</a></li>
+                <li>Jan 2024: BS student <a href="https://su-terry.github.io/">蘇智海</a> won the <a href="https://www.cs.nycu.edu.tw/storage/materials/BqI0kDw9wXf5rwQmjVkOkBbVNEOKO7w3QvyOUVtQ.pdf">陽明交大資工系專題競賽特優 (1st place of the NYCU CS Undergraduate Research Competition)</a>!</li>
+                <li>Jan 2024: One conference paper accepted to <a href="https://iclr.cc/Conferences/2024">ICLR 2024</a></li>
+                <li>Jan 2024: One Journal paper accepted to <a href="https://link.springer.com/journal/11263">IJCV</a> 2024</li>
+                <li>Dec 2023: One conference paper accepted to <a href="https://aaai.org/aaai-conference/">AAAI 2024</a></li>
+                <li>Aug 2023: Honored to receive Google's Research Grant!</li>
+                <li>Aug 2023: Honored to receive the <a href="https://140.125.183.142/wp-content/uploads/2023/08/%E7%AC%AC16%E5%B1%86%E5%8D%9A%E7%A2%A9%E5%A3%AB%E8%AB%96%E6%96%87%E7%8D%8E%E7%8D%B2%E7%8D%8E%E5%90%8D%E5%96%AE.pdf">中華民國影像處理與圖形識別學會博士優等論文獎 (IPPR Best Ph.D. Thesis Award)</a>!</li>
+                <li>July 2023: Excited and honored to have been selected as a <a href="https://yushan.moe.gov.tw/TopTalent">玉山青年學者</a> (<a href="https://yushan.moe.gov.tw/TopTalent/EN">Yushan Young Fellow</a>), 2023!</li>
+                <li>July 2023: Two conference papers accepted to <a href="https://iccv2023.thecvf.com/">ICCV 2023</a></li>
+                <li>May 2023: Talk at MediaTek Inc.</li>
+                <li>April 2023: Invited Seminar at NTHU</li>
+                <li>Mar 2023: Talk at the <a href="https://elsa-lab.github.io/AIIWorkshop_5th/index.html">5th AII Workshop</a></li>
+                <li>Mar 2023: Invited Seminar at NYCU</li>
+                <li>Mar 2023: Two conference papers accepted to <a href="https://cvpr2023.thecvf.com/">CVPR 2023</a></li>
+                <li>Jan 2023: Talk at Academia Sinica</li>
+                <li>Nov 2022: Invited Seminar at NTHU</li> -->
+                <li>Sep 2024: Three conference papers accepted to <a href="https://neurips.cc/">NeurIPS 2024</a></li>
+                <li>Sep 2024: <a href="https://www.youtube.com/watch?v=Xt17-D9Mp9A">Talk</a> at NYCU Library</li>
+                <li>Aug 2024: MS student 鄭伯俞 won the <a href="https://ippr.org.tw/wp-content/uploads/2024/08/%E7%AC%AC17%E5%B1%86%E5%8D%9A%E7%A2%A9%E5%A3%AB%E8%AB%96%E6%96%87%E7%8D%8E%E7%8D%B2%E7%8D%8E%E5%90%8D%E5%96%AE.pdf">中華民國影像處理與圖形識別學會碩士佳作論文獎</a>!</li>
+                <li>July 2024: BS student <a href="https://jayinnn.dev/">李杰穎</a> won the <a href="https://www.cs.nycu.edu.tw/storage/materials/xeXTWKdsG4IkteKZGx3lxO6WdeZv4Qi0mgaomFJr.pdf">陽明交大資工系專題競賽佳作</a>!</li>
+                <li>July 2024: BS students 吳俊宏, 陳士弘, 陳凱昕, and 陳昱佑 won the <a href="https://www.cs.nycu.edu.tw/storage/materials/xeXTWKdsG4IkteKZGx3lxO6WdeZv4Qi0mgaomFJr.pdf">陽明交大資工系專題競賽優等</a>!</li>
+                <li>July 2024: One conference paper accepted to <a href="https://eccv.ecva.net/">ECCV 2024</a></li>
+                <li>June 2024: One conference paper accepted to <a href="https://iros2024-abudhabi.org/">IROS 2024</a></li>
+                <li>June 2024: Excited and honored to have been selected as a <a href="https://www.nstc.gov.tw/folksonomy/list/b783c8f8-92fd-444b-a3dd-c9f026124319?l=ch">國科會 2030 新秀學者</a>!</li>
+                <li>June 2024: BS students <a href="https://su-terry.github.io/">蘇智海</a> and <a href="https://jayinnn.dev/">李杰穎</a> are awarded the <a href="https://www.nstc.gov.tw/folksonomy/list/2af9ad9a-1f47-450d-b5a1-2cb43de8290c?l=ch">國科會大專學生研究計畫</a>!</li>
+                <li>May 2024: Honored to win a CVPR 2024 <a href="https://x.com/CVPR/status/1793616950314369239/photo/1">Outstanding Reviewer</a> award!</li>
+                <li>April 2024: Excited and honored to receive a <a href="https://research.google/programs-and-events/research-scholar-program/recipients/">Google Research Scholar Award</a>!</li>
+                <li>Mar 2024: Two conference papers conditionally accepted to <a href="https://s2024.siggraph.org/">SIGGRAPH 2024</a></li>
+                <li>Mar 2024: Invited <a href="https://csie.ntu.edu.tw/zh_tw/Announcements/Announcement7/%5B2024-03-01%5D%C2%A0Prof-Yu-Lun-Alex-Liu-National-Yang-Ming-Chiao-Tung-University-Enhancing-3D-Scene-Reconstruction-in-NeRFs-36521134">Seminar</a> at NTU</li>
+                <li>Feb 2024: Two conference papers accepted to <a href="https://cvpr.thecvf.com/Conferences/2024">CVPR 2024</a></li>
+                <li>Feb 2024: Keynote at <a href="http://mislab.cs.nthu.edu.tw/explorecsr-3/index.html#program">2024 Fun AI Winter Camp</a></li>
+                <li>Jan 2024: BS student <a href="https://su-terry.github.io/">蘇智海</a> won the <a href="https://www.cs.nycu.edu.tw/storage/materials/BqI0kDw9wXf5rwQmjVkOkBbVNEOKO7w3QvyOUVtQ.pdf">陽明交大資工系專題競賽特優</a>!</li>
+                <li>Jan 2024: One conference paper accepted to <a href="https://iclr.cc/Conferences/2024">ICLR 2024</a></li>
+                <li>Jan 2024: One Journal paper accepted to <a href="https://link.springer.com/journal/11263">IJCV</a> 2024</li>
+                <li>Dec 2023: One conference paper accepted to <a href="https://aaai.org/aaai-conference/">AAAI 2024</a></li>
+                <li>Aug 2023: Honored to receive Google's Research Grant!</li>
+                <li>Aug 2023: Honored to receive the <a href="https://140.125.183.142/wp-content/uploads/2023/08/%E7%AC%AC16%E5%B1%86%E5%8D%9A%E7%A2%A9%E5%A3%AB%E8%AB%96%E6%96%87%E7%8D%8E%E7%8D%B2%E7%8D%8E%E5%90%8D%E5%96%AE.pdf">中華民國影像處理與圖形識別學會博士優等論文獎</a>!</li>
+                <li>July 2023: Excited and honored to have been selected as a <a href="https://yushan.moe.gov.tw/TopTalent">教育部玉山青年學者</a>!</li>
+                <li>July 2023: Two conference papers accepted to <a href="https://iccv2023.thecvf.com/">ICCV 2023</a></li>
+                <li>May 2023: Talk at MediaTek Inc.</li>
+                <li>April 2023: Invited Seminar at NTHU</li>
+                <li>Mar 2023: Talk at the <a href="https://elsa-lab.github.io/AIIWorkshop_5th/index.html">5th AII Workshop</a></li>
+                <li>Mar 2023: Invited Seminar at NYCU</li>
+                <li>Mar 2023: Two conference papers accepted to <a href="https://cvpr2023.thecvf.com/">CVPR 2023</a></li>
+                <li>Jan 2023: Talk at Academia Sinica</li>
+                <li>Nov 2022: Invited Seminar at NTHU</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <hr class="soft">
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <p><center><heading>Research Group</heading></center></p>
+              <div id="slideshow">
+                <figure>
+                    <img src="images/20230429.jpg">
+                    <img src="images/20231208.jpg">
+                    <img src="images/20240121.jpg">
+                    <img src="images/20240402.jpg">
+                    <img src="images/20240428.jpg">
+                </figure>
+              </div>
+              <p><center><subheading>Postdoc</subheading></center></p>
+              <div class="people">
+                <div class="person">
+                  <img src="students/zhenjunzhao.jpg" />
+                  <p><a href="https://ericzzj1989.github.io/">赵祯俊</a></p>
+                </div>
+              </div>
+              <p><center><subheading>PhD Students</subheading></center></p>
+              <div class="people">
+                <div class="person">
+                  <img src="students/yichuanhuang.jpg" />
+                  <p>黃怡川<br>Institute of<br>Computer Science<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/zhenghuihuang.jpg" />
+                  <p>黃正輝<br>NTU CSIE<br>with <a href="https://www.csie.ntu.edu.tw/~cyy/">Yung-Yu Chuang</a></p>
+                </div>
+                <div class="person">
+                  <img src="students/junweiduanmu.jpg" />
+                  <p><a href="http://www.linkedin.com/in/ray-tuan-mu-a46257246">端木竣偉</a><br>Institute of<br>Computer Science<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/chengyoulu.jpg" />
+                  <p><a href="https://johnnylu305.github.io/">呂承祐</a><br>UTS CS<br>with <a href="https://profiles.uts.edu.au/Chin-Teng.Lin">Chin-Teng Lin</a></p>
+                </div>
+              </div>
+              <p><center><subheading>Research Assistants</subheading></center></p>
+              <div class="people">
+                <div class="person">
+                  <img src="students/changhanyeh.jpg" />
+                  <p><a href="https://jimmycv07.github.io/">葉長瀚</a><br>BS, NYCU CE & CS<br>now MS student @ UIUC</p>
+                </div>
+                <div class="person">
+                  <img src="students/tinghsuanchen.jpg" />
+                  <p><a href="https://koi953215.github.io/">陳霆軒</a><br>BS, NCHU AMATH<br>now MS student @ USC</p>
+                </div>
+                <div class="person">
+                  <img src="students/haojenchien.jpg" />
+                  <p>簡浩任<br>MS, UCLA ECE<br></p>
+                </div>
+              </div>
+              <p><center><subheading>MS Students</subheading></center></p>
+              <div class="people">
+                <div class="person">
+                  <img src="students/chinyanglin.jpg" />
+                  <p><a href="https://linjohnss.github.io/">林晉暘</a><br>Institute of Data Science<br>with <a href="https://walonchiu.github.io/">Wei-Chen Chiu</a></p>
+                </div>
+                <div class="person">
+                  <img src="students/kennethwu.jpg" />
+                  <p>吳中赫<br>Institute of<br>Multimedia<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/alexyen.jpg" />
+                  <p>嚴士函<br>Institute of<br>Multimedia<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/jiewenchan.jpg" />
+                  <p>陳捷文<br>Institute of<br>Computer Science<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/xuhaoxiang.jpg" />
+                  <p>許皓翔<br>Institute of Computer Science<br>with <a href="http://gpl.cs.nctu.edu.tw/Steve-Lin/">Wen-Chieh Lin</a></p>
+                </div>
+                <div class="person">
+                  <img src="students/yinghuanchen.jpg" />
+                  <p>陳映寰<br>Institute of<br>Computer Science<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/sianglingzhang.jpg" />
+                  <p><a href="https://www.linkedin.com/in/sianglinzhang/">張欀齡</a><br>Institute of<br>Computer Science<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/huaish.jpg" />
+                  <p><a href="https://www.linkedin.com/in/huaish/">鄭淮薰</a><br>Institute of<br>Computer Science<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/hentcike.jpg" />
+                  <p>柯柏旭<br>Institute of Computer Science<br>with <a href="https://walonchiu.github.io/">Wei-Chen Chiu</a></p>
+                </div>
+                <div class="person">
+                  <img src="students/pingchenwu.jpg" />
+                  <p>吳秉宸<br>Program of<br>Artificial Intelligence<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/chengdefan.jpg" />
+                  <p>范丞德<br>Institute of Computer Science<br>with <a href="https://sites.google.com/view/yctseng">Yu-Chee Tseng</a></p>
+                </div>
+                <div class="person">
+                  <img src="students/chenweichang.jpg" />
+                  <p>張宸瑋<br>Institute of AI Innovation<br>with <a href="https://people.cs.nycu.edu.tw/~jlhuang/">Jiun-Long Huang</a></p>
+                </div>
+              </div>
+              <p><center><subheading>BS Students</subheading></center></p>
+              <div class="people">
+                <div class="person">
+                  <img src="students/chihhaisu.jpg" />
+                  <p><a href="https://su-terry.github.io/">蘇智海</a><br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/chihyaohu.jpg" />
+                  <p>胡智堯<br>NTU MED<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/edisonlee55.webp" />
+                  <p><a href="https://www.edisonlee55.com">李明謙</a><br>NYCU ARETEHP<br></p>
+                </div>
+                <div class="person">
+                  <img src="images/avatar_scholar_256.png" />
+                  <p>孫揚喆<br>NYCU MED<br></p>
+                </div>
+                <div class="person">
+                  <img src="images/avatar_scholar_256.png" />
+                  <p>陳士弘<br>NYCU MATH & CS<br>now MS student @ NYCU</p>
+                </div>
+                <div class="person">
+                  <img src="images/avatar_scholar_256.png" />
+                  <p>陳昱佑<br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/tsungyenlee.jpg" />
+                  <p><a href="http://solocat17.github.io/">李宗諺</a><br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="images/avatar_scholar_256.png" />
+                  <p>楊宗儒<br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="images/avatar_scholar_256.png" />
+                  <p>陳凱昕<br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/yirueiliu.jpg" />
+                  <p>劉珆睿<br>NYCU CS<br>now MS student @ UIUC</p>
+                </div>
+                <div class="person">
+                  <img src="images/avatar_scholar_256.png" />
+                  <p>吳俊宏<br>NYCU CS<br>now MS student @ NYCU</p>
+                </div>
+                <div class="person">
+                  <img src="students/shrrueitsai.jpg" />
+                  <p>蔡師睿<br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/WeiChengChang.jpg" />
+                  <p>張維程<br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/jylee.jpg" />
+                  <p><a href="https://jayinnn.dev/">李杰穎</a><br>NYCU CS<br>now exchange student @ ETHZ</p>
+                </div>
+                <div class="person">
+                  <img src="students/0816109.jpg" />
+                  <p><a href="https://www.linkedin.com/in/ericyangchen">陳楊融</a><br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="images/avatar_scholar_256.png" />
+                  <p>吳定霖<br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/lizhongsitu.jpg" />
+                  <p>司徒立中<br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/yitingchu.jpg" />
+                  <p>朱驛庭<br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/hehsu.jpg" />
+                  <p>徐和<br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="images/avatar_scholar_256.png" />
+                  <p>翁晨昱<br>NTHU PHYS<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/yihsiangho.jpg" />
+                  <p><a href="https://sean20405.github.io/">何義翔</a><br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/yuchehsieh.jpg" />
+                  <p>謝侑哲<br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/yuweitsai.jpg" />
+                  <p>蔡聿瑋<br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/minghsiangcheng.jpg" />
+                  <p>鄭名翔<br>NYCU ARETEHP<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/weilingchi.jpg" />
+                  <p>戚維凌<br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/haopingwang.jpg" />
+                  <p>王皓平<br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="students/chiachenyeh.jpg" />
+                  <p>葉家蓁<br>NYCU CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="images/avatar_scholar_256.png" />
+                  <p>林揚森<br>NYCU ME & CS<br></p>
+                </div>
+                <div class="person">
+                  <img src="images/avatar_scholar_256.png" />
+                  <p>蔡昀錚<br>NYCU CS<br>with <a href="https://sites.google.com/site/yylinweb/">Yen-Yu Lin</a><br></p>
+                </div>
+              </div>
+              <p><center><a href="javascript:toggleblock('alumni')"><subheading>Alumni</subheading></a></center></p>
+              <!-- <subsectionheading>
+                <a href="javascript:toggleblock('alumni')">Alumni</a>
+              </subsectionheading> -->
+              <i id="alumni">
+                <div class="people">
+                  <div class="person">
+                    <img src="students/boyucheng.jpg" />
+                    <p>鄭伯俞<br>MS Spring 2023<br>with <a href="https://walonchiu.github.io/">Wei-Chen Chiu</a><br>now @ Qualcomm</p>
+                  </div>
+                  <div class="person">
+                    <img src="images/avatar_scholar_256.png" />
+                    <p>陳俊瑋<br>BS 2023<br>Next MS Student<br>NYCU</p>
+                  </div>
+                  <div class="person">
+                    <img src="images/avatar_scholar_256.png" />
+                    <p>林奕杰<br>BS 2023-2024<br></p>
+                  </div>
+                  <div class="person">
+                    <img src="images/avatar_scholar_256.png" />
+                    <p>羅宇呈<br>BS 2023-2024<br></p>
+                  </div>
+                  <div class="person">
+                    <img src="images/avatar_scholar_256.png" />
+                    <p>郭玠甫<br>BS 2023-2024<br></p>
+                  </div>
+                  <div class="person">
+                    <img src="images/avatar_scholar_256.png" />
+                    <p>葉柔昀<br>BS 2023-2024<br></p>
+                  </div>
+                  <div class="person">
+                    <img src="students/CHENG YU-HAO.jpg" />
+                    <p>鄭又豪<br>BS 2023-2024<br></p>
+                  </div>
+                  <div class="person">
+                    <img src="images/avatar_scholar_256.png" />
+                    <p>丁祐承<br>BS 2023-2024<br></p>
+                  </div>
+                  <div class="person">
+                    <img src="students/kevinhsieh1016.jpg" />
+                    <p>謝明翰<br>BS 2023-2024<br></p>
+                  </div>
+                  <div class="person">
+                    <img src="students/weizhishi.jpg" />
+                    <p>施惟智<br>BS 2023-2024<br></p>
+                  </div>
+                  <div class="person">
+                    <img src="students/erniechu.jpg" />
+                    <p><a href="https://ernestchu.github.io/">朱劭璿</a><br>MS Spring 2024<br>now PhD Student<br>@ Johns Hopkins</p>
+                  </div>
+                </div>
+              </i>
+            </td>
+          </tr>
+        </tbody></table>
+        
+        
+        <!-- <li>林晉暘, 2023</li>
+                <li>吳中赫, 2023</li>
+                <li>嚴士函, 2023</li>
+                <li>陳捷文, 2023</li>
+                <li>鄭伯俞, 2023 (with <a href="https://walonchiu.github.io/">Wei-Chen Chiu</a>)</li>
+              </ul>
+            </td>
+            <td style="padding:20px;width:33%;vertical-align:top">
+              <subheading>Undergraduate Students</subheading>
+              <br>
+              <ul style="list-style:none; padding-left:0;">
+                <li>蘇智海, 2023</li>
+                <li>胡智堯, 2023</li>
+                <li>陳俊瑋, 2023</li>
+                <li>李明謙, 2023</li>
+                <li>林奕杰, 2023</li>
+                <li>孫揚喆, 2023</li>
+                <li>羅宇呈, 2023</li>
+                <li>郭玠甫, 2023</li>
+                <li>葉柔昀, 2023</li>
+                <li>陳士弘, 2023</li>
+                <li>鄭又豪, 2023</li>
+                <li>陳昱佑, 2023</li>
+                <li>丁祐承, 2023</li>
+                <li>李宗諺, 2023</li>
+                <li>楊宗儒, 2023</li>
+                <li>陳凱昕, 2023</li>
+                <li>劉珆睿, 2023</li>
+                <li>吳俊宏, 2023</li>
+                <li>蔡師睿, 2023</li>
+                <li>張維程, 2023</li> -->
+        
+        
+        <hr class="soft">
+        
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <center><heading>Research</heading></center>
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+
+
+
+          <tr onmouseout="Yeh2024DIR_stop()" onmouseover="Yeh2024DIR_start()"  bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Yeh2024DIR_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Yeh2024DIR.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                <img src='images/Yeh2024DIR.jpg' width="160" alt="Description" style="margin-top: 35px;">
+              </div>
+              <script type="text/javascript">
+                function Yeh2024DIR_start() {
+                  document.getElementById('Yeh2024DIR_image').style.opacity = "1";
+                }
+
+                function Yeh2024DIR_stop() {
+                  document.getElementById('Yeh2024DIR_image').style.opacity = "0";
+                }
+                Yeh2024DIR_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://jimmycv07.github.io/DiffIR2VR_web/">
+                <papertitle>DiffIR2VR-Zero: Zero-Shot Video Restoration with Diffusion-based Image Restoration Models</papertitle>
+              </a>
+              <br>
+              <a href="https://jimmycv07.github.io/">Chang-Han Yeh</a>, <a href="https://linjohnss.github.io/">Chin-Yang Lin</a>, <a href="https://lightchaserx.github.io/">Zhixiang Wang</a>, <a href="https://chiweihsiao.github.io/">Chi-Wei Hsiao</a>, <a href="https://koi953215.github.io/">Ting-Hsuan Chen</a>, <strong>Yu-Lun Liu</strong>
+              <br>
+              <em>arXiv</em>, 2024 &nbsp
+              <br>
+              <a href="https://jimmycv07.github.io/DiffIR2VR_web/">project page</a>
+              /
+              <a href="http://arxiv.org/abs/2407.01519">arXiv</a>
+              /
+              <a href="https://github.com/jimmycv07/DiffIR2VR-Zero">code</a>
+              /
+              <a href="https://huggingface.co/spaces/Koi953215/DiffIR2VR">demo</a>
+              <p></p>
+              <p>
+                It is shown that this method not only achieves top performance in zero-shot video restoration but also significantly surpasses trained models in generalization across diverse datasets and extreme degradations.
+            </td>
+          </tr>
+
+          <tr onmouseout="Wang2024DAE_stop()" onmouseover="Wang2024DAE_start()"  bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Wang2024DAE_image'>
+                  <img src='images/Wang2024DAE_output.jpg' width="160" style="margin-top: 35px;"></div>
+                <img src='images/Wang2024DAE_input.jpg' width="160" alt="Description" style="margin-top: 35px;">
+              </div>
+              <script type="text/javascript">
+                function Wang2024DAE_start() {
+                  document.getElementById('Wang2024DAE_image').style.opacity = "1";
+                }
+
+                function Wang2024DAE_stop() {
+                  document.getElementById('Wang2024DAE_image').style.opacity = "0";
+                }
+                Wang2024DAE_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://albert100121.github.io/Depth-Anywhere/">
+                <papertitle>Depth Anywhere: Enhancing 360 Monocular Depth Estimation via Perspective Distillation and Unlabeled Data Augmentation</papertitle>
+              </a>
+              <br>
+              <a href="http://albert100121.github.io/">Ning-Hsu Wang</a>, <strong>Yu-Lun Liu</strong>
+              <br>
+              <em>NeurIPS</em>, 2024
+              <img src="images/new_animated.gif"\>
+              <br>
+              <a href="https://albert100121.github.io/Depth-Anywhere/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2406.12849">arXiv</a>
+              /
+              <a href="">code [coming soon]</a>
+              /
+              <a href="https://huggingface.co/spaces/Albert-NHWang/Depth-Anywhere-App">demo</a>
+              <p></p>
+              <p>
+                This work proposes a new depth estimation framework that utilizes unlabeled 360-degree data effectively and uses state-of-the-art perspective depth estimation models as teacher models to generate pseudo labels through a six-face cube projection technique, enabling efficient labeling of depth in 360-degree images.
+            </td>
+          </tr>
+
+          <tr onmouseout="Chen2024NRC_stop()" onmouseover="Chen2024NRC_start()"  bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Chen2024NRC_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Chen2024NRC.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                <img src='images/Chen2024NRC.jpg' width="160" alt="Description" style="margin-top: 35px;">
+              </div>
+              <script type="text/javascript">
+                function Chen2024NRC_start() {
+                  document.getElementById('Chen2024NRC_image').style.opacity = "1";
+                }
+
+                function Chen2024NRC_stop() {
+                  document.getElementById('Chen2024NRC_image').style.opacity = "0";
+                }
+                Chen2024NRC_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://koi953215.github.io/NaRCan_page/">
+                <papertitle>NaRCan: Natural Refined Canonical Image with Integration of Diffusion Prior for Video Editing</papertitle>
+              </a>
+              <br>
+              <a href="https://koi953215.github.io/">Ting-Hsuan Chen</a>, Jiewen Chan, Hau-Shiang Shiu, Shih-Han Yen, <a href="https://jimmycv07.github.io/">Chang-Han Yeh</a>, <strong>Yu-Lun Liu</strong>
+              <br>
+              <em>NeurIPS</em>, 2024
+              <img src="images/new_animated.gif"\>
+              <br>
+              <a href="https://koi953215.github.io/NaRCan_page/">project page</a>
+              /
+              <a href="http://arxiv.org/abs/2406.06523">arXiv</a>
+              /
+              <a href="https://drive.google.com/file/d/1Ur6HEP2MizFe3z7iSXoaMQmC5_qHUn1S/view?usp=sharing">results</a>
+              /
+              <a href="">code [coming soon]</a>
+              /
+              <a href="https://huggingface.co/spaces/Koi953215/NaRCan_demo">demo</a>
+              <p></p>
+              <p>
+                A video editing framework, NaRCan, which integrates a hybrid deformation field and diffusion prior to generate high-quality natural canonical images to represent the input video and employs multi-layer perceptrons (MLPs) to capture local residual deformations, enhancing the model's ability to handle complex video dynamics.
+            </td>
+          </tr>
+
+          <tr onmouseout="Wu2024DNV_stop()" onmouseover="Wu2024DNV_start()"  bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Wu2024DNV_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Wu2024DNV.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                <img src='images/Wu2024DNV.jpg' width="160" alt="Description" style="margin-top: 0px;">
+              </div>
+              <script type="text/javascript">
+                function Wu2024DNV_start() {
+                  document.getElementById('Wu2024DNV_image').style.opacity = "1";
+                }
+
+                function Wu2024DNV_stop() {
+                  document.getElementById('Wu2024DNV_image').style.opacity = "0";
+                }
+                Wu2024DNV_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://kirito878.github.io/DeNVeR/">
+                <papertitle>DeNVeR: Deformable Neural Vessel Representations for Unsupervised Video Vessel Segmentation</papertitle>
+              </a>
+              <br>
+              Chun-Hung Wu, Shih-Hong Chen, Chih-Yao Hu, Hsin-Yu Wu, Kai-Hsin Chen, Yu-You Chen, <a href="https://su-terry.github.io/">Chih-Hai Su</a>, Chih-Kuo Lee, <strong>Yu-Lun Liu</strong>
+              <br>
+              <em>arXiv</em>, 2024 &nbsp
+              <br>
+              <a href="https://kirito878.github.io/DeNVeR/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2406.01591">arXiv</a>
+              /
+              <a href="">code & dataset [coming soon]</a>
+              /
+              <a href="https://colab.research.google.com/drive/1IYGiJECwAaoLPq7KGHQE_dvtrdHz9fUA?authuser=2&hl=zh-tw#scrollTo=n1ppvOhqbRkV">colab</a>
+              <p></p>
+              <p>
+                DeNVeR is presented, an unsupervised approach for vessel segmentation in X-ray videos without annotated ground truth, providing a robust, data-efficient tool for disease diagnosis and treatment planning and setting a new standard for future research in video vessel segmentation.
+            </td>
+          </tr>
+
+          <tr onmouseout="Guo2024PPPstop()" onmouseover="Guo2024PPP_start()"  bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Guo2024PPP_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Guo2024PPP.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                  <img src='images/Guo2024PPP.jpg' width="160" alt="Description" style="margin-top: 35px;">
+              </div>
+              <script type="text/javascript">
+                function Guo2024PPP_start() {
+                  document.getElementById('Guo2024PPP_image').style.opacity = "1";
+                }
+
+                function Guo2024PPPstop() {
+                  document.getElementById('Guo2024PPP_image').style.opacity = "0";
+                }
+                Guo2024PPPstop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://tony2guo.github.io/precise-pick-and-place/">
+                <papertitle>Precise Pick-and-Place using Score-Based Diffusion Networks</papertitle>
+              </a>
+              <br>
+              <a href="https://tony2guo.github.io/">Shih-Wei Guo</a>, 
+              <a href="https://github.com/Ending2015a">Tsu-Ching Hsiao</a>, 
+			        <strong>Yu-Lun Liu</strong>, 
+              <a href="https://scholar.google.com/citations?hl=en&user=5mYNdo0AAAAJ&view_op=list_works&sortby=pubdate">Chun-Yi Lee</a>
+              <br>
+              <em>IROS</em>, 2024
+              <img src="images/new_animated.gif"\>
+              <br>
+              <a href="https://tony2guo.github.io/precise-pick-and-place/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2409.09725">arXiv</a>
+              /
+              <a href="https://www.youtube.com/watch?v=56RQPgYyP1s">video</a>
+              <p></p>
+              <p>
+                In this paper, we propose a novel coarse-to-fine continuous pose diffusion method to enhance the precision of pick-and-place operations within robotic manipulation tasks.
+			      </td>
+          </tr>
+
+          <tr bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two"><img src='images/Li2024GRC.jpg' width="160" alt="Description" style="margin-top: 10px;"></div>
+                <img src='images/Li2024GRC.jpg' width="160" alt="Description" style="margin-top: 10px;">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://minfenli.github.io/GenRC/">
+                <papertitle>GenRC: 3D Indoor Scene Generation from Sparse Image Collections</papertitle>
+              </a>
+              <br>
+              <a href="https://minfenli.github.io/">Ming-Feng Li</a>, 
+              Yueh-Feng Ku, Hong-Xuan Yen, Chi Liu, 
+              <strong>Yu-Lun Liu</strong>, 
+              Albert Y. C. Chen, Cheng-Hao Kuo, 
+              <a href="https://aliensunmin.github.io/">Min Sun</a>
+              <br>
+              <em>ECCV</em>, 2024 &nbsp
+              <br>
+              <a href="https://minfenli.github.io/GenRC/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2407.12939">arXiv</a>
+              /
+              <a href="https://github.com/minfenli/GenRC">code</a>
+              <p></p>
+              <p>
+                Given a sparse collection of RGBD images that capture a scene, our method can generate complete room-scale 3D meshes with high-fidelity texture.
+			      </td>
+          </tr>
+
+          <tr bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <br>
+                <br>
+                <div class="two"><img src='images/icraw_myshen24.jpg' width="160"></div>
+                <img src='images/icraw_myshen24.jpg' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2403.15791">
+                <papertitle>DriveEnv-NeRF: Exploration of A NeRF-Based Autonomous Driving Environment for Real-World Performance Validation</papertitle>
+              </a>
+              <br>
+              <a href="https://scholar.google.com.tw/citations?user=2bYyZnwAAAAJ&hl=zh-TW">Mu-Yi Shen</a>, 
+              Chia-Chi Hsu, Hao-Yu Hou, Yu-Chen Huang, 
+              <a href="https://scholar.google.com/citations?user=TgMlVRUAAAAJ&hl=zh-TW">Wei-Fang Sun</a>, 
+              <a href="https://scholar.google.com.tw/citations?user=FK1RcpoAAAAJ&hl=zh-TW">Chia-Che Chang</a>, 
+			        <strong>Yu-Lun Liu</strong>, 
+              <a href="https://elsalab.ai/about">Chun-Yi Lee</a>
+              <br>
+              <em>ICRA RoboNerF Workshop</em>, 2024 &nbsp
+              <br>
+              <a href="https://muyishen2040.github.io/DriveEnvNeRF/">project page</a>
+              /
+              <a href="https://youtu.be/8wNflV_A5FM">video</a>
+              /
+              <a href="https://arxiv.org/abs/2403.15791">arXiv</a>
+              /
+              <a href="https://github.com/muyishen2040/DriveEnvNeRF">code</a>
+              <p></p>
+              <p>
+                The DriveEnv-NeRF framework, which leverages Neural Radiance Fields (NeRF) to enable the validation and faithful forecasting of the efficacy of autonomous driving agents in a targeted real-world scene, can serve as a training environment for autonomous driving agents under various lighting conditions.
+			      </td>
+          </tr>
+
+          <tr onmouseout="Wang2024MBG_stop()" onmouseover="Wang2024MBG_start()"  bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Wang2024MBG_image'>
+                  <img src='images/Wang2024MBG_output.jpg' width="160" style="margin-top: 10px;"></div>
+                <img src='images/Wang2024MBG_input.jpg' width="160" alt="Description" style="margin-top: 10px;">
+              </div>
+              <script type="text/javascript">
+                function Wang2024MBG_start() {
+                  document.getElementById('Wang2024MBG_image').style.opacity = "1";
+                }
+
+                function Wang2024MBG_stop() {
+                  document.getElementById('Wang2024MBG_image').style.opacity = "0";
+                }
+                Wang2024MBG_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://lightchaserx.github.io/matting-by-generation/">
+                <papertitle>Matting by Generation</papertitle>
+              </a>
+              <br>
+              <a href="https://lightchaserx.github.io/">Zhixiang Wang</a>, 
+              Baiang Li, 
+              <a href="https://jianwang-cmu.github.io/">Jian Wang</a>, 
+              <strong>Yu-Lun Liu</strong>, 
+              <a href="https://www.gujinwei.org/">Jinwei Gu</a>, 
+              <a href="https://www.csie.ntu.edu.tw/~cyy/">Yung-Yu Chuang</a>, 
+              <a href="http://www.satoh-lab.nii.ac.jp/index.html">Shin'ichi Satoh</a>
+              <br>
+              <em>SIGGRAPH</em>, 2024 &nbsp
+              <br>
+              <a href="https://lightchaserx.github.io/matting-by-generation/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2407.21017">arXiv</a>
+              /
+              <a href="">code [coming soon]</a>
+              /
+              <a href="https://drive.google.com/file/d/1S6vpkuQs3I1pAX7FNRUy_ADtTudn7YJP/view">slides</a>
+              /
+              <a href="https://dl.acm.org/doi/suppl/10.1145/3641519.3657519/suppl_file/_SIGGRAPH24__Matting_by_Generation%20(10).pdf">supplement</a>
+              <p></p>
+              <p>
+                An innovative approach for image matting that redefines the traditional regression-based task as a generative modeling challenge and harnesses the capabilities of latent diffusion models, enriched with extensive pre-trained knowledge, to regularize the matting process.
+            </td>
+          </tr>
+
+          <tr onmouseout="Su2024BMNstop()" onmouseover="Su2024BMN_start()"  bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Su2024BMN_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Su2024BMN.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                  <img src='images/Su2024BMN.jpg' width="160" alt="Description" style="margin-top: 20px;">
+              </div>
+              <script type="text/javascript">
+                function Su2024BMN_start() {
+                  document.getElementById('Su2024BMN_image').style.opacity = "1";
+                }
+
+                function Su2024BMNstop() {
+                  document.getElementById('Su2024BMN_image').style.opacity = "0";
+                }
+                Su2024BMNstop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://su-terry.github.io/BoostMVSNeRFs/">
+                <papertitle>BoostMVSNeRFs: Boosting MVS-based NeRFs to Generalizable View Synthesis in Large-scale Scenes</papertitle>
+              </a>
+              <br>
+              <a href="https://su-terry.github.io/">Chih-Hai Su*</a>, 
+              <a href="https://orcid.org/0009-0008-5968-6322">Chih-Yao Hu*</a>, 
+              <a href="https://orcid.org/0009-0002-2707-0095">Shr-Ruei Tsai*</a>, 
+              <a href="https://orcid.org/0009-0008-0826-4664">Jie-Ying Lee*</a>, 
+              <a href="https://linjohnss.github.io/">Chin-Yang Lin</a>, 
+			        <strong>Yu-Lun Liu</strong>
+              <br>
+              <em>SIGGRAPH</em>, 2024 &nbsp
+              <br>
+              <a href="https://su-terry.github.io/BoostMVSNeRFs/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2407.15848">arXiv</a>
+              /
+              <a href="https://www.youtube.com/watch?v=tX4EkFgm0ng">video</a>
+              /
+              <a href="https://github.com/Su-Terry/BoostMVSNeRFs">code</a>
+              <p></p>
+              <p>
+                This paper presents a novel approach called BoostMVSNeRFs to enhance the rendering quality of MVS-based NeRFs in large-scale scenes, and identifies limitations in MVS-based NeRF methods, such as restricted viewport coverage and artifacts due to limited input views.
+			      </td>
+          </tr>
+
+
+          <tr bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <br>
+                <div class="two"><img src='images/cvpr-jjwu24.jpg' width="160"></div>
+                <img src='images/cvpr-jjwu24.jpg' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2404.04231">
+                <papertitle>Image-Text Co-Decomposition for Text-Supervised Semantic Segmentation</papertitle>
+              </a>
+              <br>
+              <a href="https://github.com/072jiajia">Ji-Jia Wu</a>, 
+              Andy Chia-Hao Chang, 
+              Chieh-Yu Chuang, 
+              Chun-Pei Chen, 
+			        <strong>Yu-Lun Liu</strong>, 
+              <a href="https://minhungchen.netlify.app/">Min-Hung Chen</a>, 
+              <a href="https://eborboihuc.github.io/">Hou-Ning Hu</a>, 
+              <a href="https://www.csie.ntu.edu.tw/~cyy/">Yung-Yu Chuang</a>, 
+              <a href="https://sites.google.com/site/yylinweb/">Yen-Yu Lin</a>
+              <br>
+              <em>CVPR</em>, 2024 &nbsp
+              <br>
+              <a href="https://arxiv.org/abs/2404.04231">arXiv</a>
+              /
+              <a href="https://github.com/072jiajia/image-text-co-decomposition">code</a>
+              <p></p>
+              <p>
+                This paper addresses text-supervised semantic segmentation, aiming to learn a model capable of segmenting arbitrary visual concepts within images by using only imagetext pairs without dense annotations.
+			      </td>
+          </tr>
+
+          <tr onmouseout="Ma2024HNRstop()" onmouseover="Ma2024HNR_start()"  bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Ma2024HNR_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Ma2024HNR.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                  <br><img src='images/Ma2024HNR.jpg' width="160" alt="Description" style="margin-top: 20px;">
+              </div>
+              <script type="text/javascript">
+                function Ma2024HNR_start() {
+                  document.getElementById('Ma2024HNR_image').style.opacity = "1";
+                }
+
+                function Ma2024HNRstop() {
+                  document.getElementById('Ma2024HNR_image').style.opacity = "0";
+                }
+                Ma2024HNRstop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://miles629.github.io/humannerf-se.github.io/">
+                <papertitle>HumanNeRF-SE: A Simple yet Effective Approach to Animate HumanNeRF with Diverse Poses</papertitle>
+              </a>
+              <br>
+              Caoyuan Ma,
+              <strong>Yu-Lun Liu</strong>, 
+              <a href="https://lightchaserx.github.io/">Zhixiang Wang</a>, 
+              <a href="http://liuwu.weebly.com/">Wu Liu</a>, 
+              <a href="https://xinchenliu.com/">Xinchen Liu</a>, 
+              <a href="https://wangzwhu.github.io/home/">Zheng Wang</a>
+              <br>
+              <em>CVPR</em>, 2024 &nbsp
+              <br>
+              <a href="https://miles629.github.io/humannerf-se.github.io/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2312.02232">arXiv</a>
+              /
+              <a href="https://github.com/Miles629/HumanNeRF-SE">code</a>
+              <p></p>
+              <p>
+                This work reconstructs the previous HumanNeRF approach, combining explicit and implicit human representations with both general and specific mapping processes, and shows that explicit shape can filter the information used to fit implicit representation, and frozen general mapping combined with point-specific mapping can effectively avoid overfitting and improve pose generalization performance.
+            </td>
+          </tr>
+
+          <tr bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <br>
+                <div class="two"><img src='images/daefr_teaser.jpg' width="160"></div>
+                <img src='images/daefr_teaser.jpg' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://liagm.github.io/DAEFR/">
+                <papertitle>Dual Associated Encoder for Face Restoration</papertitle>
+              </a>
+              <br>
+              <a href="https://liagm.github.io/">Yu-Ju Tsai</a>, 
+			        <strong>Yu-Lun Liu</strong>, 
+              <a href="http://luqi.info/">Lu Qi</a>, 
+              <a href="https://ckkelvinchan.github.io/">Kelvin C.K. Chan</a>, 
+              <a href="https://faculty.ucmerced.edu/mhyang/">Ming-Hsuan Yang</a>
+              <br>
+              <em>ICLR</em>, 2024 &nbsp
+              <br>
+              <a href="https://liagm.github.io/DAEFR/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2308.07314">arXiv</a>
+              <p></p>
+              <p>
+                This work proposes a novel dual-branch framework named DAEFR, which introduces an auxiliary LQ branch that extracts crucial information from the LQ inputs and incorporates association training to promote effective synergy between the two branches, enhancing code prediction and output quality.
+			      </td>
+          </tr>
+
+          <tr onmouseout="Wang2023DCOstop()" onmouseover="Wang2023DCO_start()"  bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <!-- <div class="two" id='Wang2023DCO_image'><img src='images/Wang2023DCO.gif' width="160"></div>
+                <img src='images/Wang2023DCO.jpg' width="160">
+              </div> -->
+                <div class="two" id='Wang2023DCO_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Wang2023DCO.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                <img src='images/Wang2023DCO.jpg' width="160" alt="Description" style="margin-top: 20px;">
+              </div>
+              <script type="text/javascript">
+                function Wang2023DCO_start() {
+                  document.getElementById('Wang2023DCO_image').style.opacity = "1";
+                }
+
+                function Wang2023DCOstop() {
+                  document.getElementById('Wang2023DCO_image').style.opacity = "0";
+                }
+                Wang2023DCOstop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://portrait-disco.github.io/">
+                <papertitle>DisCO: Portrait Distortion Correction with Perspective-Aware 3D GANs</papertitle>
+              </a>
+              <br>
+              <a href="https://lightchaserx.github.io/">Zhixiang Wang</a>, 
+              <strong>Yu-Lun Liu</strong>, 
+              <a href="https://jbhuang0604.github.io/">Jia-Bin Huang</a>, 
+              <a href="http://www.satoh-lab.nii.ac.jp/index.html">Shin'ichi Satoh</a>, 
+              <a href="https://sizhuoma.netlify.app/">Sizhuo Ma</a>, 
+              <a href="https://www.linkedin.com/in/krishnanguru/">Guru Krishnan</a>, 
+              <a href="https://jianwang-cmu.github.io/">Jian Wang</a>
+              <br>
+              <em>IJCV</em>, 2024 &nbsp
+              <br>
+              <a href="https://portrait-disco.github.io/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2302.12253">arXiv</a>
+              <p></p>
+              <p>
+                This work proposes a simple yet effective method for correcting perspective distortions in a single close-up face using GAN inversion using a perspective-distorted input facial image, and develops starting from a short distance, optimization scheduling, reparametrizations, and geometric regularization.
+            </td>
+          </tr>
+
+          <tr onmouseout="Cheng2024IRJstop()" onmouseover="Cheng2024IRJ_start()"  bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Cheng2024IRJ_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Cheng2024IRJ.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                  <br><img src='images/aaai24_jointtensorf.jpg' width="160" alt="Description" style="margin-top: 20px;">
+              </div>
+              <script type="text/javascript">
+                function Cheng2024IRJ_start() {
+                  document.getElementById('Cheng2024IRJ_image').style.opacity = "1";
+                }
+
+                function Cheng2024IRJstop() {
+                  document.getElementById('Cheng2024IRJ_image').style.opacity = "0";
+                }
+                Cheng2024IRJstop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://alex04072000.github.io/Joint-TensoRF/">
+                <papertitle>Improving Robustness for Joint Optimization of Camera Poses and Decomposed Low-Rank Tensorial Radiance Fields</papertitle>
+              </a>
+              <br>
+              Bo-Yu Cheng, 
+              <a href="https://walonchiu.github.io/">Wei-Chen Chiu</a>, 
+			        <strong>Yu-Lun Liu</strong>
+              <br>
+              <em>AAAI</em>, 2024 &nbsp
+              <br>
+              <a href="https://alex04072000.github.io/Joint-TensoRF/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2402.13252">arXiv</a>
+              /
+              <a href="https://github.com/Nemo1999/Joint-TensoRF">code</a>
+              <p></p>
+              <p>
+                An algorithm that allows joint refinement of camera pose and scene geometry represented by decomposed low-rank tensor, using only 2D images as supervision is proposed, which achieves an equivalent effect to brute-force 3D convolution with only incurring little computational overhead.
+			      </td>
+          </tr>
+
+          <tr bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two"><img src='images/iccv-chen23.jpg' width="160"></div>
+                <img src='images/iccv-chen23.jpg' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://skchen1993.github.io/CEVR_web/">
+                <papertitle>Learning Continuous Exposure Value Representations for Single-Image HDR Reconstruction</papertitle>
+              </a>
+              <br>
+              Su-Kai Chen, 
+              Hung-Lin Yen, 
+			        <strong>Yu-Lun Liu</strong>, 
+              <a href="https://minhungchen.netlify.app/">Min-Hung Chen</a>, 
+              <a href="https://eborboihuc.github.io/">Hou-Ning Hu</a>, 
+              <a href="https://sites.google.com/g2.nctu.edu.tw/wpeng">Wen-Hsiao Peng</a>, 
+              <a href="https://sites.google.com/site/yylinweb/">Yen-Yu Lin</a>
+              <br>
+              <em>ICCV</em>, 2023 &nbsp
+              <br>
+              <a href="https://skchen1993.github.io/CEVR_web/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2309.03900">arXiv</a>
+              /
+              <a href="https://github.com/skchen1993/2023_CEVR">code</a>
+              /
+              <a href="https://www.youtube.com/watch?v=Az8W2lGegcg">video</a>
+              <p></p>
+              <p>
+                This work proposes the continuous exposure value representation (CEVR), which uses an implicit function to generate LDR images with arbitrary EVs, including those unseen during training, to improve HDR reconstruction.
+			      </td>
+          </tr>
+          
+
+          <tr onmouseout="Tu2023IGNstop()" onmouseover="Tu2023IGN_start()"  bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='Tu2023IGN_image'><img src='images/imgeonet.gif' width="160"></div>
+                <img src='images/imgeonet.jpg' width="160">
+              </div>
+              <script type="text/javascript">
+                function Tu2023IGN_start() {
+                  document.getElementById('Tu2023IGN_image').style.opacity = "1";
+                }
+
+                function Tu2023IGNstop() {
+                  document.getElementById('Tu2023IGN_image').style.opacity = "0";
+                }
+                Tu2023IGNstop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://ttaoretw.github.io/imgeonet/">
+                <papertitle>ImGeoNet: Image-induced Geometry-aware Voxel Representation for Multi-view 3D Object Detection</papertitle>
+              </a>
+              <br>
+              <a href="https://ttaoretw.github.io/">Tao Tu</a>, 
+              <a href="https://www.linkedin.com/in/shunpo">Shun-Po Chuang</a>, 
+              <strong>Yu-Lun Liu</strong>, 
+              <a href="https://sunset1995.github.io/">Cheng Sun</a>, 
+              Ke Zhang, 
+              Donna Roy, 
+              Cheng-Hao Kuo, 
+              <a href="https://aliensunmin.github.io/">Min Sun</a>
+              <br>
+              <em>ICCV</em>, 2023 &nbsp
+              <br>
+              <a href="https://ttaoretw.github.io/imgeonet/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2308.09098">arXiv</a>
+              <p></p>
+              <p>
+                The studies indicate that the proposed image-induced geometry-aware representation can enable image-based methods to attain superior detection accuracy than the seminal point cloud-based method, VoteNet, in two practical scenarios: (1) scenarios where point clouds are sparse and noisy, such as in ARKitScenes, and (2) scenarios involve diverse object classes, particularly classes of small objects, as in the case in ScanNet200.
+            </td>
+          </tr>
+
+
+          <tr onmouseout="Meuleman2023POLstop()" onmouseover="Meuleman2023POL_start()"  bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <!-- <div class="two" id='Meuleman2023POL_image'><img src='images/Meuleman2023POL.gif' width="160"></div>
+                <img src='images/Meuleman2023POL.jpg' width="160" height="90">
+              </div> -->
+                <div class="two" id='Meuleman2023POL_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Meuleman2023POL.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                <img src='images/Meuleman2023POL.jpg' width="160" alt="Description" style="margin-top: 35px;">
+              </div>
+              <script type="text/javascript">
+                function Meuleman2023POL_start() {
+                  document.getElementById('Meuleman2023POL_image').style.opacity = "1";
+                }
+
+                function Meuleman2023POLstop() {
+                  document.getElementById('Meuleman2023POL_image').style.opacity = "0";
+                }
+                Meuleman2023POLstop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://localrf.github.io/">
+                <papertitle>Progressively Optimized Local Radiance Fields for Robust View Synthesis</papertitle>
+              </a>
+              <br>
+              <a href="https://ameuleman.github.io/">Andreas Meuleman</a>, 
+              <strong>Yu-Lun Liu</strong>, 
+              <a href="http://chengao.vision/">Chen Gao</a>, 
+              <a href="https://jbhuang0604.github.io/">Jia-Bin Huang</a>, 
+              <a href="https://changilkim.com/">Changil Kim</a>, 
+              <a href="http://vclab.kaist.ac.kr/minhkim/">Min H. Kim</a>, 
+              <a href="http://johanneskopf.de/">Johannes Kopf</a>
+              <br>
+              <em>CVPR</em>, 2023 &nbsp
+              <br>
+              <a href="https://localrf.github.io/">project page</a>
+              /
+              <a href="https://localrf.github.io/localrf.pdf">paper</a>
+              /
+              <a href="https://github.com/facebookresearch/localrf">code</a>
+              /
+              <a href="https://www.youtube.com/watch?v=GfXAHDxUY4M">video</a>
+              <p></p>
+              <p>
+                This work presents an algorithm for reconstructing the radiance field of a large-scale scene from a single casually captured video, and shows that progressive optimization significantly improves the robustness of the reconstruction.
+            </td>
+          </tr>
+
+      
+        <tr onmouseout="Liu2023RDR_stop()" onmouseover="Liu2023RDR_start()"  bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <!-- <div class="two" id='Liu2023RDR_image'><img src='images/Liu2023RDR.gif' width="160"></div>
+                <img src='images/Liu2023RDR.jpg' width="160" height="90"> -->
+                <div class="two" id='Liu2023RDR_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/Liu2023RDR.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                <img src='images/Liu2023RDR.jpg' width="160" alt="Description" style="margin-top: 35px;">
+              </div>
+              <script type="text/javascript">
+                function Liu2023RDR_start() {
+                  document.getElementById('Liu2023RDR_image').style.opacity = "1";
+                }
+
+                function Liu2023RDR_stop() {
+                  document.getElementById('Liu2023RDR_image').style.opacity = "0";
+                }
+                Liu2023RDR_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://robust-dynrf.github.io/">
+                <papertitle>Robust Dynamic Radiance Fields</papertitle>
+              </a>
+              <br>
+              <strong>Yu-Lun Liu</strong>, 
+              <a href="http://chengao.vision/">Chen Gao</a>, 
+              <a href="https://ameuleman.github.io/">Andreas Meuleman</a>, 
+              <a href="https://hytseng0509.github.io/">Hung-Yu Tseng</a>, 
+              <a href="https://scholar.google.com/citations?user=bluhHm8AAAAJ&hl=en">Ayush Saraf</a>, 
+              <a href="https://changilkim.com/">Changil Kim</a>, 
+              <a href="https://www.csie.ntu.edu.tw/~cyy/">Yung-Yu Chuang</a>, 
+              <a href="http://johanneskopf.de/">Johannes Kopf</a>, 
+              <a href="https://jbhuang0604.github.io/">Jia-Bin Huang</a>
+              <br>
+              <em>CVPR</em>, 2023 &nbsp
+              <br>
+              <a href="https://robust-dynrf.github.io/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2301.02239">arXiv</a>
+              /
+              <a href="https://github.com/facebookresearch/robust-dynrf">code</a>
+              /
+              <a href="https://www.youtube.com/watch?v=38S56ottFQ4">video</a>
+              <p></p>
+              <p>
+                This work addresses the robustness issue by jointly estimating the static and dynamic radiance fields along with the camera parameters (poses and focal length) and shows favorable performance over the state-of-the-art dynamic view synthesis methods.
+            </td>
+          </tr>
+		
+
+          <tr bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+			    <br>
+			    <br>
+			    <br>
+                <div class="two"><img src='images/iclr2022.jpg' width="160"></div>
+                <img src='images/iclr2022.jpg' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2203.14206">
+                <papertitle>Denoising Likelihood Score Matching for Conditional Score-based Data Generation</papertitle>
+              </a>
+              <br>
+              Chen-Hao Chao, 
+              <a href="https://scholar.google.com.tw/citations?user=TgMlVRUAAAAJ&hl=zh-TW">Wei-Fang Sun</a>, 
+              Bo-Wun Cheng, 
+              <a href="https://scholar.google.com/citations?user=EPYQ48sAAAAJ&hl=zh-TW">Yi-Chen Lo</a>, 
+              <a href="https://scholar.google.com.tw/citations?user=FK1RcpoAAAAJ&hl=zh-TW">Chia-Che Chang</a>, 
+			        <strong>Yu-Lun Liu</strong>, 
+              <a href="https://scholar.google.com/citations?user=0O9rukQAAAAJ&hl=en">Yu-Lin Chang</a>, 
+              <a href="https://tw.linkedin.com/in/chia-ping-chen-81674078">Chia-Ping Chen</a>, 
+              <a href="https://elsalab.ai/about">Chun-Yi Lee</a>
+              <br>
+              <em>ICLR</em>, 2022 &nbsp
+              <br>
+              <a href="https://arxiv.org/abs/2203.14206">arXiv</a>
+              /
+              <a href="https://openreview.net/forum?id=LcF-EEt8cCC">OpenReview</a>
+              <p></p>
+              <p>
+                This work forms a novel training objective, called Denoising Likelihood Score Matching (DLSM) loss, for the classifier to match the gradients of the true log likelihood density, and concludes that the conditional scores can be accurately modeled, and the effect of the score mismatch issue is alleviated.
+      			</td>
+          </tr>
+
+		  
+          <tr onmouseout="Liu2021SOLD_stop()" onmouseover="Liu2021SOLD_start()"  bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <!-- <div class="two" id='Liu2021SOLD_image'><img src='images/cvpr20_reflection.gif' width="160"></div>
+                <img src='images/pamiobstruction.jpg' width="160" height="90">
+              </div> -->
+              <div class="two" id='Liu2021SOLD_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/cvpr20_reflection.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+              <img src='images/pamiobstruction.jpg' width="160" alt="Description" style="margin-top: 35px;" height="90">
+            </div>
+              <script type="text/javascript">
+                function Liu2021SOLD_start() {
+                  document.getElementById('Liu2021SOLD_image').style.opacity = "1";
+                }
+
+                function Liu2021SOLD_stop() {
+                  document.getElementById('Liu2021SOLD_image').style.opacity = "0";
+                }
+                Liu2021SOLD_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://alex04072000.github.io/SOLD/">
+                <papertitle>Learning to See Through Obstructions with Layered Decomposition</papertitle>
+              </a>
+              <br>
+			  <strong>Yu-Lun Liu</strong>, 
+              <a href="https://www.wslai.net/">Wei-Sheng Lai</a>, 
+              <a href="https://faculty.ucmerced.edu/mhyang/">Ming-Hsuan Yang</a>, 
+              <a href="https://www.csie.ntu.edu.tw/~cyy/">Yung-Yu Chuang</a>, 
+              <a href="https://filebox.ece.vt.edu/~jbhuang/">Jia-Bin Huang</a>
+              <br>
+              <em>TPAMI</em>, 2021 &nbsp
+              <br>
+              <a href="https://alex04072000.github.io/SOLD/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2008.04902">arXiv</a>
+              /
+              <a href="https://github.com/alex04072000/SOLD">code</a>
+              /
+              <a href="https://colab.research.google.com/drive/1kCG5SJd3usgzi6Bx979KiaO_YTanNVVz?usp=sharing">demo</a>
+              /
+              <a href="https://www.youtube.com/watch?v=oqdvYRYOT5s&t=4s">video</a>
+              <p></p>
+              <p>
+                This work alternate between estimating dense optical flow fields of the two layers and reconstructing each layer from the flow-warped images via a deep convolutional neural network, facilitates accommodating potential errors in the flow estimation and brittle assumptions, such as brightness consistency.
+            </td>
+          </tr>
+		
+		  <tr bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+			    <br>
+			    <br>
+			    <br>
+                <div class="two"><img src='images/iccv2021.jpg' width="160"></div>
+                <img src='images/iccv2021.jpg' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://albert100121.github.io/AiFDepthNet/">
+                <papertitle>Bridging Unsupervised and Supervised Depth from Focus via All-in-Focus Supervision</papertitle>
+              </a>
+              <br>
+              <a href="http://albert100121.github.io/">Ning-Hsu Wang</a>,
+              <a href="https://tw.linkedin.com/in/ren-wang-61b273160">Ren Wang</a>,
+			  <strong>Yu-Lun Liu</strong>, 
+              <a href="https://www.linkedin.com/in/yu-hao-huang-72821060/">Yu-Hao Huang</a>, 
+              <a href="https://scholar.google.com/citations?user=0O9rukQAAAAJ&hl=en">Yu-Lin Chang</a>, 
+              <a href="https://tw.linkedin.com/in/chia-ping-chen-81674078">Chia-Ping Chen</a>, 
+              <a href="https://dblp.org/pid/160/5531.html">Kevin Jou</a>
+              <br>
+              <em>ICCV</em>, 2021 &nbsp
+              <br>
+              <a href="https://albert100121.github.io/AiFDepthNet/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2108.10843">arXiv</a>
+              /
+              <a href="https://github.com/albert100121/AiFDepthNet">code</a>
+              <p></p>
+              <p>
+                This paper proposes a method to estimate not only a depth map but an AiF image from a set of images with different focus positions (known as a focal stack), and shows that this method outperforms the state-of-the-art methods both quantitatively and qualitatively, and also has higher efficiency in inference time.
+      			</td>
+          </tr>
+		
+		  <tr onmouseout="Liu2021HNF_stop()" onmouseover="Liu2021HNF_start()"  bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <!-- <div class="two" id='Liu2021HNF_image'><br><img src='images/iccv21_nervis.gif' width="160"></div>
+                <img src='images/FuSta.jpg' width="160" id='fusta_image'>
+              </div> -->
+              <div class="two" id='Liu2021HNF_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/iccv21_nervis.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+              <img src='images/FuSta.jpg' width="160" alt="Description" style="margin-top: 8px;" id='fusta_image'>
+            </div>
+              <script type="text/javascript">
+                function Liu2021HNF_start() {
+                  document.getElementById('Liu2021HNF_image').style.opacity = "1";
+                  document.getElementById('fusta_image').style.opacity = "0";
+                }
+
+                function Liu2021HNF_stop() {
+                  document.getElementById('Liu2021HNF_image').style.opacity = "0";
+                  document.getElementById('fusta_image').style.opacity = "1";
+                }
+                Liu2021HNF_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://alex04072000.github.io/FuSta/">
+                <papertitle>Hybrid Neural Fusion for Full-frame Video Stabilization</papertitle>
+              </a>
+              <br>
+			  <strong>Yu-Lun Liu</strong>, 
+              <a href="https://www.wslai.net/">Wei-Sheng Lai</a>, 
+              <a href="https://faculty.ucmerced.edu/mhyang/">Ming-Hsuan Yang</a>, 
+              <a href="https://www.csie.ntu.edu.tw/~cyy/">Yung-Yu Chuang</a>, 
+              <a href="https://filebox.ece.vt.edu/~jbhuang/">Jia-Bin Huang</a>
+              <br>
+              <em>ICCV</em>, 2021 &nbsp
+              <br>
+              <a href="https://alex04072000.github.io/FuSta/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2102.06205">arXiv</a>
+              /
+              <a href="https://www.cmlab.csie.ntu.edu.tw/~yulunliu/FuSta/iccv21_poster.pdf">poster</a>
+              /
+              <a href="https://www.cmlab.csie.ntu.edu.tw/~yulunliu/FuSta/slides_mtk_25min.pptx">slides</a>
+              /
+              <a href="https://github.com/alex04072000/FuSta">code</a>
+              /
+              <a href="https://colab.research.google.com/drive/1l-fUzyM38KJMZyKMBWw_vu7ZUyDwgdYH?usp=sharing">demo</a>
+              /
+              <a href="https://www.youtube.com/watch?v=KO3sULs4hso">video</a>
+              /
+              <a href="https://www.youtube.com/watch?v=v5pOsQEOsyA">Two minute video</a>
+              <p></p>
+              <p>
+                This work presents a frame synthesis algorithm to achieve full-frame video stabilization that first estimate dense warp fields from neighboring frames and then synthesize the stabilized frame by fusing the warped contents.
+            </td>
+          </tr>
+
+          <tr bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+			    <br>
+			    <br>
+                <div class="two"><img src='images/icpr2020.png' width="160"></div>
+                <img src='images/icpr2020.png' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2010.10000">
+                <papertitle>Explorable Tone Mapping Operators</papertitle>
+              </a>
+              <br>
+              Chien-Chuan Su, 
+              <a href="https://tw.linkedin.com/in/ren-wang-61b273160">Ren Wang</a>,
+              <a href="https://github.com/leVirve">Hung-Jin Lin</a>, 
+			  <strong>Yu-Lun Liu</strong>, 
+              <a href="https://tw.linkedin.com/in/chia-ping-chen-81674078">Chia-Ping Chen</a>, 
+              <a href="https://scholar.google.com/citations?user=0O9rukQAAAAJ&hl=en">Yu-Lin Chang</a>, 
+              <a href="https://scholar.google.com/citations?user=-JiGrnAAAAAJ">Soo-Chang Pei</a>
+              <br>
+              <em>ICPR</em>, 2020 &nbsp
+              <br>
+              <a href="https://arxiv.org/abs/2010.10000">arXiv</a>
+              <p></p>
+              <p>
+                This paper proposes a learning-based multimodal tone-mapping method, which not only achieves excellent visual quality but also explores the style diversity and shows that the proposed method performs favorably against state-of-the-art tone-Mapping algorithms both quantitatively and qualitatively.
+			</td>
+          </tr>
+
+          <tr bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+			    <br>
+                <div class="two"><img src='images/eccv2020.png' width="160"></div>
+                <img src='images/eccv2020.png' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arcchang1236.github.io/CA-NoiseGAN/">
+                <papertitle>Learning Camera-Aware Noise Models</papertitle>
+              </a>
+              <br>
+              <a href="http://arcchang1236.github.io/">Ke-Chi Chang</a>,
+              <a href="https://tw.linkedin.com/in/ren-wang-61b273160">Ren Wang</a>,
+              <a href="https://github.com/leVirve">Hung-Jin Lin</a>, 
+			  <strong>Yu-Lun Liu</strong>, 
+              <a href="https://tw.linkedin.com/in/chia-ping-chen-81674078">Chia-Ping Chen</a>, 
+              <a href="https://scholar.google.com/citations?user=0O9rukQAAAAJ&hl=en">Yu-Lin Chang</a>, 
+              <a href="https://htchen.github.io/">Hwann-Tzong Chen</a>
+              <br>
+              <em>ECCV</em>, 2020 &nbsp
+              <br>
+              <a href="https://arcchang1236.github.io/CA-NoiseGAN">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2008.09370">arXiv</a>
+              /
+              <a href="https://github.com/arcchang1236/CA-NoiseGAN">code</a>
+              <p></p>
+              <p>
+                A data-driven approach, where a generative noise model is learned from real-world noise, which is camera-aware and quantitatively and qualitatively outperforms existing statistical noise models and learning-based methods.
+			</td>
+          </tr>
+
+          <tr onmouseout="Liu2020SID_stop()" onmouseover="Liu2020SID_start()"  bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <!-- <div class="two" id='Liu2020SID_image'><img src='images/cvpr20_hdr.gif' width="160"></div>
+                <img src='images/shdr.jpg' width="160">
+              </div> -->
+              <div class="two" id='Liu2020SID_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/cvpr20_hdr.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                <img src='images/shdr.jpg' width="160" alt="Description" style="margin-top: 20px;">
+              </div>
+              <script type="text/javascript">
+                function Liu2020SID_start() {
+                  document.getElementById('Liu2020SID_image').style.opacity = "1";
+                }
+
+                function Liu2020SID_stop() {
+                  document.getElementById('Liu2020SID_image').style.opacity = "0";
+                }
+                Liu2020SID_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://alex04072000.github.io/SingleHDR/">
+                <papertitle>Single-Image HDR Reconstruction by Learning to Reverse the Camera Pipeline</papertitle>
+              </a>
+              <br>
+			  <strong>Yu-Lun Liu*</strong>, 
+              <a href="https://www.wslai.net/">Wei-Sheng Lai*</a>, 
+              <a href="https://www.cmlab.csie.ntu.edu.tw/~nothinglo/">Yu-Sheng Chen</a>, Yi-Lung Kao, 
+              <a href="https://faculty.ucmerced.edu/mhyang/">Ming-Hsuan Yang</a>, 
+              <a href="https://www.csie.ntu.edu.tw/~cyy/">Yung-Yu Chuang</a>, 
+              <a href="https://filebox.ece.vt.edu/~jbhuang/">Jia-Bin Huang</a>
+              <br>
+              <em>CVPR</em>, 2020 &nbsp
+              <br>
+              <a href="https://alex04072000.github.io/SingleHDR/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2004.01179">arXiv</a>
+              /
+              <a href="https://www.cmlab.csie.ntu.edu.tw/~yulunliu/SingleHDR_/cvpr20_singleHDR_poster_mtk.pdf">poster</a>
+              /
+              <a href="https://www.cmlab.csie.ntu.edu.tw/~yulunliu/SingleHDR_/cvpr20_singleHDR_video_slides_15min.pptx">slides</a>
+              /
+              <a href="https://github.com/alex04072000/SingleHDR">code</a>
+              /
+              <a href="https://colab.research.google.com/drive/1WzNaGSaucF2AMDSdUCBMEOauBg4IowMa">demo</a>
+              /
+              <a href="https://www.youtube.com/watch?v=UCHDhk6fciY">1-minute video</a>
+              <p></p>
+              <p>
+                This work model the HDR-to-LDR image formation pipeline as the dynamic range clipping, non-linear mapping from a camera response function, and quantization, and proposes to learn three specialized CNNs to reverse these steps.
+            </td>
+          </tr>
+
+          <tr onmouseout="Liu2020LST_stop()" onmouseover="Liu2020LST_start()"  bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <!-- <div class="two" id='Liu2020LST_image'><img src='images/cvpr20_reflection.gif' width="160"></div>
+                <img src='images/reflection.jpg' width="160">
+              </div> -->
+              <div class="two" id='Liu2020LST_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/cvpr20_reflection.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+              <img src='images/reflection.jpg' width="160" alt="Description" style="margin-top: 35px;">
+            </div>
+              <script type="text/javascript">
+                function Liu2020LST_start() {
+                  document.getElementById('Liu2020LST_image').style.opacity = "1";
+                }
+
+                function Liu2020LST_stop() {
+                  document.getElementById('Liu2020LST_image').style.opacity = "0";
+                }
+                Liu2020LST_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://alex04072000.github.io/ObstructionRemoval/">
+                <papertitle>Learning to See Through Obstructions</papertitle>
+              </a>
+              <br>
+			  <strong>Yu-Lun Liu</strong>, 
+              <a href="https://www.wslai.net/">Wei-Sheng Lai</a>, 
+              <a href="https://faculty.ucmerced.edu/mhyang/">Ming-Hsuan Yang</a>, 
+              <a href="https://www.csie.ntu.edu.tw/~cyy/">Yung-Yu Chuang</a>, 
+              <a href="https://filebox.ece.vt.edu/~jbhuang/">Jia-Bin Huang</a>
+              <br>
+              <em>CVPR</em>, 2020 &nbsp
+              <br>
+              <a href="https://alex04072000.github.io/ObstructionRemoval/">project page</a>
+              /
+              <a href="https://arxiv.org/abs/2004.01180">arXiv</a>
+              /
+              <a href="https://www.cmlab.csie.ntu.edu.tw/~yulunliu/ObstructionRemoval_/cvpr20_obstructionRemoval_poster_mtk.pdf">poster</a>
+              /
+              <a href="https://www.cmlab.csie.ntu.edu.tw/~yulunliu/ObstructionRemoval_/cvpr20_obstructionRemoval_video_slides_15min.pptx">slides</a>
+              /
+              <a href="https://github.com/alex04072000/ObstructionRemoval">code</a>
+              /
+              <a href="https://colab.research.google.com/drive/1iOKknc0dePekUH2TEh28EhcRPCS1mgwz">demo</a>
+              /
+              <a href="https://www.youtube.com/watch?v=pJWcHhofYTE">1-minute video</a>
+              /
+              <a href="https://www.youtube.com/watch?v=ICr6xi9wA94">video</a>
+              /
+              <a href="https://www.newscientist.com/article/2253195-ai-removes-unwanted-objects-from-photos-to-give-a-clearer-view/">New Scientists</a>
+              <p></p>
+              <p>
+                The method leverages the motion differences between the background and the obstructing elements to recover both layers and alternate between estimating dense optical flow fields of the two layers and reconstructing each layer from the flow-warped images via a deep convolutional neural network.
+            </td>
+          </tr>
+
+          <tr bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+			    <br>
+                <div class="two"><img src='images/AVS.jpg' width="160"></div>
+                <img src='images/AVS.jpg' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://www.csie.ntu.edu.tw/~cyy/publications/papers/Tsai2020AVS.pdf">
+                <papertitle>Attention-based View Selection Networks for Light-field Disparity Estimation</papertitle>
+              </a>
+              <br>
+			  Yu-Ju Tsai, 
+			  <strong>Yu-Lun Liu</strong>, 
+              <a href="https://www.csie.ntu.edu.tw/~cyy/">Yung-Yu Chuang</a>, 
+              <a href="https://www.csie.ntu.edu.tw/~ming/">Ming Ouhyoung</a>
+              <br>
+              <em>AAAI</em>, 2020 &nbsp
+              <br>
+              <a href="https://www.csie.ntu.edu.tw/~cyy/publications/papers/Tsai2020AVS.pdf">paper</a>
+              /
+              <a href="https://github.com/LIAGM/LFattNet">code</a>
+			  /
+			  <a href="https://lightfield-analysis.uni-konstanz.de/benchmark/table">benchmark</a>
+              <p></p>
+              <p>
+                A novel deep network for estimating depth maps from a light field image that generates an attention map indicating the importance of each view and its potential for contributing to accurate depth estimation and enforce symmetry in the attention map to improve accuracy.
+            </td>
+          </tr>
+    
+          <tr onmouseout="cyclic_stop()" onmouseover="cyclic_start()"  bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <!-- <div class="two" id='cyclic_image'><img src='images/aaai-liu19.gif' width="160"></div>
+				<br>
+                <img src='images/cyclic.jpg' width="160"> -->
+                <div class="two" id='cyclic_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/aaai-liu19.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                  <!-- <br> -->
+                <img src='images/cyclic.jpg' width="160" alt="Description" style="margin-top: 20px;">
+              </div>
+              <script type="text/javascript">
+                function cyclic_start() {
+                  document.getElementById('cyclic_image').style.opacity = "1";
+                }
+
+                function cyclic_stop() {
+                  document.getElementById('cyclic_image').style.opacity = "0";
+                }
+                cyclic_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://www.cmlab.csie.ntu.edu.tw/~yulunliu/CyclicGen">
+                <papertitle>Deep Video Frame Interpolation using Cyclic Frame Generation</papertitle>
+              </a>
+              <br>
+			  <strong>Yu-Lun Liu</strong>, 
+              <a href="http://www.cmlab.csie.ntu.edu.tw/~queenieliaw/">Yi-Tung Liao</a>, 
+              <a href="https://sites.google.com/site/yylinweb/">Yen-Yu Lin</a>, 
+              <a href="https://www.csie.ntu.edu.tw/~cyy/">Yung-Yu Chuang</a>
+              <br>
+              <em>AAAI</em>, 2019 &nbsp <font color="red"><strong>(Oral Presentation)</strong></font>
+              <br>
+              <a href="https://www.cmlab.csie.ntu.edu.tw/~yulunliu/CyclicGen">project page</a>
+              /
+              <a href="https://www.cmlab.csie.ntu.edu.tw/~yulunliu/CyclicGen_/liu.pdf">paper</a>
+              /
+              <a href="https://www.cmlab.csie.ntu.edu.tw/~yulunliu/CyclicGen_/aaai19_cyclic_gen_poster.pdf">poster</a>
+              /
+              <a href="https://www.cmlab.csie.ntu.edu.tw/~yulunliu/CyclicGen_/CyclicGen_yylin_20190127.pptx">slides</a>
+              /
+              <a href="https://github.com/alex04072000/CyclicGen">code</a>
+              /
+              <a href="https://www.youtube.com/watch?v=R8vQjgAtPOE">video</a>
+              <p></p>
+              <p>
+                A new loss term, the cycle consistency loss, which can better utilize the training data to not only enhance the interpolation results, but also maintain the performance better with less training data is introduced.
+            </td>
+          </tr>
+		  
+		  <tr bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two"><img src='images/14.png' width="160"></div>
+                <img src='images/14.png' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://ieeexplore.ieee.org/abstract/document/7041517/">
+                <papertitle>Background modeling using depth information</papertitle>
+              </a>
+              <br>
+			  <strong>Yu-Lun Liu</strong>, 
+              <a href="https://mcube.nctu.edu.tw/~hmhang/">Hsueh-Ming Hang</a>
+              <br>
+              <em>APSIPA</em>, 2014 &nbsp
+              <br>
+              <a href="http://cwww.ee.nctu.edu.tw/~hmhang/publications/Conf/Background%20Modeling%20Using%20Depth%20Information.pdf">paper</a>
+              <p></p>
+              <p>
+                This paper focuses on creating a global background model of a video sequence using the depth maps together with the RGB pictures, and develops a recursive algorithm that iterates between the depth map and color pictures.
+            </td>
+          </tr>
+		  
+		  <tr bgcolor="#ffffff">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two"><img src='images/13.png' width="160"></div>
+                <img src='images/13.png' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://ieeexplore.ieee.org/abstract/document/6737719">
+                <papertitle>Virtual view synthesis using backward depth warping algorithm</papertitle>
+              </a>
+              <br>
+			  Du-Hsiu Li,
+              <a href="https://mcube.nctu.edu.tw/~hmhang/">Hsueh-Ming Hang</a>,
+			  <strong>Yu-Lun Liu</strong>
+              <br>
+              <em>PCS</em>, 2013 &nbsp
+              <br>
+              <a href="https://mcube.nctu.edu.tw/~hmhang/publications/Conf/Virtual%20View%20Synthesis%20Using%20Backward%20Depth%20Warping%20Algorithm.pdf">paper</a>
+              <p></p>
+              <p>
+                A backward warping process is proposed to replace the forward warped process, and the artifacts (particularly the ones produced by quantization) are significantly reduced, so the subjective quality of the synthesized virtual view images is thus much improved.
+            </td>
+          </tr>
+
+        </tbody></table>
+
+        <hr class="soft"><table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+          <tr>
+            <td>
+              <center><heading>Miscellanea</heading></center>
+            </td>
+          </tr>
+        </tbody></table>
+        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/cvf.jpg"></td>
+            <td width="75%" valign="center">
+              <a href="https://accv2024.org/organizers/">Publication Chair, ACCV 2024</a>
+              <br>
+              Reviewer: CVPR, ICCV, ECCV, NeurIPS, ICLR, ICML, SIGGRAPH, SIGGRAPH Asia, AAAI, IJCAI, TPAMI
+              <!-- <br>
+              <a href="https://cvpr2023.thecvf.com/Conferences/2023/Organizers">Demo Chair, CVPR 2023</a>
+              <br>
+              <a href="https://cvpr2022.thecvf.com/area-chairs">Area Chair, CVPR 2022</a>
+              <br>
+              <a href="http://cvpr2021.thecvf.com/area-chairs">Area Chair & Award Committee Member, CVPR 2021</a>
+              <br>
+              <a href="http://cvpr2019.thecvf.com/area_chairs">Area Chair, CVPR 2019</a>
+              <br>
+              <a href="http://cvpr2018.thecvf.com/organizers/area_chairs">Area Chair, CVPR 2018</a> -->
+            </td>
+          </tr>
+        </tbody></table>
+
+        <hr class="soft">
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+          <tr>
+            <td>
+              <center><heading>Teaching</heading></center>
+            </td>
+          </tr>
+        </tbody></table>
+        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle" align="center"><img src="images/VC.jpg" height="50"></td>
+            <td width="75%" valign="center">
+              <a href="https://timetable.nycu.edu.tw/?r=main/crsoutline&Acy=113&Sem=1&CrsNo=535657&lang=zh-tw"><papertitle>CSIC30107: Video Compression</papertitle></a>
+              <br>
+              NYCU - Fall 2024 (Instructor)
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle" align="center"><img src="images/SS.jpg" height="50"></td>
+            <td width="75%" valign="center">
+              <a href="https://timetable.nycu.edu.tw/?r=main/crsoutline&Acy=112&Sem=2&CrsNo=515613&lang=zh-tw"><papertitle>CSCS10017: Signals and Systems</papertitle></a>
+              <br>
+              NYCU - Spring 2024 (Instructor)
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle" align="center"><img src="images/VC.jpg" height="50"></td>
+            <td width="75%" valign="center">
+              <a href="https://timetable.nycu.edu.tw/?r=main/crsoutline&Acy=112&Sem=1&CrsNo=535659&lang=zh-tw"><papertitle>CSIC30107: Video Compression</papertitle></a>
+              <br>
+              NYCU - Fall 2023 (Instructor)
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle" align="center"><img src="images/VC.jpg" height="50"></td>
+            <td width="75%" valign="center">
+              <a href="https://timetable.nycu.edu.tw/?r=main/crsoutline&Acy=111&Sem=2&CrsNo=535659&lang=zh-tw"><papertitle>CSIC30107: Video Compression</papertitle></a>
+              <br>
+              NYCU - Spring 2023 (Instructor)
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle" align="center"><img src="images/PS.jpg" height="50"></td>
+            <td width="75%" valign="center">
+              <a href="https://timetable.nycu.edu.tw/?r=main/crsoutline&Acy=101&Sem=2&CrsNo=1017&lang=zh-tw"><papertitle>DEE1315: Probability and Statistics</papertitle></a>
+              <br>
+              NCTU - Spring 2013 (Teaching Assistant)
+            </td>
+          </tr>
+        </tbody></table>
+
+        <hr class="soft">
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+          <tr>
+            <td>
+              <center><heading>Funding</heading></center>
+              <p>My research is made possible by the generous support of the following organizations.
+                <!-- bootstrap -->
+                <!-- <div class="container">
+                  <div class="row">
+                    <div class="col-xs-2 col-sm-6 col-md-4" align="center"><img src="images/ROC_Ministry_of_Education_Seal.svg.png" height="50"></div>
+                    <div class="col-xs-2 col-sm-6 col-md-4" align="center"><img src="images/2880px-MediaTek_logo.svg.png" height="26"></div>
+                    <div class="col-xs-2 col-sm-6 col-md-4" align="center"><img src="images/ROC_National_Science_and_Technology_Council.svg.png" height="19"></div>
+                  </div> -->
+
+                <!-- three columes for images, each 33% of the talbe size -->
+                <!-- columes! not rows! -->
+                <!-- <div class="container">
+                  <div class="row">
+                <div class="col-xs-2 col-sm-6 col-md-4" align="center"><img src="images/2880px-MediaTek_logo.svg.png" width="160"></div>
+                <div class="col-xs-2 col-sm-6 col-md-4" align="center"><img src="images/ROC_National_Science_and_Technology_Council.svg.png" width="160"></div>
+                <div class="col-xs-2 col-sm-6 col-md-4" align="center"><img src="images/2880px-Industrial_Technology_Research_Institute_logo.svg.png" width="160"></div>
+              </div>
+            </div> -->
+            <!-- <br>
+            <br>
+            <br> -->
+            <!-- <div class="row centered">
+              <div class="sponsor">
+                <p><img src="images/ROC_Ministry_of_Education_Seal.svg.png" width="128"></p>
+              </div>
+              <div class="sponsor">
+                <p><img src="images/2880px-MediaTek_logo.svg.png" width="128"></p>
+              </div>
+              <div class="sponsor">
+                <p><img src="images/ROC_National_Science_and_Technology_Council.svg.png" width="128"></p>
+              </div>
+            <div class="row centered">
+            </div>
+              <div class="sponsor">
+                <p><img src="images/NVIDIA_logo.svg.png" width="128"></p>
+              </div>
+              <div class="sponsor">
+                <p><img src="images/2880px-Industrial_Technology_Research_Institute_logo.svg.png" width="128"></p>
+              </div>
+            </div> -->
+
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr style="padding:0px">
+                <td><img height=50 src="images/ROC_Ministry_of_Education_Seal.svg.png"></td>
+                <td><img height=26 src="images/2880px-MediaTek_logo.svg.png"></td>
+                <td><img height=19 src="images/ROC_National_Science_and_Technology_Council.svg.png"></td>
+                <td><img height=29 src="images/Google_2015_logo.svg.png"></td>
+                <td><img height=22 src="images/NVIDIA_logo.svg.png"></td>
+                <td><img height=36 src="images/500px-National_Taiwan_University_Hospital_logo.svg.png"></td>
+                <td><img height=24 src="images/2880px-Industrial_Technology_Research_Institute_logo.svg.png"></td>
+                <!-- <td style="padding:0px;width:100%;vertical-align:middle">
+                  <div class="people">
+                    <div class="sponsor">
+                      <img height=70 src="images/ROC_Ministry_of_Education_Seal.svg.png" />
+                    </div>
+                    <div class="sponsor">
+                      <img height=36 src="images/2880px-MediaTek_logo.svg.png" />
+                    </div>
+                    <div class="sponsor">
+                      <img height=27 src="images/ROC_National_Science_and_Technology_Council.svg.png" />
+                    </div>
+                    <div class="sponsor">
+                      <img height=41 src="images/Google_2015_logo.svg.png" />
+                    </div>
+                    <div class="sponsor">
+                      <img height=30 src="images/NVIDIA_logo.svg.png" />
+                    </div>
+                    <div class="sponsor">
+                      <img height=50 src="images/500px-National_Taiwan_University_Hospital_logo.svg.png" />
+                    </div>
+                    <div class="sponsor">
+                      <img height=34 src="images/2880px-Industrial_Technology_Research_Institute_logo.svg.png" />
+                    </div>
+                  </div>
+                </td> -->
+              </tr>
+            </tbody></table>
+            <!-- &nbsp&nbsp教育部&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp聯發科技&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp國科會&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGoogle&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNVIDIA&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp台大醫院&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp工研院 -->
+
+
+                <!-- <div style="width: 25%; text-align: center;"><img src="images/2880px-MediaTek_logo.svg.png"></div>
+                <div style="width: 25%; text-align: center;"><img src="images/2880px-MediaTek_logo.svg.png"></div>
+                <div style="width: 25%; text-align: center;"><img src="images/2880px-MediaTek_logo.svg.png"></div> -->
+                <!-- <table><tr><td><img height=50 src="images/2880px-MediaTek_logo.svg.png"></td><td><img height=50 src="images/ROC_National_Science_and_Technology_Council.svg.png"></td><td><img height=50 src="images/2880px-Industrial_Technology_Research_Institute_logo.svg.png"></td></tr></table></p> -->
+            </td>
+          </tr>
+        </tbody></table>
+        
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p style="text-align:right;font-size:small;">
+        Stolen from <a href="https://jonbarron.info/">Jon Barron</a>'s website.
+                <br>
+                Last updated Sep 2024.
+        </p>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+          <tr>
+            <td>
+              <heading>Service</heading>
+            </td>
+          </tr>
+        </tbody></table>
+        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/cvf.jpg"></td>
+            <td width="75%" valign="center">
+              Reviewer: 
+              <br>
+              SIGGRAPH 2022
+              <br>
+              CVPR 2022
+              <br>
+              ICCV 2021
+              <br>
+              ECCV 2020-2022
+              <br>
+              ACCV 2020
+              <br>
+              ICLR 2022
+              <br>
+              NeurIPS 2022
+              <br>
+              AAAI 2021-2022
+              <br>
+              IJCAI 2021-2022
+              <br>
+              MM 2018
+              <br>
+              TIP
+              <br>
+              Applied Soft Computing
+              <br>
+              Pattern Recognition
+              <br>
+              CVIU
+              <br>
+              Multidimensional Systems and Signal Processing
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p style="text-align:right;font-size:small;">
+        Stolen from <a href="https://jonbarron.info/">Jon Barron</a>'s website.
+                <br>
+                Last updated Feburary 2023.
+        </p>
+            </td>
+          </tr>
+        </tbody></table> -->
+      </td>
+    </tr>
+  </table>
+</body>
+
+<script xml:space="preserve" language="javascript">hideblock('alumni');</script>
+</html>
