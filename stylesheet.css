@@ -367,41 +367,7 @@ hr.soft {
   display: none !important;
 }
 
-/* Navigation Pills */
-.nav-pills {
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  cursor: pointer;
-}
 
-.nav-pills .method-pill {
-  margin: 0.25rem;
-}
-
-.nav-pills .method-pill a {
-  display: block;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  color: #007bff;
-  background-color: transparent;
-  border: 1px solid #ddd;
-  border-radius: 0.25rem;
-  text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.nav-pills .method-pill a:hover {
-  background-color: #f8f9fa;
-}
-
-.nav-pills .method-pill.active a {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-}
 
 
 /* .nav-pills {
@@ -460,6 +426,8 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .nav-pills .method-pill {
