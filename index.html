@@ -824,6 +824,52 @@
                               </td>
                             </tr>
                   
+                            <tr onmouseout="Lin2025LON_stop()" onmouseover="Lin2025LON_start()"  bgcolor="#ffffd0" class="publication paper-3D-from-Multi-view-and-Sensors paper-3D-from-Multi-view-and-Sensors paperhi">
+                              <td style="padding:20px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                  <div class="two" id='Lin2025LON_image'><video  width=100% height=100% muted autoplay loop>
+                                    <source src="images/Lin2025LON.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                    </video></div>
+                                  <img src='images/Lin2025LON.jpg' width="160" alt="Description" style="margin-top: 0px;">
+                                </div>
+                                <script type="text/javascript">
+                                  function Lin2025LON_start() {
+                                    document.getElementById('Lin2025LON_image').style.opacity = "1";
+                                  }
+
+                                  function Lin2025LON_stop() {
+                                    document.getElementById('Lin2025LON_image').style.opacity = "0";
+                                  }
+                                  Lin2025LON_stop()
+                                </script>
+                              </td>
+                              <td style="padding:20px;width:75%;vertical-align:middle">
+                                <a href="https://linjohnss.github.io/longsplat/">
+                                  <papertitle>LongSplat: Robust Unposed 3D Gaussian Splatting for Casual Long Videos</papertitle>
+                                </a>
+                                <br>
+                                <a href="https://linjohnss.github.io/">Chin-Yang Lin</a>, 
+                                <a href="https://sunset1995.github.io/">Cheng Sun</a>, 
+                                <a href="https://fuenyang1127.github.io/">Fu-En Yang</a>, 
+                                <a href="https://minhungchen.netlify.app/">Min-Hung Chen</a>, 
+                                <a href="https://sites.google.com/site/yylinweb/">Yen-Yu Lin</a>, 
+                                <strong>Yu-Lun Liu</strong>
+                                <br>
+                                <em>ICCV</em>, 2025
+                                <img src="images/new_animated.gif"\>
+                                <br>
+                                <a href="https://linjohnss.github.io/longsplat/">project page</a>
+                                /
+                                <a href="https://arxiv.org/abs/2508.14041">arXiv</a>
+                                /
+                                <a href="https://github.com/NVlabs/LongSplat">code</a>
+                                <p></p>
+                                <p>
+                                  LongSplat is introduced, a robust unposed 3D Gaussian Splatting framework featuring a robust Pose Estimation Module leveraging learned 3D priors, and an efficient Octree Anchor Formation mechanism that converts dense point clouds into anchors based on spatial density.
+                              </td>
+                            </tr>
+                  
                             <tr onmouseout="Chang2025GCC_stop()" onmouseover="Chang2025GCC_start()"  bgcolor="#ffffd0" class="publication paper-Low-level-Vision paper-Low-level-Vision paperhi">
                               <td style="padding:20px;width:25%;vertical-align:middle">
                                 <div class="one">
@@ -858,7 +904,6 @@
                                 <strong>Yu-Lun Liu</strong>
                                 <br>
                                 <em>CVPR</em>, 2025
-                                <img src="images/new_animated.gif"\>
                                 <br>
                                 <a href="https://chenwei891213.github.io/GCC/">project page</a>
                                 /
@@ -909,7 +954,6 @@
                                 <strong>Yu-Lun Liu</strong>
                                 <br>
                                 <em>CVPR</em>, 2025
-                                <img src="images/new_animated.gif"\>
                                 <br>
                                 <a href="https://kkennethwu.github.io/aurafusion360/">project page</a>
                                 /
@@ -924,7 +968,7 @@
                                 <a href="https://drive.google.com/drive/folders/1ujTKiBfTBD_BVv9YiifOl_SfG8sd0dZ6?usp=sharing">results</a>
                                 <p></p>
                                 <p>
-                                  The approach introduces (1) depth-aware unseen mask generation for accurate occlusion identification, (2) Adaptive Guided Depth Diffusion, a zero-shot method for accurate initial point placement without requiring additional training, and (3) SDEdit-based detail enhancement for multi-view coherence.
+                                  This work presents AuraFusion360, a novel reference-based method that enables high-quality object removal and hole filling in 3D scenes represented by Gaussian Splatting, and introduces 360-USID, the first comprehensive dataset for 360° unbounded scene inpainting with ground truth.
                               </td>
                             </tr>
                   
@@ -956,7 +1000,6 @@
                                 Cheng-De Fan, <a href="https://chenwei891213.github.io/">Chen-Wei Chang</a>, Yi-Ruei Liu , <a href="https://jayinnn.dev/">Jie-Ying Lee</a>, <a href="https://people.cs.nycu.edu.tw/~jlhuang/">Jiun-Long Huang</a>, <a href="https://sites.google.com/view/yctseng">Yu-Chee Tseng</a>, <strong>Yu-Lun Liu</strong>
                                 <br>
                                 <em>CVPR</em>, 2025
-                                <img src="images/new_animated.gif"\>
                                 <br>
                                 <a href="https://cdfan0627.github.io/spectromotion/">project page</a>
                                 /
@@ -969,7 +1012,7 @@
                                 <a href="https://drive.google.com/file/d/1ciuPR-1RMo0-5Bn6wz2qMliFywxGjRpu/view?usp=sharing">results</a>
                                 <p></p>
                                 <p>
-                                  SpectroMotion is presented, a novel approach that combines 3D Gaussian Splatting with physically-based rendering (PBR) and deformation fields to reconstruct dynamic specular scenes and is the only existing 3DGS method capable of synthesizing photorealistic real-world dynamic specular scenes.
+                                  SpectroMotion, a novel approach that combines 3D Gaussian Splatting with physically-based rendering (PBR) and deformation fields to reconstruct dynamic specular scenes, outperforming state-of-the-art methods in rendering complex, dynamic, and specular scenes.
                               </td>
                             </tr>
                   
@@ -995,13 +1038,12 @@
                               </td>
                               <td style="padding:20px;width:75%;vertical-align:middle">
                                 <a href="https://linjohnss.github.io/frugalnerf/">
-                                  <papertitle>FrugalNeRF: Fast Convergence for Few-shot Novel View Synthesis without Learned Priors</papertitle>
+                                  <papertitle>FrugalNeRF: Fast Convergence for Extreme Few-shot Novel View Synthesis without Learned Priors</papertitle>
                                 </a>
                                 <br>
                                 <a href="https://linjohnss.github.io/">Chin-Yang Lin*</a>, <a href="https://kkennethwu.github.io/">Chung-Ho Wu*</a>, <a href="https://jimmycv07.github.io/">Chang-Han Yeh</a>, Shih-Han Yen, <a href="https://sunset1995.github.io/">Cheng Sun</a>, <strong>Yu-Lun Liu</strong>
                                 <br>
                                 <em>CVPR</em>, 2025
-                                <img src="images/new_animated.gif"\>
                                 <br>
                                 <a href="https://linjohnss.github.io/frugalnerf/">project page</a>
                                 /
@@ -1044,7 +1086,6 @@
                                 Chun-Hung Wu, Shih-Hong Chen, Chih-Yao Hu, Hsin-Yu Wu, Kai-Hsin Chen, Yu-You Chen, <a href="https://su-terry.github.io/">Chih-Hai Su</a>, Chih-Kuo Lee, <strong>Yu-Lun Liu</strong>
                                 <br>
                                 <em>CVPR</em>, 2025
-                                <img src="images/new_animated.gif"\>
                                 <br>
                                 <a href="https://kirito878.github.io/DeNVeR/">project page</a>
                                 /
@@ -1057,7 +1098,7 @@
                                 <a href="https://colab.research.google.com/drive/1IYGiJECwAaoLPq7KGHQE_dvtrdHz9fUA?authuser=2&hl=zh-tw#scrollTo=n1ppvOhqbRkV">colab</a>
                                 <p></p>
                                 <p>
-                                  DeNVeR is presented, an unsupervised approach for vessel segmentation in X-ray videos without annotated ground truth, providing a robust, data-efficient tool for disease diagnosis and treatment planning and setting a new standard for future research in video vessel segmentation.
+                                  Deformable Neural Vessel Representations is presented, an unsupervised approach for vessel segmentation in X-ray angiography videos without annotated ground truth that outperforms current state-of-the-art methods in vessel segmentation accuracy and generalization capability while maintaining temporal coherency.
                               </td>
                             </tr>
 
