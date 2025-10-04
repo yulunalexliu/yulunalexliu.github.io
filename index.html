@@ -416,7 +416,7 @@
                           </div>
                           <div class="person">
                             <img src="students/yuchehsieh.jpg" />
-                            <p>謝侑哲<br>NYCU CS<br></p>
+                            <p><a href="https://www.youzhexie.me/">謝侑哲</a><br>NYCU CS<br></p>
                           </div>
                           <div class="person">
                             <img src="students/yuweitsai.jpg" />
@@ -701,6 +701,10 @@
                             <!-- 2 -->
                               <a>Medical and Biological Vision, Cell Microscopy</a>
                           </li>
+                          <li class="method-pill" data-value="Adversarial Attack and Defense">
+                            <!-- 2 -->
+                              <a>Adversarial Attack and Defense</a>
+                          </li>
                           <li class="method-pill" data-value="Physics-based Vision and Shape-from-X">
                             <!-- 1 -->
                               <a>Physics-based Vision and Shape-from-X</a>
@@ -797,6 +801,52 @@
                             <tr class="year-group">
                               <td colspan="2" class="year">
                                 <br><center><subsubheading>2025</subsubheading></center>
+                              </td>
+                            </tr>
+
+                            <tr onmouseout="Ke2025SAR_stop()" onmouseover="Ke2025SAR_start()"  bgcolor="#ffffd0" class="publication paper-Adversarial-Attack-and-Defense paper-Adversarial-Attack-and-Defense paperhi">
+                              <td style="padding:20px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                  <div class="two" id='Ke2025SAR_image'><video  width=100% height=100% muted autoplay loop>
+                                    <source src="images/Ke2025SAR.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                    </video></div>
+                                  <img src='images/Ke2025SAR.jpg' width="160" alt="Description" style="margin-top: 20px;">
+                                </div>
+                                <script type="text/javascript">
+                                  function Ke2025SAR_start() {
+                                    document.getElementById('Ke2025SAR_image').style.opacity = "1";
+                                  }
+
+                                  function Ke2025SAR_stop() {
+                                    document.getElementById('Ke2025SAR_image').style.opacity = "0";
+                                  }
+                                  Ke2025SAR_stop()
+                                </script>
+                              </td>
+                              <td style="padding:20px;width:75%;vertical-align:middle">
+                                <a href="https://hentci.github.io/stealthattack/">
+                                  <papertitle>StealthAttack: Robust 3D Gaussian Splatting Poisoning via Density-Guided Illusions</papertitle>
+                                </a>
+                                <br>
+                                <a href="https://hentci.github.io/">Bo-Hsu Ke</a>, 
+                                <a href="https://www.youzhexie.me/">You-Zhe Xie</a>, 
+                                <strong>Yu-Lun Liu</strong>, 
+                                <a href="https://walonchiu.github.io/">Wei-Chen Chiu</a>
+                                <br>
+                                <em>ICCV</em>, 2025
+                                <img src="images/new_animated.gif"\>
+                                <br>
+                                <a href="https://hentci.github.io/stealthattack/">project page</a>
+                                /
+                                <a href="https://arxiv.org/abs/2510.02314">arXiv</a>
+                                /
+                                <a href="https://github.com/Hentci/StealthAttack_official">code</a>
+                                /
+                                <a href="https://drive.google.com/drive/folders/1GyjvTE-Vmj3MDDWUhmYf5aVhChrElJQW?usp=sharing">results</a>
+                                <p></p>
+                                <p>
+                                  This work analyzes 3DGS robustness against image-level poisoning attacks and proposes a novel density-guided poisoning method that strategically injects Gaussian points into low-density regions identified via Kernel Density Estimation (KDE), embedding viewpoint-dependent illusory objects clearly visible from poisoned views while minimally affecting innocent views.
                               </td>
                             </tr>
                   
