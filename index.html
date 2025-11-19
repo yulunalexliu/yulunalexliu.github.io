@@ -654,15 +654,15 @@
                           </li>
                           <li class="line-break"></li>
                           <li class="method-pill" data-value="Image and Video Synthesis and Generation">
-                            <!-- 17 -->
+                            <!-- 19 -->
                               <a>Image and Video Synthesis and Generation</a>
                           </li>
                           <li class="method-pill" data-value="3D from Multi-view and Sensors">
-                            <!-- 18 -->
+                            <!-- 20 -->
                               <a>3D from Multi-view and Sensors</a>
                           </li>
                           <li class="method-pill" data-value="Low-level Vision">
-                            <!-- 15 -->
+                            <!-- 19 -->
                               <a>Low-level Vision</a>
                           </li>
                           <li class="method-pill" data-value="Video: Low-level Analysis, Motion, and Tracking">
@@ -704,6 +704,10 @@
                           <li class="method-pill" data-value="Adversarial Attack and Defense">
                             <!-- 2 -->
                               <a>Adversarial Attack and Defense</a>
+                          </li>
+                          <li class="method-pill" data-value="Photogrammetry and Remote Sensing">
+                            <!-- 2 -->
+                              <a>Photogrammetry and Remote Sensing</a>
                           </li>
                           <li class="method-pill" data-value="Physics-based Vision and Shape-from-X">
                             <!-- 1 -->
@@ -808,7 +812,127 @@
                               </td>
                             </tr>
 
-                            <tr onmouseout="Ke2025SAR_stop()" onmouseover="Ke2025SAR_start()"  bgcolor="#ffffd0" class="publication paper-Adversarial-Attack-and-Defense paper-Adversarial-Attack-and-Defense paperhi">
+                            <tr onmouseout="Lee2025SGS_stop()" onmouseover="Lee2025SGS_start()"  bgcolor="#ffffd0" class="publication paper-Photogrammetry-and-Remote-Sensing paper-3D-from-Multi-view-and-Sensors paper-Image-and-Video-Synthesis-and-Generation paperhi">
+                              <td style="padding:20px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                  <div class="two" id='Lee2025SGS_image'><video  width=100% height=100% muted autoplay loop>
+                                    <source src="images/Lee2025SGS.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                    </video></div>
+                                  <img src='images/Lee2025SGS.jpg' width="160" alt="Description" style="margin-top: 35px;">
+                                </div>
+                                <script type="text/javascript">
+                                  function Lee2025SGS_start() {
+                                    document.getElementById('Lee2025SGS_image').style.opacity = "1";
+                                  }
+
+                                  function Lee2025SGS_stop() {
+                                    document.getElementById('Lee2025SGS_image').style.opacity = "0";
+                                  }
+                                  Lee2025SGS_stop()
+                                </script>
+                              </td>
+                              <td style="padding:20px;width:75%;vertical-align:middle">
+                                <a href="https://skyfall-gs.jayinnn.dev/">
+                                  <papertitle>Skyfall-GS: Synthesizing Immersive 3D Urban Scenes from Satellite Imagery</papertitle>
+                                </a>
+                                <br>
+                                <a href="https://jayinnn.dev/">Jie-Ying Lee</a>, 
+                                <a href="https://www.linkedin.com/in/yi-ruei-liu">Yi-Ruei Liu</a>, 
+                                <a href="https://tw.linkedin.com/in/shr-ruei-tsai/en">Shr-Ruei Tsai</a>, 
+                                Wei-Cheng Chang, 
+                                <a href="https://kkennethwu.github.io/">Chung-Ho Wu</a>, 
+                                <a href="https://jiewenchan.github.io/">Jiewen Chan</a>, 
+                                <a href="https://ericzzj1989.github.io/">Zhenjun Zhao</a>, 
+                                <a href="https://hubert0527.github.io/">Chieh Hubert Lin</a>, 
+                                <strong>Yu-Lun Liu</strong>
+                                <br>
+                                <em>arXiv</em>, 2025
+                                <img src="images/new_animated.gif"\>
+                                <br>
+                                <a href="https://skyfall-gs.jayinnn.dev/">project page</a>
+                                /
+                                <a href="https://arxiv.org/abs/2510.15869">arXiv</a>
+                                <p></p>
+                                <p>
+                                  This paper proposes Skyfall-GS, the first city-block scale 3D scene creation framework without costly 3D annotations, also featuring real-time, immersive 3D exploration, and tailor a curriculum-driven iterative refinement strategy to progressively enhance geometric completeness and photorealistic textures.
+                              </td>
+                            </tr>
+
+                            <tr bgcolor="#ffffd0" class="publication paper-Low-level-Vision paper-Low-level-Vision paperhi">
+                              <td style="padding:20px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                  <div class="two"><img src='images/Sun2024FIP.jpg' width="160" alt="Description" style="margin-top: 40px;"></div>
+                                  <img src='images/Sun2024FIP.jpg' width="160" alt="Description" style="margin-top: 40px;">
+                                </div>
+                              </td>
+                              <td style="padding:20px;width:75%;vertical-align:middle">
+                                <a href="https://jayisaking.github.io/FIPER/">
+                                  <papertitle>FIPER: Factorized Features for Robust Image Super-Resolution and Compression</papertitle>
+                                </a>
+                                <br>
+                                Yang-Che Sun, Cheng Yu Yeo, 
+                                <a href="https://www.cs.jhu.edu/~schu23/">Ernie Chu</a>, 
+                                <a href="https://homepage.citi.sinica.edu.tw/pages/pullpull/index_en.html">Jun-Cheng Chen</a>, 
+                                <strong>Yu-Lun Liu</strong>
+                                <br>
+                                <em>NeurIPS</em>, 2025
+                                <img src="images/new_animated.gif"\>
+                                <br>
+                                <a href="https://jayisaking.github.io/FIPER/">project page</a>
+                                /
+                                <a href="https://arxiv.org/abs/2410.18083">arXiv</a>
+                                /
+                                <a href="">code [coming soon]</a>
+                                <p></p>
+                                <p>
+                                  This work replaces the representation of prior models from simple feature maps with Factorized Features to validate the potential for broad generalizability and further optimize the compression pipeline by leveraging the mergeable-basis property of the authors' Factorized Features, which consolidates shared structures on multi-frame compression.
+                              </td>
+                            </tr>
+                  
+                            <tr onmouseout="Tsai2025LOD_stop()" onmouseover="Tsai2025LOD_start()"  bgcolor="#ffffd0" class="publication paper-Low-level-Vision paper-Image-and-Video-Synthesis-and-Generation paperhi">
+                              <td style="padding:20px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                  <div class="two" id='Tsai2025LOD_image'>
+                                    <img src='images/Tsai2025LOD_output.jpg' width="160" style="margin-top: 0px;"></div>
+                                  <img src='images/Tsai2025LOD_input.jpg' width="160" alt="Description" style="margin-top: 0px;">
+                                </div>
+                                <script type="text/javascript">
+                                  function Tsai2025LOD_start() {
+                                    document.getElementById('Tsai2025LOD_image').style.opacity = "1";
+                                  }
+
+                                  function Tsai2025LOD_stop() {
+                                    document.getElementById('Tsai2025LOD_image').style.opacity = "0";
+                                  }
+                                  Tsai2025LOD_stop()
+                                </script>
+                              </td>
+                              <td style="padding:20px;width:75%;vertical-align:middle">
+                                <a href="https://ray-1026.github.io/lightsout/">
+                                  <papertitle>LightsOut: Diffusion-based Outpainting for Enhanced Lens Flare Removal</papertitle>
+                                </a>
+                                <br>
+                                <a href="https://tw.linkedin.com/in/shr-ruei-tsai/en">Shr-Ruei Tsai</a>, Wei-Cheng Chang, <a href="https://jayinnn.dev/">Jie-Ying Lee</a>, <a href="https://su-terry.github.io/">Chih-Hai Su</a>, <strong>Yu-Lun Liu</strong>
+                                <br>
+                                <em>ICCV</em>, 2025
+                                <br>
+                                <a href="https://ray-1026.github.io/lightsout/">project page</a>
+                                /
+                                <a href="https://arxiv.org/abs/2510.15868">arXiv</a>
+                                /
+                                <a href="https://github.com/Ray-1026/LightsOut-official">code</a>
+                                /
+                                <a href="https://youtu.be/VNzJ9Z_dJNI">video</a>
+                                /
+                                <a href="https://huggingface.co/spaces/RayTsai-030/LightsOut-demo">demo</a>
+                                <p></p>
+                                <p>
+                                  LightsOut, a diffusion-based outpainting framework tailored to enhance SIFR by reconstructing off-frame light sources by leveraging a multitask regression module and LoRA fine-tuned diffusion model to ensure realistic and physically consistent outpainting results.
+                              </td>
+                            </tr>
+
+                            <tr onmouseout="Ke2025SAR_stop()" onmouseover="Ke2025SAR_start()"  bgcolor="#ffffd0" class="publication paper-Adversarial-Attack-and-Defense paper-3D-from-Multi-view-and-Sensors paperhi">
                               <td style="padding:20px;width:25%;vertical-align:middle">
                                 <div class="one">
                                   <div class="two" id='Ke2025SAR_image'><video  width=100% height=100% muted autoplay loop>
@@ -839,7 +963,6 @@
                                 <a href="https://walonchiu.github.io/">Wei-Chen Chiu</a>
                                 <br>
                                 <em>ICCV</em>, 2025
-                                <img src="images/new_animated.gif"\>
                                 <br>
                                 <a href="https://hentci.github.io/stealthattack/">project page</a>
                                 /
@@ -887,7 +1010,6 @@
                                 <strong>Yu-Lun Liu</strong>
                                 <br>
                                 <em>ICCV</em>, 2025
-                                <img src="images/new_animated.gif"\>
                                 <br>
                                 <a href="https://linjohnss.github.io/longsplat/">project page</a>
                                 /
@@ -923,7 +1045,6 @@
                                 <a href="https://scholar.google.com/citations?user=nvQampwAAAAJ&hl=zh-TW">Cheng-Hao Kuo</a>
                                 <br>
                                 <em>ICCV</em>, 2025
-                                <img src="images/new_animated.gif"\>
                                 <br>
                                 <a href="https://penghaohsu.github.io/projects/openm3d/">project page</a>
                                 /
@@ -971,7 +1092,6 @@
                                 <strong>Yu-Lun Liu</strong>
                                 <br>
                                 <em>CoRL</em>, 2025
-                                <img src="images/new_animated.gif"\>
                                 <br>
                                 <a href="https://spf-web.pages.dev/">project page</a>
                                 /
@@ -986,7 +1106,7 @@
                               </td>
                             </tr>
                   
-                            <tr onmouseout="Chang2025GCC_stop()" onmouseover="Chang2025GCC_start()"  bgcolor="#ffffd0" class="publication paper-Low-level-Vision paper-Low-level-Vision paperhi">
+                            <tr onmouseout="Chang2025GCC_stop()" onmouseover="Chang2025GCC_start()"  bgcolor="#ffffd0" class="publication paper-Low-level-Vision paper-Image-and-Video-Synthesis-and-Generation paperhi">
                               <td style="padding:20px;width:25%;vertical-align:middle">
                                 <div class="one">
                                   <div class="two" id='Chang2025GCC_image'><video  width=100% height=100% muted autoplay loop>
@@ -1355,38 +1475,8 @@
                                 <br><center><subsubheading>2024</subsubheading></center>
                               </td>
                             </tr>
-
-                            <tr bgcolor="#ffffff" class="publication paper-Low-level-Vision paper-Low-level-Vision">
-                              <td style="padding:20px;width:25%;vertical-align:middle">
-                                <div class="one">
-                                  <div class="two"><img src='images/Sun2024FIP.jpg' width="160" alt="Description" style="margin-top: 40px;"></div>
-                                  <img src='images/Sun2024FIP.jpg' width="160" alt="Description" style="margin-top: 40px;">
-                                </div>
-                              </td>
-                              <td style="padding:20px;width:75%;vertical-align:middle">
-                                <a href="https://jayisaking.github.io/FIPER/">
-                                  <papertitle>FIPER: Generalizable Factorized Fields for Joint Image Compression and Super-Resolution</papertitle>
-                                </a>
-                                <br>
-                                Yang-Che Sun, Cheng Yu Yeo, 
-                                <a href="https://www.cs.jhu.edu/~schu23/">Ernie Chu</a>, 
-                                <a href="https://homepage.citi.sinica.edu.tw/pages/pullpull/index_en.html">Jun-Cheng Chen</a>, 
-                                <strong>Yu-Lun Liu</strong>
-                                <br>
-                                <em>arXiv</em>, 2024 &nbsp
-                                <br>
-                                <a href="https://jayisaking.github.io/FIPER/">project page</a>
-                                /
-                                <a href="https://arxiv.org/abs/2410.18083">arXiv</a>
-                                /
-                                <a href="">code [coming soon]</a>
-                                <p></p>
-                                <p>
-                                  This work derives a SR model, which includes a Coefficient Backbone and Basis Swin Transformer for generalizable Factorized Fields, and introduces a merged-basis compression branch that consolidates shared structures, further optimizing the compression process.
-                              </td>
-                            </tr>
                             
-                            <tr onmouseout="Yeh2024DIR_stop()" onmouseover="Yeh2024DIR_start()"  bgcolor="#ffffff" class="publication paper-Low-level-Vision paper-Low-level-Vision">
+                            <tr onmouseout="Yeh2024DIR_stop()" onmouseover="Yeh2024DIR_start()"  bgcolor="#ffffff" class="publication paper-Low-level-Vision paper-Image-and-Video-Synthesis-and-Generation">
                               <td style="padding:20px;width:25%;vertical-align:middle">
                                 <div class="one">
                                   <div class="two" id='Yeh2024DIR_image'><video  width=100% height=100% muted autoplay loop>
