@@ -527,7 +527,7 @@ setTimeout(initNews, 100);
                         <div class="people">
                           <div class="person">
                             <img src="students/jiewenchan.jpg" />
-                            <p>陳捷文<br>Institute of<br>Computer Science<br></p>
+                            <p><a href="https://jiewenchan.github.io/">陳捷文</a><br>Institute of<br>Computer Science<br></p>
                           </div>
                           <div class="person">
                             <img src="students/xuhaoxiang.jpg" />
@@ -719,6 +719,10 @@ setTimeout(initNews, 100);
                           <div class="person">
                             <img src="students/chihyuchang.jpg" />
                             <p>張芷瑜<br>NYCU CS</p>
+                          </div>
+                          <div class="person">
+                            <img src="students/mengkaichen.jpg" />
+                            <p>陳孟楷<br>NYCU CS</p>
                           </div>
                         </div>
                         <p><center><a href="javascript:toggleblock('alumni')"><subheading>Alumni</subheading></a></center></p>
@@ -947,6 +951,10 @@ setTimeout(initNews, 100);
                             <!-- 1 -->
                               <a>Recognition: Categorization, Detection, Retrieval</a>
                           </li>
+                          <li class="method-pill" data-value="Efficient and Scalable Vision">
+                            <!-- 1 -->
+                              <a>Efficient and Scalable Vision</a>
+                          </li>
                       </ul>
                   </div>
                   
@@ -1030,7 +1038,132 @@ setTimeout(initNews, 100);
                             <!-- Year Row -->
                             <tr class="year-group">
                               <td colspan="2" class="year">
+                                <br><center><subsubheading>2026</subsubheading></center>
+                              </td>
+                            </tr>
+
+                            <tr bgcolor="#ffffff" class="publication paper-3D-from-Multi-view-and-Sensors paper-Efficient-and-Scalable-Vision paper-Vision--Graphics">
+                              <td style="padding:20px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                  <div class="two"><img src='images/Ho2026TED.jpg' width="160" alt="Description" style="margin-top: 40px;"></div>
+                                  <img src='images/Ho2026TED.jpg' width="160" alt="Description" style="margin-top: 40px;">
+                                </div>
+                              </td>
+                              <td style="padding:20px;width:75%;vertical-align:middle">
+                                <a href="https://nycu-mapl.github.io/TED-4DGS_page/">
+                                  <papertitle>TED-4DGS: Temporally Activated and Embedding-based Deformation for 4DGS Compression</papertitle>
+                                </a>
+                                <br>
+                                Cheng-Yuan Ho, He-Bi Yang, 
+                                <a href="https://chiang.ccu.edu.tw/index.php">Jui-Chiu Chiang</a>, 
+                                <strong>Yu-Lun Liu</strong>, 
+                                <a href="https://sites.google.com/g2.nctu.edu.tw/wpeng">Wen-Hsiao Peng</a>
+                                <br>
+                                <em>WACV</em>, 2026
+                                <img src="images/new_animated.gif"\>
+                                <br>
+                                <a href="https://nycu-mapl.github.io/TED-4DGS_page/">project page</a>
+                                /
+                                <a href="https://arxiv.org/pdf/2512.05446">arXiv</a>
+                                <p></p>
+                                <p>
+                                  This work presents TED-4DGS, a temporally activated and embedding-based deformation scheme for rate-distortion-optimized 4DGS compression that unifies the strengths of both families and represents one of the first attempts to pursue a rate-distortion-optimized compression framework for dynamic 3DGS representations.
+                              </td>
+                            </tr>
+
+                            <tr onmouseout="Chien2026SFM_stop()" onmouseover="Chien2026SFM_start()"  bgcolor="#ffffd0" class="publication paper-Vision--Graphics paper-3D-from-Multi-view-and-Sensors paper-Image-and-Video-Synthesis-and-Generation paperhi">
+                              <td style="padding:20px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                  <div class="two" id='Chien2026SFM_image'><video  width=100% height=100% muted autoplay loop>
+                                    <source src="images/Chien2026SFM.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                    </video></div>
+                                  <img src='images/Chien2026SFM.jpg' width="160" alt="Description" style="margin-top: 35px;">
+                                </div>
+                                <script type="text/javascript">
+                                  function Chien2026SFM_start() {
+                                    document.getElementById('Chien2026SFM_image').style.opacity = "1";
+                                  }
+
+                                  function Chien2026SFM_stop() {
+                                    document.getElementById('Chien2026SFM_image').style.opacity = "0";
+                                  }
+                                  Chien2026SFM_stop()
+                                </script>
+                              </td>
+                              <td style="padding:20px;width:75%;vertical-align:middle">
+                                <a href="https://chien90190.github.io/splannequin/">
+                                  <papertitle>Splannequin: Freezing Monocular Mannequin-Challenge Footage with Dual-Detection Splatting</papertitle>
+                                </a>
+                                <br>
+                                Hao-Jen Chien, 
+                                <a href="https://yichuanh.github.io/Personal-Page/">Yi-Chuan Huang</a>, 
+                                <a href="https://kkennethwu.github.io/">Chung-Ho Wu</a>, 
+                                <a href="https://sites.google.com/view/wei-lun-harry-chao">Wei-Lun Chao</a>, 
+                                <strong>Yu-Lun Liu</strong>
+                                <br>
+                                <em>WACV</em>, 2026
+                                <img src="images/new_animated.gif"\>
+                                <br>
+                                <a href="https://chien90190.github.io/splannequin/">project page</a>
+                                /
+                                <a href="https://arxiv.org/abs/2512.05113">arXiv</a>
+                                /
+                                <a href="https://github.com/jayin92/skyfall-gs">code (coming soon)</a>
+                                <p></p>
+                                <p>
+                                  Splannequin is proposed, an architecture-agnostic regularization that detects two states of Gaussian primitives, hidden and defective, and applies temporal anchoring, resulting in markedly improved visual quality, enabling high-fidelity, user-selectable frozen-time renderings, validated by a 96% user preference.
+                              </td>
+                            </tr>
+
+                            <!-- Year Row -->
+                            <tr class="year-group">
+                              <td colspan="2" class="year">
                                 <br><center><subsubheading>2025</subsubheading></center>
+                              </td>
+                            </tr>
+
+                            <tr onmouseout="Huang2025VDP_stop()" onmouseover="Huang2025VDP_start()"  bgcolor="#ffffd0" class="publication paper-Vision--Graphics paper-3D-from-Multi-view-and-Sensors paper-Image-and-Video-Synthesis-and-Generation paperhi">
+                              <td style="padding:20px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                  <div class="two" id='Huang2025VDP_image'><video  width=100% height=100% muted autoplay loop>
+                                    <source src="images/Huang2025VDP.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                    </video></div>
+                                  <img src='images/Huang2025VDP.jpg' width="160" alt="Description" style="margin-top: 0px;">
+                                </div>
+                                <script type="text/javascript">
+                                  function Huang2025VDP_start() {
+                                    document.getElementById('Huang2025VDP_image').style.opacity = "1";
+                                  }
+
+                                  function Huang2025VDP_stop() {
+                                    document.getElementById('Huang2025VDP_image').style.opacity = "0";
+                                  }
+                                  Huang2025VDP_stop()
+                                </script>
+                              </td>
+                              <td style="padding:20px;width:75%;vertical-align:middle">
+                                <a href="https://yichuanh.github.io/Voxify-3D/">
+                                  <papertitle>Voxify3D: Pixel Art Meets Volumetric Rendering</papertitle>
+                                </a>
+                                <br>
+                                <a href="https://yichuanh.github.io/Personal-Page/">Yi-Chuan Huang</a>, 
+                                <a href="https://jiewenchan.github.io/">Jiewen Chan</a>, 
+                                Hao-Jen Chien, 
+                                <strong>Yu-Lun Liu</strong>
+                                <br>
+                                <em>arXiv</em>, 2025
+                                <img src="images/new_animated.gif"\>
+                                <br>
+                                <a href="https://yichuanh.github.io/Voxify-3D/">project page</a>
+                                /
+                                <a href="https://arxiv.org/abs/2512.07834">arXiv</a>
+                                /
+                                <a href="">code (coming soon)</a>
+                                <p></p>
+                                <p>
+                                  Voxify3D is introduced, a differentiable two-stage framework bridging 3D mesh optimization with 2D pixel art supervision that addresses fundamental challenges: semantic preservation under extreme discretization, pixel-art aesthetics through volumetric rendering, and end-to-end discrete optimization.
                               </td>
                             </tr>
 
@@ -1753,7 +1886,7 @@ setTimeout(initNews, 100);
                               </td>
                             </tr>
                             
-                            <tr onmouseout="Yeh2024DIR_stop()" onmouseover="Yeh2024DIR_start()"  bgcolor="#ffffff" class="publication paper-Low-level-Vision paper-Image-and-Video-Synthesis-and-Generation">
+                            <tr onmouseout="Yeh2024DIR_stop()" onmouseover="Yeh2024DIR_start()"  bgcolor="#ffffff" class="publication paper-Low-level-Vision paper-Image-and-Video-Synthesis-and-Generation paperhi">
                               <td style="padding:20px;width:25%;vertical-align:middle">
                                 <div class="one">
                                   <div class="two" id='Yeh2024DIR_image'><video  width=100% height=100% muted autoplay loop>
