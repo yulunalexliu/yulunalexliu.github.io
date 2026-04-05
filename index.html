@@ -265,6 +265,7 @@
 
       <ul id="news-list">
         <!-- 2026 -->
+        <li class="news-item" data-categories="Research Spotlight">Mar 2026: Three conference papers conditionally accepted to <a href="https://s2026.siggraph.org/">SIGGRAPH 2026</a></li>
         <li class="news-item" data-categories="Research Spotlight">Feb 2026: Five conference papers accepted to <a href="https://cvpr.thecvf.com/">CVPR 2026</a></li>
         <li class="news-item" data-categories="Student Honor">Jan 2026: BS students <a href="https://sean20405.github.io/">何義翔</a> and 朱驛庭 won the <a href="https://www.cs.nycu.edu.tw/storage/materials/vVOx5KA9GljxHcRjuQtZrXqsKUugQlRb2kKsCtia.pdf">陽明交大資工系專題競賽佳作</a>!</li>
 
@@ -539,7 +540,7 @@ setTimeout(initNews, 100);
                           </div>
                           <div class="person">
                             <img src="students/yirueiliu.jpg" />
-                            <p>劉珆睿<br>Institute of Computer Science<br>now MS student @ UIUC</p>
+                            <p><a href="https://shigon255.github.io/">劉珆睿</a><br>Institute of Computer Science<br>now MS student @ UIUC</p>
                           </div>
                           <div class="person">
                             <img src="students/jiachenglin.jpg" />
@@ -907,7 +908,7 @@ setTimeout(initNews, 100);
                           </li>
                           <li class="line-break"></li>
                           <li class="method-pill" data-value="Image and Video Synthesis and Generation">
-                            <!-- 19 -->
+                            <!-- 21 -->
                               <a>Image and Video Synthesis and Generation</a>
                           </li>
                           <li class="method-pill" data-value="3D from Multi-view and Sensors">
@@ -926,17 +927,21 @@ setTimeout(initNews, 100);
                             <!-- 5 -->
                               <a>Computational Imaging</a>
                           </li>
+                          <li class="method-pill" data-value="Vision + Graphics">
+                            <!-- 5 -->
+                              <a>Vision + Graphics</a>
+                          </li>
                           <li class="method-pill" data-value="Humans: Face, Body, Pose, Gesture, Movement">
                             <!-- 4 -->
                               <a>Humans: Face, Body, Pose, Gesture, Movement</a>
                           </li>
-                          <li class="method-pill" data-value="Vision + Graphics">
-                            <!-- 3 -->
-                              <a>Vision + Graphics</a>
-                          </li>
                           <li class="method-pill" data-value="Segmentation, Grouping and Shape Analysis">
-                            <!-- 3 -->
+                            <!-- 4 -->
                               <a>Segmentation, Grouping and Shape Analysis</a>
+                          </li>
+                          <li class="method-pill" data-value="Datasets and Evaluation">
+                            <!-- 4 -->
+                              <a>Datasets and Evaluation</a>
                           </li>
                           <li class="method-pill" data-value="Computer Vision for Robotics">
                             <!-- 3 -->
@@ -962,10 +967,6 @@ setTimeout(initNews, 100);
                             <!-- 2 -->
                               <a>Photogrammetry and Remote Sensing</a>
                           </li>
-                          <li class="method-pill" data-value="Datasets and Evaluation">
-                            <!-- 2 -->
-                              <a>Datasets and Evaluation</a>
-                          </li>
                           <li class="method-pill" data-value="Physics-based Vision and Shape-from-X">
                             <!-- 1 -->
                               <a>Physics-based Vision and Shape-from-X</a>
@@ -985,6 +986,10 @@ setTimeout(initNews, 100);
                           <li class="method-pill" data-value="Efficient and Scalable Vision">
                             <!-- 1 -->
                               <a>Efficient and Scalable Vision</a>
+                          </li>
+                          <li class="method-pill" data-value="Scene Analysis and Understanding">
+                            <!-- 1 -->
+                              <a>Scene Analysis and Understanding</a>
                           </li>
                       </ul>
                   </div>
@@ -1073,6 +1078,56 @@ setTimeout(initNews, 100);
                               </td>
                             </tr>
 
+                            <tr onmouseout="Huang2026GWR_stop()" onmouseover="Huang2026GWR_start()"  bgcolor="#ffffd0" class="publication paper-Vision--Graphics paper-Datasets-and-Evaluation paper-Image-and-Video-Synthesis-and-Generation paperhi">
+                              <td style="padding:20px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                  <div class="two" id='Huang2026GWR_image'><video  width=100% height=100% muted autoplay loop>
+                                    <source src="images/Huang2026GWR.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                    </video></div>
+                                  <img src='images/Huang2026GWR.jpg' width="160" alt="Description" style="margin-top: 35px;">
+                                </div>
+                                <script type="text/javascript">
+                                  function Huang2026GWR_start() {
+                                    document.getElementById('Huang2026GWR_image').style.opacity = "1";
+                                  }
+
+                                  function Huang2026GWR_stop() {
+                                    document.getElementById('Huang2026GWR_image').style.opacity = "0";
+                                  }
+                                  Huang2026GWR_stop()
+                                </script>
+                              </td>
+                              <td style="padding:20px;width:75%;vertical-align:middle">
+                                <a href="https://alaya-studio.github.io/renderer/">
+                                  <papertitle>Generative World Renderer</papertitle>
+                                </a>
+                                <br>
+                                Zheng-Hui Huang, 
+                                <a href="https://lightchaserx.github.io/">Zhixiang Wang</a>, 
+                                Jiaming Tan, Ruihan Yu, Yidan Zhang, Bo Zheng, 
+                                <strong>Yu-Lun Liu</strong>, 
+                                <a href="https://www.csie.ntu.edu.tw/~cyy/">Yung-Yu Chuang</a>, 
+                                <a href="https://kpzhang93.github.io/">Kaipeng Zhang</a>
+                                <br>
+                                <em>arXiv</em>, 2026
+                                <img src="images/new_animated.gif"\>
+                                <br>
+                                <a href="https://alaya-studio.github.io/renderer/">project page</a>
+                                /
+                                <a href="https://arxiv.org/abs/2604.02329">arXiv</a>
+                                /
+                                <a href="https://alaya-studio.github.io/renderer/">code</a>
+                                /
+                                <a href="https://huggingface.co/spaces/Brian9999/game-editing">demo</a>
+                                /
+                                <a href="https://youtu.be/N5CQ5WWIA_8">video</a>
+                                <p></p>
+                                <p>
+                                  A large-scale, dynamic dataset curated from visually complex AAA games is introduced, enabling robust in-the-wild geometry and material decomposition, and facilitating high-fidelity G-buffer-guided video generation and a novel VLM-based assessment protocol measuring semantic, spatial, and temporal consistency.
+                              </td>
+                            </tr>
+
                             <tr onmouseout="Lee2026PSR_stop()" onmouseover="Lee2026PSR_start()"  bgcolor="#ffffd0" class="publication paper-Low-level-Vision paperhi">
                               <td style="padding:20px;width:25%;vertical-align:middle">
                                 <div class="one">
@@ -1158,6 +1213,49 @@ setTimeout(initNews, 100);
                                 <p></p>
                                 <p>
                                   ReflexSplit, a dual-stream framework with three key innovations that adaptively aggregates semantic priors, texture details, and decoder context across hierarchical depths, stabilizing gradient flow and maintaining feature consistency, is proposed.
+                              </td>
+                            </tr>
+
+                            <tr onmouseout="Chan2026AGR_stop()" onmouseover="Chan2026AGR_start()"  bgcolor="#ffffd0" class="publication paper-Vision--Graphics paper-3D-from-Multi-view-and-Sensors paperhi">
+                              <td style="padding:20px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                  <div class="two" id='Chan2026AGR_image'><video  width=100% height=100% muted autoplay loop>
+                                    <source src="images/Chan2026AGR.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                    </video></div>
+                                  <img src='images/Chan2026AGR.jpg' width="160" alt="Description" style="margin-top: 0px;">
+                                </div>
+                                <script type="text/javascript">
+                                  function Chan2026AGR_start() {
+                                    document.getElementById('Chan2026AGR_image').style.opacity = "1";
+                                  }
+
+                                  function Chan2026AGR_stop() {
+                                    document.getElementById('Chan2026AGR_image').style.opacity = "0";
+                                  }
+                                  Chan2026AGR_stop()
+                                </script>
+                              </td>
+                              <td style="padding:20px;width:75%;vertical-align:middle">
+                                <a href="https://jiewenchan.github.io/AdaGaR/">
+                                  <papertitle>AdaGaR: Adaptive Gabor Representation for Dynamic Scene Reconstruction</papertitle>
+                                </a>
+                                <br>
+                                <a href="https://jiewenchan.github.io/">Jiewen Chan</a>, 
+                                <a href="https://ericzzj1989.github.io/">Zhenjun Zhao</a>, 
+                                <strong>Yu-Lun Liu</strong>
+                                <br>
+                                <em>CVPR Findings</em>, 2026
+                                <img src="images/new_animated.gif"\>
+                                <br>
+                                <a href="https://jiewenchan.github.io/AdaGaR/">project page</a>
+                                /
+                                <a href="https://arxiv.org/abs/2601.00796">arXiv</a>
+                                /
+                                <a href="">code (coming soon)</a>
+                                <p></p>
+                                <p>
+                                  This work proposes AdaGaR, a unified framework addressing both frequency adaptivity and temporal continuity in explicit dynamic scene modeling, and introduces Adaptive Gabor Representation, extending Gaussians through learnable frequency weights and adaptive energy compensation to balance detail capture and stability.
                               </td>
                             </tr>
 
@@ -1298,46 +1396,39 @@ setTimeout(initNews, 100);
                               </td>
                             </tr>
 
-                            <tr onmouseout="Chan2026AGR_stop()" onmouseover="Chan2026AGR_start()"  bgcolor="#ffffd0" class="publication paper-Vision--Graphics paper-3D-from-Multi-view-and-Sensors paperhi">
+                            <tr onmouseout="Yen2026PSP_stop()" onmouseover="Yen2026PSP_start()"  bgcolor="#ffffd0" class="publication paper-Segmentation-Grouping-and-Shape-Analysis paper-Scene-Analysis-and-Understanding">
                               <td style="padding:20px;width:25%;vertical-align:middle">
                                 <div class="one">
-                                  <div class="two" id='Chan2026AGR_image'><video  width=100% height=100% muted autoplay loop>
-                                    <source src="images/Chan2026AGR.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                    </video></div>
-                                  <img src='images/Chan2026AGR.jpg' width="160" alt="Description" style="margin-top: 0px;">
+                                  <div class="two" id='Yen2026PSP_image'>
+                                    <img src='images/Yen2026PSP_output.jpg' width="160" style="margin-top: 25px;"></div>
+                                  <img src='images/Yen2026PSP_input.jpg' width="160" alt="Description" style="margin-top: 25px;">
                                 </div>
                                 <script type="text/javascript">
-                                  function Chan2026AGR_start() {
-                                    document.getElementById('Chan2026AGR_image').style.opacity = "1";
+                                  function Yen2026PSP_start() {
+                                    document.getElementById('Yen2026PSP_image').style.opacity = "1";
                                   }
 
-                                  function Chan2026AGR_stop() {
-                                    document.getElementById('Chan2026AGR_image').style.opacity = "0";
+                                  function Yen2026PSP_stop() {
+                                    document.getElementById('Yen2026PSP_image').style.opacity = "0";
                                   }
-                                  Chan2026AGR_stop()
+                                  Yen2026PSP_stop()
                                 </script>
                               </td>
                               <td style="padding:20px;width:75%;vertical-align:middle">
-                                <a href="https://jiewenchan.github.io/AdaGaR/">
-                                  <papertitle>AdaGaR: Adaptive Gabor Representation for Dynamic Scene Reconstruction</papertitle>
+                                <a href="https://openaccess.thecvf.com/content/WACV2026/html/Yen_PS3_Part_Level_Instance_Segmentation_in_3D_WACV_2026_paper.html">
+                                  <papertitle>PS3: Part Level Instance Segmentation in 3D</papertitle>
                                 </a>
                                 <br>
-                                <a href="https://jiewenchan.github.io/">Jiewen Chan</a>, 
-                                <a href="https://ericzzj1989.github.io/">Zhenjun Zhao</a>, 
-                                <strong>Yu-Lun Liu</strong>
+                                Hong-Xuan Yen, Chiamin Chen, Yanqing Wang, <strong>Yu-Lun Liu</strong>, <a href="https://aliensunmin.github.io/">Min Sun</a>
                                 <br>
-                                <em>arXiv</em>, 2026
-                                <img src="images/new_animated.gif"\>
+                                <em>WACV</em>, 2026
                                 <br>
-                                <a href="https://jiewenchan.github.io/AdaGaR/">project page</a>
+                                <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Yen_PS3_Part_Level_Instance_Segmentation_in_3D_WACV_2026_paper.pdf">paper</a>
                                 /
-                                <a href="https://arxiv.org/abs/2601.00796">arXiv</a>
-                                /
-                                <a href="">code (coming soon)</a>
+                                <a href="https://openaccess.thecvf.com/content/WACV2026/supplemental/Yen_PS3_Part_Level_WACV_2026_supplemental.pdf">supplement</a>
                                 <p></p>
                                 <p>
-                                  This work proposes AdaGaR, a unified framework addressing both frequency adaptivity and temporal continuity in explicit dynamic scene modeling, and introduces Adaptive Gabor Representation, extending Gaussians through learnable frequency weights and adaptive energy compensation to balance detail capture and stability.
+                                  PS3 is introduced, an approach to generate 3D part proposals from multi-view 2D masks that outperforms baselines that rely on geometric over-segmentation in scene-scale open-vocabulary 3D part segmentation.
                               </td>
                             </tr>
 
@@ -1359,7 +1450,6 @@ setTimeout(initNews, 100);
                                 <a href="https://sites.google.com/g2.nctu.edu.tw/wpeng">Wen-Hsiao Peng</a>
                                 <br>
                                 <em>WACV</em>, 2026
-                                <img src="images/new_animated.gif"\>
                                 <br>
                                 <a href="https://nycu-mapl.github.io/TED-4DGS_page/">project page</a>
                                 /
@@ -1399,7 +1489,6 @@ setTimeout(initNews, 100);
                                 <strong>Yu-Lun Liu</strong>
                                 <br>
                                 <em>WACV</em>, 2026
-                                <img src="images/new_animated.gif"\>
                                 <br>
                                 <a href="https://arxiv.org/abs/2602.19706">arXiv</a>
                                 /
@@ -1442,7 +1531,6 @@ setTimeout(initNews, 100);
                                 <strong>Yu-Lun Liu</strong>
                                 <br>
                                 <em>WACV</em>, 2026
-                                <img src="images/new_animated.gif"\>
                                 <br>
                                 <a href="https://chien90190.github.io/splannequin/">project page</a>
                                 /
@@ -1555,39 +1643,6 @@ setTimeout(initNews, 100);
                                 <p></p>
                                 <p>
                                   Stream-DiffVSR achieves the lowest latency reported for diffusion-based VSR, reducing initial delay from over 4600 seconds to 0.328 seconds, thereby making it the first diffusion VSR method suitable for low-latency online deployment.
-                              </td>
-                            </tr>
-
-                            <tr bgcolor="#ffffff" class="publication paper-Datasets-and-Evaluation paperhi">
-                              <td style="padding:20px;width:25%;vertical-align:middle">
-                                <div class="one">
-                                  <div class="two"><img src='images/SzuTu2025BMA.jpg' width="160" alt="Description" style="margin-top: 40px;"></div>
-                                  <img src='images/SzuTu2025BMA.jpg' width="160" alt="Description" style="margin-top: 40px;">
-                                </div>
-                              </td>
-                              <td style="padding:20px;width:75%;vertical-align:middle">
-                                <a href="https://sytwu.github.io/BeyondMemo/">
-                                  <papertitle>Beyond Memorization: A Multi-Modal Ordinal Regression Benchmark to Expose Popularity Bias in Vision-Language Models</papertitle>
-                                </a>
-                                <br>
-                                Li-Zhong Szu-Tu*, Ting-Lin Wu*, Chia-Jui Chang, He Syu, 
-                                <strong>Yu-Lun Liu</strong>
-                                <br>
-                                <em>arXiv</em>, 2025
-                                <img src="images/new_animated.gif"\>
-                                <br>
-                                <a href="https://sytwu.github.io/BeyondMemo/">project page</a>
-                                /
-                                <a href="https://arxiv.org/abs/2512.21337">arXiv</a>
-                                /
-                                <a href="https://github.com/Sytwu/Year-Guessr">code</a>
-                                /
-                                <a href="https://huggingface.co/datasets/Morris0401/Year-Guessr-Dataset">dataset</a>
-                                /
-                                <a href="https://docs.google.com/spreadsheets/d/1o_T1q3JrN1RZb0eFZMPdwurzhlDoot-qeKGvxWpzrr8/edit?usp=sharing">results</a>
-                                <p></p>
-                                <p>
-                                  We introduce the largest open benchmark for building construction year prediction: the YearGuessr dataset, a collection of 55,546 building images with multi-modal attributes from 157 countries, annotated with continuous ordinal labels of their construction year (1001-2024), GPS data, and page-view counts as a proxy for popularity.
                               </td>
                             </tr>
 
@@ -1768,6 +1823,38 @@ setTimeout(initNews, 100);
                                 <p></p>
                                 <p>
                                   This work replaces the representation of prior models from simple feature maps with Factorized Features to validate the potential for broad generalizability and further optimize the compression pipeline by leveraging the mergeable-basis property of the authors' Factorized Features, which consolidates shared structures on multi-frame compression.
+                              </td>
+                            </tr>
+
+                            <tr bgcolor="#ffffff" class="publication paper-Datasets-and-Evaluation paperhi">
+                              <td style="padding:20px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                  <div class="two"><img src='images/SzuTu2025BMA.jpg' width="160" alt="Description" style="margin-top: 40px;"></div>
+                                  <img src='images/SzuTu2025BMA.jpg' width="160" alt="Description" style="margin-top: 40px;">
+                                </div>
+                              </td>
+                              <td style="padding:20px;width:75%;vertical-align:middle">
+                                <a href="https://sytwu.github.io/BeyondMemo/">
+                                  <papertitle>Beyond Memorization: A Multi-Modal Ordinal Regression Benchmark to Expose Popularity Bias in Vision-Language Models</papertitle>
+                                </a>
+                                <br>
+                                Li-Zhong Szu-Tu*, Ting-Lin Wu*, Chia-Jui Chang, He Syu, 
+                                <strong>Yu-Lun Liu</strong>
+                                <br>
+                                <em>ICCV DataCV Workshop</em>, 2025
+                                <br>
+                                <a href="https://sytwu.github.io/BeyondMemo/">project page</a>
+                                /
+                                <a href="https://arxiv.org/abs/2512.21337">arXiv</a>
+                                /
+                                <a href="https://github.com/Sytwu/Year-Guessr">code</a>
+                                /
+                                <a href="https://huggingface.co/datasets/Morris0401/Year-Guessr-Dataset">dataset</a>
+                                /
+                                <a href="https://docs.google.com/spreadsheets/d/1o_T1q3JrN1RZb0eFZMPdwurzhlDoot-qeKGvxWpzrr8/edit?usp=sharing">results</a>
+                                <p></p>
+                                <p>
+                                  We introduce the largest open benchmark for building construction year prediction: the YearGuessr dataset, a collection of 55,546 building images with multi-modal attributes from 157 countries, annotated with continuous ordinal labels of their construction year (1001-2024), GPS data, and page-view counts as a proxy for popularity.
                               </td>
                             </tr>
                   
@@ -3877,7 +3964,7 @@ setTimeout(initNews, 100);
                   <p style="text-align:right;font-size:small;">
             Stolen from <a href="https://jonbarron.info/">Jon Barron</a>'s website.
                     <br>
-                    Last updated Feb 2026.
+                    Last updated April 2026.
             </p>
                 </td>
               </tr>
