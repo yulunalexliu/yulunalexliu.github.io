@@ -736,6 +736,14 @@ setTimeout(initNews, 100);
                             <img src="students/enjuichang.jpg" />
                             <p>張恩睿<br>NYCU CS</p>
                           </div>
+                          <div class="person">
+                            <img src="students/yuhantsai.jpg" />
+                            <p>蔡雨翰<br>NYCU CS</p>
+                          </div>
+                          <div class="person">
+                            <img src="students/lidahuang.jpg" />
+                            <p>黃立達<br>NYCU MED</p>
+                          </div>
                         </div>
                         <p><center><a href="javascript:toggleblock('alumni')"><subheading>Alumni</subheading></a></center></p>
                         <!-- <subsectionheading>
@@ -1087,6 +1095,47 @@ setTimeout(initNews, 100);
                             <tr class="year-group">
                               <td colspan="2" class="year">
                                 <br><center><subsubheading>2026</subsubheading></center>
+                              </td>
+                            </tr>
+
+                            <tr onmouseout="Lu2026DFD_stop()" onmouseover="Lu2026DFD_start()"  bgcolor="#ffffd0" class="publication paper-Vision--Graphics paper-Datasets-and-Evaluation paper-Image-and-Video-Synthesis-and-Generation paper-3D-from-Multi-view-and-Sensors paperhi">
+                              <td style="padding:20px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                  <div class="two" id='Lu2026DFD_image'><video  width=100% height=100% muted autoplay loop>
+                                    <source src="images/Lu2026DFD.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                    </video></div>
+                                  <img src='images/Lu2026DFD.jpg' width="160" alt="Description" style="margin-top: 35px;">
+                                </div>
+                                <script type="text/javascript">
+                                  function Lu2026DFD_start() {
+                                    document.getElementById('Lu2026DFD_image').style.opacity = "1";
+                                  }
+
+                                  function Lu2026DFD_stop() {
+                                    document.getElementById('Lu2026DFD_image').style.opacity = "0";
+                                  }
+                                  Lu2026DFD_stop()
+                                </script>
+                              </td>
+                              <td style="padding:20px;width:75%;vertical-align:middle">
+                                <a href="https://arxiv.org/abs/2604.13416">
+                                  <papertitle>DF3DV-1K: A Large-Scale Dataset and Benchmark for Distractor-Free Novel View Synthesis</papertitle>
+                                </a>
+                                <br>
+                                <a href="https://johnnylu305.github.io/">Cheng-You Lu</a>, 
+                                Yi-Shan Hung, Wei-Ling Chi, Hao-Ping Wang, Charlie Li-Ting Tsai, Yu-Cheng Chang, 
+                                <strong>Yu-Lun Liu</strong>, 
+                                <a href="https://profiles.uts.edu.au/Thomas.Do">Thomas Do</a>, 
+                                <a href="https://uts-cibci.center/our-people/">Chin-Teng Lin</a>
+                                <br>
+                                <em>arXiv</em>, 2026
+                                <img src="images/new_animated.gif"\>
+                                <br>
+                                <a href="https://arxiv.org/abs/2604.13416">arXiv</a>
+                                <p></p>
+                                <p>
+                                  DF3DV-1K is introduced, a large-scale real-world dataset comprising 1,048 scenes, each providing clean and cluttered image sets for benchmarking, and an application of DF3DV-1K is demonstrated by fine-tuning a diffusion-based 2D enhancer to improve radiance field methods.
                               </td>
                             </tr>
 
