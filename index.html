@@ -267,7 +267,7 @@
         <!-- 2026 -->
         <li class="news-item" data-categories="Research Spotlight">April 2026: Two conference papers accepted to <a href="https://2026.ieeeicip.org/">ICIP 2026</a></li>
         <li class="news-item" data-categories="Research Spotlight">Mar 2026: Three conference papers conditionally accepted to <a href="https://s2026.siggraph.org/">SIGGRAPH 2026</a></li>
-        <li class="news-item" data-categories="Research Spotlight">Feb 2026: Five conference papers accepted to <a href="https://cvpr.thecvf.com/">CVPR 2026</a></li>
+        <li class="news-item" data-categories="Research Spotlight">Feb 2026: Five conference papers and two Findings papers accepted to <a href="https://cvpr.thecvf.com/">CVPR 2026</a></li>
         <li class="news-item" data-categories="Student Honor">Jan 2026: BS students <a href="https://sean20405.github.io/">何義翔</a> and 朱驛庭 won the <a href="https://www.cs.nycu.edu.tw/storage/materials/vVOx5KA9GljxHcRjuQtZrXqsKUugQlRb2kKsCtia.pdf">陽明交大資工系專題競賽佳作</a>!</li>
 
         <!-- 2025 -->
@@ -745,6 +745,10 @@ setTimeout(initNews, 100);
                             <img src="students/lidahuang.jpg" />
                             <p>黃立達<br>NYCU MED</p>
                           </div>
+                          <div class="person">
+                            <img src="students/pochihwu.jpg" />
+                            <p>吳柏志<br>NYCU IMF</p>
+                          </div>
                         </div>
                         <p><center><a href="javascript:toggleblock('alumni')"><subheading>Alumni</subheading></a></center></p>
                         <!-- <subsectionheading>
@@ -1011,6 +1015,10 @@ setTimeout(initNews, 100);
                           <li class="method-pill" data-value="Scene Analysis and Understanding">
                             <!-- 1 -->
                               <a>Scene Analysis and Understanding</a>
+                          </li>
+                          <li class="method-pill" data-value="Transfer/ Low-shot/ Continual/ Long-tail Learning">
+                            <!-- 1 -->
+                              <a>Transfer/ Low-shot/ Continual/ Long-tail Learning</a>
                           </li>
                       </ul>
                   </div>
@@ -1362,6 +1370,37 @@ setTimeout(initNews, 100);
                                 <p></p>
                                 <p>
                                   Voxify3D is introduced, a differentiable two-stage framework bridging 3D mesh optimization with 2D pixel art supervision that addresses fundamental challenges: semantic preservation under extreme discretization, pixel-art aesthetics through volumetric rendering, and end-to-end discrete optimization.
+                              </td>
+                            </tr>
+
+                            <tr bgcolor="#ffffff" class="publication paper-Image-and-Video-Synthesis-and-Generation paper-Transfer/-Low-shot/-Continual/-Long-tail-Learning">
+                              <td style="padding:20px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                  <div class="two"><img src='images/Huang2026GVA.jpg' width="160" alt="Description" style="margin-top: 0px;"></div>
+                                  <img src='images/Huang2026GVA.jpg' width="160" alt="Description" style="margin-top: 0px;">
+                                </div>
+                              </td>
+                              <td style="padding:20px;width:75%;vertical-align:middle">
+                                <a href="https://arxiv.org/abs/2506.04676">
+                                  <papertitle>Gen-n-Val: Agentic Image Data Generation and Validation</papertitle>
+                                </a>
+                                <br>
+                                <a href="https://angusbb.github.io/">Jing-En Huang</a>, 
+                                <a href="https://ishengfang.github.io/">I-Sheng Fang</a>, 
+                                Tzuhsuan Huang, 
+                                <strong>Yu-Lun Liu</strong>, 
+                                <a href="https://tom.ky/publication/">Chih-Yu Wang</a>, 
+                                <a href="https://homepage.citi.sinica.edu.tw/pages/pullpull/index_en.html">Jun-Cheng Chen</a>
+                                <br>
+                                <em>CVPR Findings</em>, 2026
+                                <img src="images/new_animated.gif"\>
+                                <br>
+                                <a href="https://arxiv.org/abs/2506.04676">arXiv</a>
+                                /
+                                <a href="https://github.com/aiiu-lab/Gen-n-Val">code</a>
+                                <p></p>
+                                <p>
+                                  Gen-n-Val, a novel agentic data generation framework that leverages Layer Diffusion, a Large Language Model (LLM), and a Vision Large Language Model (VLLM) to produce high-quality and diverse instance masks and images for object detection and instance segmentation, has scalability in model capacity and dataset size.
                               </td>
                             </tr>
 
@@ -1835,7 +1874,6 @@ setTimeout(initNews, 100);
                                 <a href="https://homes.cs.washington.edu/~curless/">Brian Curless</a>
                                 <br>
                                 <em>SIGGRAPH Asia</em>, 2025
-                                <img src="images/new_animated.gif"\>
                                 <br>
                                 <a href="https://priorenhancedgaussian.github.io/">project page</a>
                                 /
@@ -4166,7 +4204,7 @@ $(document).ready(function () {
     } else {
         $(".publication").hide();
         $(".year-group").hide(); // Hide all year groups initially
-        var selector = ".paper-" + topic.replace(/ /g, "-").replace(/[,:\(\)]/g, "").replaceAll("+", "");
+        var selector = ".paper-" + topic.replace(/ /g, "-").replace(/[,:\(\)]/g, "").replaceAll("+", "").replace(/\//g, "\\/");
         console.log("Selector:", selector);
         console.log("Matching elements:", $(selector).length);
         $(selector).each(function () {
