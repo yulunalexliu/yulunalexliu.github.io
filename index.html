@@ -1517,6 +1517,48 @@ setTimeout(initNews, 100);
                               </td>
                             </tr>
 
+                            <tr onmouseout="Hsiao2026VSE_stop()" onmouseover="Hsiao2026VSE_start()"  bgcolor="#ffffff" class="publication paper-Vision--Graphics paper-3D-from-Single-Images">
+                              <td style="padding:20px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                  <div class="two" id='Hsiao2026VSE_image'><video  width=100% height=100% muted autoplay loop>
+                                    <source src="images/Hsiao2026VSE.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                    </video></div>
+                                  <img src='images/Hsiao2026VSE.jpg' width="160" alt="Description" style="margin-top: 0px;">
+                                </div>
+                                <script type="text/javascript">
+                                  function Hsiao2026VSE_start() {
+                                    document.getElementById('Hsiao2026VSE_image').style.opacity = "1";
+                                  }
+
+                                  function Hsiao2026VSE_stop() {
+                                    document.getElementById('Hsiao2026VSE_image').style.opacity = "0";
+                                  }
+                                  Hsiao2026VSE_stop()
+                                </script>
+                              </td>
+                              <td style="padding:20px;width:75%;vertical-align:middle">
+                                <a href="https://arxiv.org/abs/2602.04349">
+                                  <papertitle>VecSet-Edit: Unleashing Pre-trained LRM for Mesh Editing from Single Image</papertitle>
+                                </a>
+                                <br>
+                                <a href="https://bluedyee.github.io/personal_website/">Teng-Fang Hsiao</a>, 
+                                Bo-Kai Ruan, 
+                                <strong>Yu-Lun Liu</strong>, 
+                                <a href="https://basiclab.lab.nycu.edu.tw/">Hong-Han Shuai</a>
+                                <br>
+                                <em>SIGGRAPH</em>, 2026
+                                <img src="images/new_animated.gif"\>
+                                <br>
+                                <a href="https://arxiv.org/abs/2602.04349">arXiv</a>
+                                /
+                                <a href="https://github.com/BlueDyee/VecSet-Edit/tree/main">code</a>
+                                <p></p>
+                                <p>
+                                  VecSet-Edit is proposed, the first pipeline that leverages the high-fidelity VecSet Large Reconstruction Model (LRM) as a backbone for mesh editing and introduces Mask-guided Token Seeding and Attention-aligned Token Gating strategies to precisely localize target regions using only 2D image conditions.
+                              </td>
+                            </tr>
+
                             <tr onmouseout="Huang2026GWR_stop()" onmouseover="Huang2026GWR_start()"  bgcolor="#ffffd0" class="publication paper-Vision--Graphics paper-Datasets-and-Evaluation paper-Image-and-Video-Synthesis-and-Generation paperhi">
                               <td style="padding:20px;width:25%;vertical-align:middle">
                                 <div class="one">
