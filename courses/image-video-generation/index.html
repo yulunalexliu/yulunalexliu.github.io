@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSIC30191: Image and Video Generations — NYCU, Fall 2026</title>
+<meta name="description" content="Graduate course on image and video synthesis and generation (diffusion models, flow matching, video generation) at National Yang Ming Chiao Tung University, taught by Yu-Lun Liu.">
+<meta property="og:title" content="CSIC30191: Image and Video Generations — NYCU">
+<meta property="og:description" content="Graduate course on image and video synthesis and generation at NYCU, taught by Yu-Lun Liu.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yulunalexliu.github.io/courses/image-video-generation/">
+<meta property="og:image" content="https://yulunalexliu.github.io/courses/image-video-generation/assets/theatre.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    html{scroll-behavior:smooth}
+    :root{
+      --hue:211;
+      --space-tiny:.25rem; --space-sm:clamp(.25rem,1vw,.5rem); --space:clamp(.5rem,2vw,1rem); --space-pad:clamp(1rem,4vw,2rem);
+      --radius-subtle:2.5px;
+      --color-fg-base:black; --color-bg-base:white;
+      --color-fg:hsl(var(--hue),25%,10%); --color-fg-2:hsl(var(--hue),10%,40%);
+      --color-bg:hsl(0,0%,98%); --color-bg-2:hsl(0,0%,93%); --color-bg-2-hover:hsl(var(--hue),50%,95%); --color-bg-3:hsl(0,0%,96%);
+      --color-hl:hsl(var(--hue),75%,40%);
+      --color-ui-border-strong:hsl(211,10%,88%); --color-ui-border-subtle:hsl(211,10%,85%);
+      --color-pill-red-fg:hsl(17,67%,40%); --color-pill-red-bg:hsl(17,67%,90%); --color-pill-red-bg-3:hsl(17,67%,96%);
+      --color-pill-green-fg:hsl(114,67%,40%); --color-pill-green-bg-3:hsl(114,67%,96%);
+      --color-pill-amber-fg:hsl(42,90%,30%); --color-pill-amber-bg:hsl(42,90%,85%); --color-pill-amber-bg-3:hsl(42,90%,94%);
+      --color-pill-purple-fg:hsl(268,55%,45%); --color-pill-purple-bg:hsl(268,55%,90%); --color-pill-purple-bg-3:hsl(268,55%,96%);
+    }
+    html[data-theme="dark"]{
+      --color-fg-base:white; --color-bg-base:black;
+      --color-fg:hsl(0,0%,90%); --color-fg-2:hsl(0,0%,70%);
+      --color-bg:black; --color-bg-2:hsl(0,0%,15%); --color-bg-2-hover:hsl(var(--hue),50%,8%); --color-bg-3:hsl(211,0%,6%);
+      --color-hl:hsl(var(--hue),100%,60%);
+      --color-ui-border-strong:hsl(211,10%,18%); --color-ui-border-subtle:hsl(211,10%,15%);
+      --color-pill-red-fg:hsl(17,67%,80%); --color-pill-red-bg:hsl(17,67%,30%); --color-pill-red-bg-3:hsl(17,67%,6%);
+      --color-pill-green-fg:hsl(114,67%,80%); --color-pill-green-bg-3:hsl(114,67%,6%);
+      --color-pill-amber-fg:hsl(42,85%,75%); --color-pill-amber-bg:hsl(42,85%,25%); --color-pill-amber-bg-3:hsl(42,85%,7%);
+      --color-pill-purple-fg:hsl(268,65%,80%); --color-pill-purple-bg:hsl(268,55%,32%); --color-pill-purple-bg-3:hsl(268,55%,8%);
+    }
+    body{margin:0;font-family:"Instrument Sans","Noto Sans TC",system-ui,sans-serif;line-height:1.375;color:var(--color-fg);background:var(--color-bg-3)}
+    a{color:inherit;text-decoration:none;transition:color .25s ease-out,border-color .25s ease-out,background-color .25s ease-out}
+    a:hover{color:var(--color-hl)}
+    sup{line-height:0}
+    #theme-toggle-label:after{content:"Dark Theme"}
+    html[data-theme="dark"] #theme-toggle-label:after{content:"Light Theme"}
+    html[data-theme="dark"] #cplab-logo,html[data-theme="dark"] .hdr-logo{filter:invert(1) hue-rotate(180deg)}
+  </style>
+  <script>
+    (function(){try{
+      var t=localStorage.getItem("ivg-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+      document.documentElement.setAttribute("data-theme",t);
+    }catch(e){}})();
+  </script>
+</helmet>
+<div style="display:flex;flex-direction:column;min-height:100vh;background:var(--color-bg-3)">
+
+  <header data-screen-label="Header" style="position:relative;z-index:1;display:flex;flex-flow:row wrap;justify-content:space-between;align-items:center;padding:var(--space) var(--space-pad);gap:var(--space-pad);background:var(--color-bg-3);border-bottom:1px solid var(--color-ui-border-strong)">
+    <a href="https://yulunalexliu.github.io/" style="display:flex;flex-direction:row;align-items:center;max-height:55px;overflow:visible;color:var(--color-fg-base)" style-hover="color:var(--color-fg-base)">
+      <img id="cplab-logo" src="assets/cplab-logo.png" alt="NYCU Computational Photography Laboratory" style="height:clamp(44px,6vw,55px);width:auto;display:block">
+    </a>
+    <div style="margin-left:auto;display:flex;flex-direction:row;gap:var(--space);align-items:center;justify-content:flex-end;user-select:none">
+      <a href="https://www.nycu.edu.tw" title="National Yang Ming Chiao Tung University" style="display:flex;align-items:center">
+        <img class="hdr-logo" src="assets/nycu-emblem.png" alt="NYCU" style="height:clamp(34px,5vw,46px);width:auto;display:block">
+      </a>
+      <a href="https://www.cs.nycu.edu.tw/" title="NYCU Department of Computer Science" style="display:flex;align-items:center">
+        <img class="hdr-logo" src="assets/nycu-cs-emblem.png" alt="NYCU Computer Science" style="height:clamp(38px,5.5vw,50px);width:auto;display:block">
+      </a>
+    </div>
+  </header>
+
+  <div style="display:flex;flex-flow:row nowrap;flex-grow:1">
+    <aside style="display:flex;width:min-content;justify-content:center;border-right:1px solid var(--color-ui-border-strong);white-space:nowrap">
+      <ol style="display:flex;flex-wrap:nowrap;align-self:flex-start;position:sticky;top:var(--space-pad);margin:var(--space-pad) 0;padding:0 var(--space);writing-mode:vertical-rl;font-size:1.3125rem;list-style:none">
+        <li style="display:inline-block">Image and Video Generations <span style="font-size:85%;font-weight:400;color:var(--color-fg-2);margin-inline:var(--space-sm)">影像與視訊生成</span> <span style="display:inline-block;border:1px solid var(--color-ui-border-strong);background:var(--color-bg-2);padding:.0625em .5em;border-radius:var(--radius-subtle);text-transform:capitalize;font-size:.75rem">fall 2026</span></li>
+      </ol>
+    </aside>
+
+    <main id="main-content" style="flex-grow:1;min-width:0;background:var(--color-bg)">
+
+      <section id="course-title" data-screen-label="Course hero" style="padding:var(--space-pad);background-color:#0b0805;background-image:linear-gradient(rgba(5,4,2,.45),rgba(5,4,2,.25)),url('assets/theatre.jpg');background-size:cover;background-position:center 30%;border-bottom:1px solid var(--color-ui-border-strong)">
+        <h1 style="margin:0 0 var(--space);display:flex;flex-direction:column;gap:.375rem;color:#fff;text-shadow:0 1px 16px rgba(0,0,0,.55)">
+          <span style="font-size:clamp(1rem,2.2vw,1.4375rem);font-weight:600;letter-spacing:.35em">影像與視訊生成</span>
+          <span style="font-size:clamp(1.875rem,4.5vw,3.25rem);font-weight:700;line-height:1.05;max-width:16ch;text-wrap:balance">Image and Video Generations</span>
+          <span style="font-size:clamp(.8125rem,1.5vw,.9375rem);font-weight:400;color:rgba(255,255,255,.85)">劉育綸 Yu-Lun (Alex) Liu &middot; National Yang Ming Chiao Tung University</span>
+        </h1>
+        <ul style="display:flex;flex-wrap:wrap;gap:var(--space);list-style:none;margin:0;padding:0">
+          <li style="display:flex;border-radius:var(--radius-subtle);border:1px solid var(--color-ui-border-subtle);background:color-mix(in srgb,var(--color-bg-base),transparent 50%);backdrop-filter:blur(4px);transition:background-color .25s ease-out,border-color .25s ease-out" style-hover="background:var(--color-bg-2-hover);border-color:var(--color-hl)"><a href="#details" style="width:100%;padding:.5em 1em" style-hover="color:var(--color-fg)">Details</a></li>
+          <li style="display:flex;border-radius:var(--radius-subtle);border:1px solid var(--color-ui-border-subtle);background:color-mix(in srgb,var(--color-bg-base),transparent 50%);backdrop-filter:blur(4px);transition:background-color .25s ease-out,border-color .25s ease-out" style-hover="background:var(--color-bg-2-hover);border-color:var(--color-hl)"><a href="#syllabus" style="width:100%;padding:.5em 1em" style-hover="color:var(--color-fg)">Syllabus</a></li>
+          <li style="display:flex;border-radius:var(--radius-subtle);border:1px solid var(--color-ui-border-subtle);background:color-mix(in srgb,var(--color-bg-base),transparent 50%);backdrop-filter:blur(4px);transition:background-color .25s ease-out,border-color .25s ease-out" style-hover="background:var(--color-bg-2-hover);border-color:var(--color-hl)"><a href="#resources" style="width:100%;padding:.5em 1em" style-hover="color:var(--color-fg)">Resources</a></li>
+          <li style="display:flex;border-radius:var(--radius-subtle);border:1px solid var(--color-ui-border-subtle);background:color-mix(in srgb,var(--color-bg-base),transparent 50%);backdrop-filter:blur(4px);transition:background-color .25s ease-out,border-color .25s ease-out" style-hover="background:var(--color-bg-2-hover);border-color:var(--color-hl)"><a href="https://e3.nycu.edu.tw" target="_blank" style="width:100%;padding:.5em 1em" style-hover="color:var(--color-fg)">E3</a></li>
+          <li style="display:flex;border-radius:var(--radius-subtle);border:1px solid var(--color-ui-border-subtle);background:color-mix(in srgb,var(--color-bg-base),transparent 50%);backdrop-filter:blur(4px);transition:background-color .25s ease-out,border-color .25s ease-out" style-hover="background:var(--color-bg-2-hover);border-color:var(--color-hl)"><a href="https://yulunalexliu.github.io/" target="_blank" style="width:100%;padding:.5em 1em" style-hover="color:var(--color-fg)">Instructor</a></li>
+        </ul>
+      </section>
+
+      <section id="details" data-screen-label="Details" style="padding:var(--space-pad);border-bottom:1px solid var(--color-ui-border-strong);display:grid;grid-template-columns:1fr 1fr;grid-auto-flow:dense;gap:var(--space-pad)">
+        <div id="course-contents" style="display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
+          <h3 style="margin:0;padding:0 0 .25em;font-size:1.3125rem;font-weight:600">Course Contents</h3>
+          <p style="margin:0;max-width:65ch;text-wrap:pretty">In this course, we will discuss diffusion models, covering both their theoretical foundations and practical applications.</p>
+          <p style="margin:0;max-width:65ch;text-wrap:pretty">Topics include:</p>
+          <ul style="margin:0;padding-left:1.75em;list-style:square;max-width:65ch">
+            <li>Background of Generative Models</li>
+            <li>DDPM / DDIM / Score-Based Models</li>
+            <li>CFG / Latent Diffusion</li>
+            <li>Conditional Generation</li>
+            <li>Stylization / Personalization</li>
+            <li>Inverse Problem</li>
+            <li>Knowledge Distillation</li>
+            <li>Diffusion Synchronization</li>
+            <li>SDE / ODE Solvers</li>
+            <li>Consistency Models / Flow-Based Models</li>
+            <li>DiT / Applications / Future of Generative Models</li>
+          </ul>
+          <figure style="margin:var(--space-tiny) 0 0;width:100%">
+            <img src="assets/fig-diffusion-strip.jpg" alt="Reverse diffusion: from pure noise to a clean image" style="display:block;width:100%;height:auto;border:1px solid var(--color-ui-border-subtle);border-radius:var(--radius-subtle)">
+            <figcaption style="margin-top:var(--space-tiny);font-size:.875rem;color:var(--color-fg-2)">反向擴散過程：從純雜訊逐步去噪成影像</figcaption>
+          </figure>
+        </div>
+        <div id="prerequisites" style="display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
+          <h3 style="margin:0;padding:0 0 .25em;font-size:1.3125rem;font-weight:600">Prerequisites</h3>
+          <p style="margin:0;max-width:65ch">Background in machine learning / deep learning. We'll specifically focus on diffusion models (while briefly discussing the background of generative models).</p>
+          <p style="margin:0;max-width:65ch">Experience with neural network implementation. There will be programming assignments and a final project &mdash; you'll need basic programming skills in Python and PyTorch to complete them.</p>
+          <p style="margin:0;max-width:65ch">Recommended prior courses: <strong style="color:var(--color-fg-base)">線性代數、機率、微分方程、深度學習 + 深度學習實驗</strong>.</p>
+        </div>
+        <div id="lectures" style="display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
+          <h3 style="margin:0;padding:0 0 .25em;font-size:1.3125rem;font-weight:600">Lectures</h3>
+          <table style="border-collapse:collapse">
+            <tbody>
+              <tr><td style="vertical-align:top;padding:.25em var(--space) .25em 0"><strong style="color:var(--color-fg-base)">Thursday</strong></td><td style="vertical-align:top;padding:.25em 0">100 mins in-person lecture</td></tr>
+              <tr><td style="vertical-align:top;padding:.25em var(--space) .25em 0"><strong style="color:var(--color-fg-base)">Online</strong></td><td style="vertical-align:top;padding:.25em 0">50 mins recorded video</td></tr>
+            </tbody>
+          </table>
+          <p style="margin:0;max-width:65ch">2026 年課程直接沿用 <a href="https://www.youtube.com/watch?v=BEZ-t_PdnVM&amp;list=PLjlJOtsjnNKlJjbG-h3w93fMbVvdV4_cx" target="_blank" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span>2025 年的課程錄影</a>，並新增部分內容。</p>
+          <p style="margin:0;max-width:65ch">本課程內容 adapted from KAIST 的兩門課程：<a href="https://mhsung.github.io/kaist-cs492d-fall-2024/" target="_blank" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span>CS492(D): Diffusion Models and Their Applications（Fall 2024）</a> 與 <a href="https://diffusion.kaist.ac.kr/" target="_blank" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span>Diffusion Models and Their Applications（diffusion.kaist.ac.kr）</a>，並已取得 Prof. Minhyuk Sung 的授權。</p>
+        </div>
+        <div id="grading-policy" style="display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
+          <h3 style="margin:0;padding:0 0 .25em;font-size:1.3125rem;font-weight:600">Grading Policy</h3>
+          <table style="border-collapse:collapse">
+            <tbody>
+              <tr>
+                <td style="vertical-align:top;padding:.25em var(--space) .25em 0;font-variant-numeric:tabular-nums">40%</td>
+                <td style="vertical-align:top;padding:.25em 0"><strong style="color:var(--color-fg-base)">Programming Assignments</strong><br><span style="font-size:.875rem;color:var(--color-fg-2)">4 assignments, 10% each &mdash; see <a href="#assignments" style="border-bottom:1px solid var(--color-hl)">Programming Assignments</a> and the <a href="#ai-policy" style="border-bottom:1px solid var(--color-hl)">AI Coding Assistant Tool Policy</a>.</span></td>
+              </tr>
+              <tr>
+                <td style="vertical-align:top;padding:.25em var(--space) .25em 0;font-variant-numeric:tabular-nums">15%</td>
+                <td style="vertical-align:top;padding:.25em 0"><strong style="color:var(--color-fg-base)">Paper Presentation</strong><br><span style="font-size:.875rem;color:var(--color-fg-2)">10% Hacker's Deliverables (code, demo, presentation) &middot; 5% 問問題</span></td>
+              </tr>
+              <tr>
+                <td style="vertical-align:top;padding:.25em var(--space) .25em 0;font-variant-numeric:tabular-nums">40%</td>
+                <td style="vertical-align:top;padding:.25em 0"><strong style="color:var(--color-fg-base)">Final Project</strong><br><span style="font-size:.875rem;color:var(--color-fg-2)">10% Proposal Presentation &middot; 15% Oral &amp; Demo Presentation &middot; 10% Final Report (4 pages in CVPR LaTeX format) &middot; 5% 問問題</span></td>
+              </tr>
+              <tr>
+                <td style="vertical-align:top;padding:.25em var(--space) .25em 0;font-variant-numeric:tabular-nums">5%</td>
+                <td style="vertical-align:top;padding:.25em 0"><strong style="color:var(--color-fg-base)">Participation in Guest Lectures</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="assignments" style="display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
+          <h3 style="margin:0;padding:0 0 .25em;font-size:1.3125rem;font-weight:600">Programming Assignments</h3>
+          <ul style="margin:0;padding-left:1.75em;list-style:square;max-width:65ch">
+            <li>Assignment 1 (DDPM)</li>
+            <li>Assignment 2 (DDIM &amp; LoRA)</li>
+            <li>Assignment 3 (Distillation)</li>
+            <li>Assignment 4 (Flow Matching)</li>
+          </ul>
+          <p style="margin:0;max-width:65ch">Each programming assignment is due <strong style="color:var(--color-fg-base)">two weeks after the assignment session</strong>. Submit your solutions on E3.</p>
+          <p style="margin:0;max-width:65ch">No late submissions allowed. I.e., you will get <strong style="color:var(--color-fg-base)">zero credit</strong> even with only 1 minute late submitting deliverables on E3.</p>
+          <p style="margin:0;max-width:65ch">Start the programming assignments as early as possible!</p>
+          <div style="width:100%;display:grid;grid-template-columns:1fr 1fr;gap:var(--space);margin-top:var(--space-tiny)">
+            <figure style="margin:0">
+              <img src="assets/fig-a1-ddpm.png" alt="DDPM generated animal faces" style="display:block;width:100%;height:auto;border:1px solid var(--color-ui-border-subtle);border-radius:var(--radius-subtle)">
+              <figcaption style="margin-top:var(--space-tiny);font-size:.875rem;color:var(--color-fg-2)">Assignment 1（DDPM）</figcaption>
+            </figure>
+            <figure style="margin:0">
+              <img src="assets/fig-a2-lora.png" alt="DDIM and LoRA personalization examples" style="display:block;width:100%;height:auto;border:1px solid var(--color-ui-border-subtle);border-radius:var(--radius-subtle)">
+              <figcaption style="margin-top:var(--space-tiny);font-size:.875rem;color:var(--color-fg-2)">Assignment 2（DDIM &amp; LoRA）</figcaption>
+            </figure>
+            <figure style="margin:0">
+              <img src="assets/fig-a3-distill.png" alt="Distilled text-to-image generation samples" style="display:block;width:100%;height:auto;border:1px solid var(--color-ui-border-subtle);border-radius:var(--radius-subtle)">
+              <figcaption style="margin-top:var(--space-tiny);font-size:.875rem;color:var(--color-fg-2)">Assignment 3（Distillation）</figcaption>
+            </figure>
+            <figure style="margin:0">
+              <img src="assets/fig-a4-flow.png" alt="Diffusion versus optimal transport trajectories" style="display:block;width:100%;height:auto;border:1px solid var(--color-ui-border-subtle);border-radius:var(--radius-subtle)">
+              <figcaption style="margin-top:var(--space-tiny);font-size:.875rem;color:var(--color-fg-2)">Assignment 4（Flow Matching）</figcaption>
+            </figure>
+          </div>
+          <p style="margin:0;max-width:65ch;font-size:.875rem;color:var(--color-fg-2)">出題助教：<a href="https://yichuanh.github.io/" target="_blank" style="border-bottom:1px solid var(--color-hl)">黃怡川</a>、<a href="https://jayinnn.dev/" target="_blank" style="border-bottom:1px solid var(--color-hl)">李杰穎</a>、陳映寰、<a href="https://www.linkedin.com/in/sianglinzhang/" target="_blank" style="border-bottom:1px solid var(--color-hl)">張欀齡</a>、<a href="https://www.linkedin.com/in/huaish/" target="_blank" style="border-bottom:1px solid var(--color-hl)">鄭淮薰</a>、<a href="https://hentci.github.io/" target="_blank" style="border-bottom:1px solid var(--color-hl)">柯柏旭</a></p>
+        </div>
+        <div id="paper-presentation" style="grid-column:1/-1;display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
+          <h3 style="margin:0;padding:0 0 .25em;font-size:1.3125rem;font-weight:600">Paper Presentation</h3>
+          <ul style="margin:0;padding-left:1.75em;list-style:square;max-width:65ch">
+            <li>每組<strong style="color:var(--color-fg-base)">四位學生</strong>（請現在就開始找組員！）</li>
+            <li>報告的組別：報告近三年發表於 CVPR / ICCV / ECCV / NeurIPS / ICLR / ICML / SIGGRAPH / SIGGRAPH Asia main conference 的論文</li>
+            <li>根據你報告的好壞給予評分（總成績 5%）＋ Hacker's Deliverables（總成績 5%）</li>
+            <li>其他所有組別：問問題 &mdash; 在 presentation 中間或結束後皆可發問，每個 presentation 選出最 insightful 的問題加分（每次總成績 1%）</li>
+          </ul>
+          <p style="margin:0;max-width:65ch">報告的組別必須扮演一個需要盡快展示這篇論文的<strong style="color:var(--color-fg-base)">駭客</strong>：在你自己的資料／任務上展示這篇論文的結果、準備與班上同學分享演算法的核心程式碼並展示你的實作、展示 code diff 或說明安裝環境踩到的坑 &mdash; 不要只是下載並執行現有的實作。</p>
+          <div style="width:100%;display:flex;flex-wrap:wrap;gap:var(--space);align-items:flex-start;margin-top:var(--space-tiny)">
+          <figure style="margin:0;flex:0 1 210px;min-width:170px">
+            <img src="assets/fig-hacker.jpg" alt="Hacker illustration for the paper presentation role" style="display:block;width:100%;height:auto;border:1px solid var(--color-ui-border-subtle);border-radius:var(--radius-subtle)">
+            <figcaption style="margin-top:var(--space-tiny);font-size:.875rem;color:var(--color-fg-2)">扮演駭客：在自己的資料／任務上展示論文的核心實作與 demo。Credit: <a href="https://courses.grainger.illinois.edu/cs598shw/fa2024/" style="border-bottom:1px solid var(--color-hl)">Shenlong Wang, UIUC CS 598 3D Vision</a></figcaption>
+          </figure>
+          <div style="flex:1 1 340px;min-width:300px;display:flex;flex-direction:column;gap:var(--space-tiny)">
+            <h4 style="margin:0;font-size:1rem;font-weight:600">Hacker 怎麼做</h4>
+            <div style="border:1px solid var(--color-ui-border-subtle);border-radius:var(--radius-subtle);overflow:hidden;display:grid;grid-template-columns:96px 1fr">
+              <div style="background:var(--color-pill-red-bg-3);border-bottom:1px solid var(--color-ui-border-subtle);padding:.5em .25em .5em .75em;display:flex;align-items:flex-start"><img src="assets/drake-no.jpg" alt="" style="width:88px;height:88px;display:block;border-radius:var(--radius-subtle)"></div>
+              <div style="display:flex;gap:.625rem;align-items:center;padding:.5em .75em;background:var(--color-pill-red-bg-3);color:var(--color-pill-red-fg);border-bottom:1px solid var(--color-ui-border-subtle)"><span style="font-weight:700">✗</span><span>把公開的 GitHub repo 的 README 跑完，展示 paper 上就有的結果</span></div>
+              <div style="background:var(--color-pill-green-bg-3);padding:.5em .25em .5em .75em;display:flex;align-items:flex-start"><img src="assets/drake-yes.jpg" alt="" style="width:88px;height:88px;display:block;border-radius:var(--radius-subtle)"></div>
+              <div style="display:flex;flex-direction:column;background:var(--color-pill-green-bg-3);color:var(--color-pill-green-fg)">
+                <div style="display:flex;gap:.625rem;padding:.5em .75em 0"><span style="font-weight:700">✓</span><span>用自己的資料 / prompt 去跑</span></div>
+                <div style="display:flex;gap:.625rem;padding:.25em .75em 0"><span style="font-weight:700">✓</span><span>稍微改一點點 code 讓 visualization 更好看</span></div>
+                <div style="display:flex;gap:.625rem;padding:.25em .75em 0"><span style="font-weight:700">✓</span><span>搭配論文內容講解對應的程式碼區塊</span></div>
+                <div style="display:flex;gap:.625rem;padding:.25em .75em .5em"><span style="font-weight:700">✓</span><span>展示 code diff 或說明安裝環境踩到的坑</span></div>
+              </div>
+            </div>
+          </div>
+          <div style="flex:1 1 340px;min-width:300px;display:flex;flex-direction:column;gap:var(--space-tiny)">
+            <h4 style="margin:0;font-size:1rem;font-weight:600">其他組別怎麼問問題</h4>
+            <div style="border:1px solid var(--color-ui-border-subtle);border-radius:var(--radius-subtle);overflow:hidden;display:grid;grid-template-columns:96px 1fr">
+              <div style="background:var(--color-pill-red-bg-3);border-bottom:1px solid var(--color-ui-border-subtle);padding:.5em .25em .5em .75em;display:flex;align-items:flex-start"><img src="assets/drake-no.jpg" alt="" style="width:88px;height:88px;display:block;border-radius:var(--radius-subtle)"></div>
+              <div style="display:flex;gap:.625rem;align-items:center;padding:.5em .75em;background:var(--color-pill-red-bg-3);color:var(--color-pill-red-fg);border-bottom:1px solid var(--color-ui-border-subtle)"><span style="font-weight:700">✗</span><span>不著邊際非常飄渺的問題：「這篇 paper 的東西能用在 video 上嗎？」</span></div>
+              <div style="background:var(--color-pill-green-bg-3);padding:.5em .25em .5em .75em;display:flex;align-items:flex-start"><img src="assets/drake-yes.jpg" alt="" style="width:88px;height:88px;display:block;border-radius:var(--radius-subtle)"></div>
+              <div style="display:flex;flex-direction:column;background:var(--color-pill-green-bg-3);color:var(--color-pill-green-fg)">
+                <div style="display:flex;gap:.625rem;padding:.5em .75em 0"><span style="font-weight:700">✓</span><span>「為什麼不用 X，要這麼複雜？好處是 Y 嗎？」</span></div>
+                <div style="display:flex;gap:.625rem;padding:.25em .75em 0"><span style="font-weight:700">✓</span><span>「用 Z 演算法以及 A 改動，就可以 training-free 了嗎？」</span></div>
+                <div style="display:flex;gap:.625rem;padding:.25em .75em .5em"><span style="font-weight:700">✓</span><span>「這樣做會有 B 的問題，也許可以使用 C 方法解決，因為…」</span></div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div id="final-project" style="display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
+          <h3 style="margin:0;padding:0 0 .25em;font-size:1.3125rem;font-weight:600">Final Project</h3>
+          <p style="margin:0;max-width:65ch">每組四位學生（與 Paper Presentation 組別相同），三種選項：</p>
+          <ul style="margin:0;padding-left:1.75em;list-style:square;max-width:65ch">
+            <li><strong style="color:var(--color-fg-base)">[量變]</strong> 改善現有論文的演算法（生成品質、速度等等）</li>
+            <li><strong style="color:var(--color-fg-base)">[質變]</strong> 創意開發新應用或演算法（影像 &rarr; 視訊、training &rarr; zero-shot）</li>
+            <li><strong style="color:var(--color-fg-base)">[復現]</strong> Re-implement 近五年任何一篇沒有公開程式碼的頂尖會議論文</li>
+          </ul>
+          <p style="margin:0;max-width:65ch">Oral Presentation 根據創意／實用度／完整度／報告的好壞等等給予評分（總成績 15%）；其他所有組別扮演 reviewer 問問題，最 insightful 的問題加分（每次總成績 1%）。</p>
+          <p style="margin:0;max-width:65ch">Final Report 為四頁的 paper in CVPR LaTeX format：Title, Abstract, Introduction, Related Work, Method, Experiments, Conclusion, References.</p>
+          <figure style="margin:var(--space-tiny) 0 0;width:100%">
+            <img src="assets/fig-paper.png" alt="Example four-page research paper in CVPR LaTeX format" style="display:block;width:100%;height:auto">
+            <figcaption style="margin-top:var(--space-tiny);font-size:.875rem;color:var(--color-fg-2)">CVPR LaTeX 格式論文範例</figcaption>
+          </figure>
+        </div>
+        <div id="guest-lectures" style="display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
+          <h3 style="margin:0;padding:0 0 .25em;font-size:1.3125rem;font-weight:600">Guest Lectures</h3>
+          <table style="border-collapse:collapse">
+            <tbody>
+              <tr><td style="vertical-align:top;padding:.25em var(--space) .25em 0"><a href="https://koi953215.github.io/" target="_blank" style="border-bottom:1px solid var(--color-hl)"><strong style="color:var(--color-fg-base)">Ting-Hsuan Chen</strong></a><br><span style="font-size:.875rem;color:var(--color-fg-2)">CS PhD student @ USC</span></td><td style="vertical-align:top;padding:.25em 0">TBA</td></tr>
+              <tr><td style="vertical-align:top;padding:.25em var(--space) .25em 0"><a href="https://yaochih.github.io/" target="_blank" style="border-bottom:1px solid var(--color-hl)"><strong style="color:var(--color-fg-base)">Yao-Chih Lee</strong></a><br><span style="font-size:.875rem;color:var(--color-fg-2)">CS PhD student @ University of Maryland</span></td><td style="vertical-align:top;padding:.25em 0">TBA</td></tr>
+            </tbody>
+          </table>
+          <p style="margin:0;max-width:65ch">Participation in guest lectures counts for 5% of the final grade.</p>
+        </div>
+        <div id="instructor" style="display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
+          <h3 style="margin:0;padding:0 0 .25em;font-size:1.3125rem;font-weight:600">Instructor</h3>
+          <p style="margin:0;max-width:65ch"><strong style="color:var(--color-fg-base)">劉育綸 Yu-Lun (Alex) Liu</strong><br>Assistant Professor in the Department of Computer Science.</p>
+          <table style="border-collapse:collapse">
+            <tbody>
+              <tr><td style="vertical-align:top;padding:.25em var(--space) .25em 0"><strong style="color:var(--color-fg-base)">Homepage</strong></td><td style="vertical-align:top;padding:.25em 0"><a href="https://yulunalexliu.github.io/" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span>yulunalexliu.github.io</a></td></tr>
+              <tr><td style="vertical-align:top;padding:.25em var(--space) .25em 0"><strong style="color:var(--color-fg-base)">Office</strong></td><td style="vertical-align:top;padding:.25em 0">EC713</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="tas" style="display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
+          <h3 style="margin:0;padding:0 0 .25em;font-size:1.3125rem;font-weight:600">Teaching Assistants</h3>
+          <table style="border-collapse:collapse">
+            <tbody>
+              <tr><td style="vertical-align:top;padding:.25em var(--space) .25em 0"><strong style="color:var(--color-fg-base)">劉珆睿</strong> <span style="font-size:.875rem;color:var(--color-fg-2)">資科工所博一</span></td><td style="vertical-align:top;padding:.25em 0"><a href="mailto:ray5233512.cs15@nycu.edu.tw" style="border-bottom:1px solid var(--color-hl)">ray5233512.cs15@nycu.edu.tw</a></td></tr>
+              <tr><td style="vertical-align:top;padding:.25em var(--space) .25em 0"><strong style="color:var(--color-fg-base)">俞柏帆</strong> <span style="font-size:.875rem;color:var(--color-fg-2)">資科工所碩二</span></td><td style="vertical-align:top;padding:.25em 0"><a href="mailto:bamboofan.cs14@nycu.edu.tw" style="border-bottom:1px solid var(--color-hl)">bamboofan.cs14@nycu.edu.tw</a></td></tr>
+              <tr><td style="vertical-align:top;padding:.25em var(--space) .25em 0"><strong style="color:var(--color-fg-base)">黃靖恩</strong> <span style="font-size:.875rem;color:var(--color-fg-2)">數據所碩二</span></td><td style="vertical-align:top;padding:.25em 0"><a href="mailto:jingenhuang.cs14@nycu.edu.tw" style="border-bottom:1px solid var(--color-hl)">jingenhuang.cs14@nycu.edu.tw</a></td></tr>
+              <tr><td style="vertical-align:top;padding:.25em var(--space) .25em 0"><strong style="color:var(--color-fg-base)">司徒立中</strong> <span style="font-size:.875rem;color:var(--color-fg-2)">資科工所碩一</span></td><td style="vertical-align:top;padding:.25em 0"><a href="mailto:sytwu.cs15@nycu.edu.tw" style="border-bottom:1px solid var(--color-hl)">sytwu.cs15@nycu.edu.tw</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="ai-policy" style="display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
+          <h3 style="margin:0;padding:0 0 .25em;font-size:1.3125rem;font-weight:600">AI Coding Assistant Tool Policy</h3>
+          <p style="margin:0;max-width:65ch">你可以在 programming assignments 和 final project 中使用 AI coding tools，例如 ChatGPT、Copilot 以及 coding agents（Claude Code、Codex、Gemini CLI 等）。</p>
+          <p style="margin:0;max-width:65ch">但直接抄網路上或別人的程式碼仍然是<strong style="color:var(--color-fg-base)">嚴格禁止</strong>的 &mdash; 學期成績零分，並向學校報告。</p>
+        </div>
+        <div id="plagiarism" style="display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
+          <h3 style="margin:0;padding:0 0 .25em;font-size:1.3125rem;font-weight:600">Plagiarism</h3>
+          <p style="margin:0;max-width:65ch">我們將使用 <a href="https://www.turnitin.tw/" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span>Turnitin</a> 與 <a href="https://theory.stanford.edu/~aiken/moss/" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span>Moss</a> 來比對原創性檢測與遏止抄襲。</p>
+        </div>
+        <div id="computing" style="display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
+          <h3 style="margin:0;padding:0 0 .25em;font-size:1.3125rem;font-weight:600">Computing Resource</h3>
+          <p style="margin:0;max-width:65ch">本課程<strong style="color:var(--color-fg-base)">不提供</strong>任何運算資源，請使用個人／實驗室／付費雲端資源完成 programming assignments 與 final project。</p>
+          <p style="margin:0;max-width:65ch">你會需要至少一張有 <strong style="color:var(--color-fg-base)">12 GB VRAM 的 NVIDIA GPU</strong>。</p>
+        </div>
+      </section>
+
+      <section id="syllabus" data-screen-label="Syllabus" style="padding:var(--space-pad);border-bottom:1px solid var(--color-ui-border-strong)">
+        <h2 style="margin:0;padding:0 0 var(--space-tiny);font-size:1.5rem;font-weight:600">Syllabus <span style="font-size:.875rem;font-weight:400;color:var(--color-fg-2)">(tentative)</span></h2>
+        <p style="margin:0 0 var(--space);max-width:75ch;color:var(--color-fg-2)">2026 年課程直接沿用 2025 年的課程錄影（見 <strong style="color:var(--color-fg-base)">2025</strong> 欄），並於部分週次新增內容；新增部分將另行公告（見 <strong style="color:var(--color-fg-base)">2026</strong> 欄）。主題列表中的<strong style="color:var(--color-fg-base)">粗體項目</strong>為本學期新增的內容。</p>
+        <div style="display:grid;grid-template-columns:24% minmax(0,1fr) max-content max-content;width:100%">
+          <div style="grid-column:1/3;border-bottom:2px solid var(--color-ui-border-strong)"></div>
+          <div style="padding:var(--space-sm);border-bottom:2px solid var(--color-ui-border-strong);font-weight:600;white-space:nowrap">2025 <span style="font-weight:400;font-size:.8125rem;color:var(--color-fg-2)">錄影・教材</span></div>
+          <div style="padding:var(--space-sm);border-bottom:2px solid var(--color-ui-border-strong);font-weight:600;white-space:nowrap">2026 <span style="font-weight:400;font-size:.8125rem;color:var(--color-fg-2)">本學期</span></div>
+          <sc-for list="{{ rows }}" as="r" hint-placeholder-count="6">
+            <sc-if value="{{ r.module }}" hint-placeholder-val="{{ false }}">
+              <div style="grid-column:1/-1;padding:var(--space-pad) 0 var(--space-sm);border-bottom:3px solid var(--color-hl)">
+                <h3 style="margin:0;padding:.25em 0;display:flex;column-gap:var(--space-sm);font-size:1.3125rem;font-weight:600"><span style="font-weight:400;color:var(--color-fg-2);white-space:nowrap">{{ r.sub }}</span><span>{{ r.title }}</span></h3>
+              </div>
+            </sc-if>
+            <sc-if value="{{ r.lec }}" hint-placeholder-val="{{ false }}">
+              <div style="grid-column:1/-1;display:grid;grid-template-columns:subgrid;background-color:{{ r.bg }};opacity:{{ r.op }}">
+                <div style="vertical-align:top;padding:var(--space-sm) var(--space-sm) var(--space-sm) 0;border-bottom:2px solid var(--color-ui-border-strong)">
+                  <h4 style="margin:0;font-size:1rem;font-weight:600">{{ r.title }}</h4>
+                  <div style="font-weight:400;font-size:.875rem;color:var(--color-fg-2)">{{ r.week }}</div>
+                  <sc-if value="{{ r.kind }}" hint-placeholder-val="{{ false }}">
+                    <div style="margin-top:var(--space-tiny)"><span style="display:inline-block;color:{{ r.kindFg }};background-color:{{ r.kindBg }};padding:.125rem .5rem;border-radius:1rem;text-transform:uppercase;font-size:.6875rem;font-weight:600">{{ r.kind }}</span></div>
+                  </sc-if>
+                </div>
+                <div style="padding:var(--space-sm);border-bottom:2px solid var(--color-ui-border-strong)">
+                  <sc-if value="{{ r.hasTopics }}" hint-placeholder-val="{{ false }}">
+                    <ul style="margin:0;padding-left:1.75em;list-style:square">
+                      <sc-for list="{{ r.topics }}" as="t" hint-placeholder-count="0"><li style="max-width:48ch;overflow-wrap:anywhere;font-weight:{{ t.fw }};color:{{ t.col }};list-style-type:{{ t.ls }};margin-left:{{ t.ml }}">{{ t.text }}</li></sc-for>
+                    </ul>
+                  </sc-if>
+                  <sc-if value="{{ r.note }}" hint-placeholder-val="{{ false }}">
+                    <p style="margin:var(--space-tiny) 0 0;font-size:.875rem;color:var(--color-fg-2)">{{ r.note }}</p>
+                  </sc-if>
+                </div>
+                <div style="padding:var(--space-sm);border-bottom:2px solid var(--color-ui-border-strong)">
+                  <sc-if value="{{ r.g25 }}" hint-placeholder-val="{{ false }}">
+                    <div style="font-size:.875rem;color:var(--color-fg-2);margin-top:var(--space-tiny);max-width:24ch;white-space:normal">{{ r.g25 }}</div>
+                  </sc-if>
+                  <sc-if value="{{ r.r25 }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:flex;flex-direction:column;gap:var(--space-sm);margin-top:var(--space-sm);align-items:flex-start">
+                      <sc-for list="{{ r.recs }}" as="rc" hint-placeholder-count="0">
+                      <div style="display:inline-flex;border-radius:var(--radius-subtle);border:1px solid var(--color-ui-border-subtle);background:var(--color-bg-2);transition:background-color .25s ease-out,border-color .25s ease-out" style-hover="background:var(--color-bg-2-hover);border-color:var(--color-hl)">
+                        <a href="{{ rc.url }}" target="_blank" style="display:inline-flex;align-items:center;padding:.5em 1em" style-hover="color:var(--color-fg)"><span>{{ rc.label }}</span><svg width="1em" height="1em" viewBox="0 0 24 24" style="margin-left:var(--space-tiny)" aria-hidden="true"><path fill="currentColor" d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v1c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-1h5c1.1 0 1.99-.9 1.99-2L23 5a2 2 0 0 0-2-2m-1 14H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h16c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1m-5.52-5.13-3.98 2.28c-.67.38-1.5-.11-1.5-.87V8.72c0-.77.83-1.25 1.5-.87l3.98 2.28c.67.39.67 1.35 0 1.74"></path></svg></a>
+                      </div>
+                      </sc-for>
+                      <sc-if value="{{ r.sl25 }}" hint-placeholder-val="{{ false }}">
+                        <div style="display:inline-flex;border-radius:var(--radius-subtle);border:1px solid var(--color-ui-border-subtle);background:var(--color-bg-2);transition:background-color .25s ease-out,border-color .25s ease-out" style-hover="background:var(--color-bg-2-hover);border-color:var(--color-hl)">
+                          <a href="https://e3.nycu.edu.tw" target="_blank" style="display:inline-flex;align-items:center;padding:.5em 1em" style-hover="color:var(--color-fg)"><span>Slides</span><svg width="0.85em" height="1em" viewBox="0 0 434 512" style="margin-left:var(--space-tiny)" aria-hidden="true"><path fill="currentColor" d="M0 270.382h433.607c-.993 11.851-6.983 19.237-19.13 21.123H15.144C5.813 288.98.068 282.675 0 270.382M207.165 2.71c-11.137-3.494-51.331-4.485-59.175 2.402-7.424 6.519-9.001 9.282-19.532 11.157H86.674c-16.23 0-29.387 13.157-29.387 29.387V72.31H43.44c-12.81-.589-22.577 11.746-23.093 21.898l-8.391 162.226h408.898L413.68 93.433c-.606-11.463-12.399-21.58-23.514-21.123H70.44V44.46c0-8.966 7.269-16.235 16.235-16.235h46.733c11.335 0 7.897 14.34 24.825 14.34H200.4c5.004 0 9.958-1.515 13.875-4.631 9.141-6.387 8.732-30.71-7.11-35.224m29.099 475.813v-178.07H190.83v178.07h-83.805V512H320.07v-33.477z"></path></svg></a>
+                        </div>
+                      </sc-if>
+                    </div>
+                  </sc-if>
+                </div>
+                <div style="padding:var(--space-sm);border-bottom:2px solid var(--color-ui-border-strong)">
+                  <div style="white-space:nowrap;color:var(--color-fg-2)">{{ r.d26 }}<sup>{{ r.s26 }}</sup></div>
+                  <sc-if value="{{ r.g26 }}" hint-placeholder-val="{{ false }}">
+                    <div style="margin-top:var(--space-tiny)"><a href="{{ r.g26url }}" target="_blank" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span>{{ r.g26 }}</a></div>
+                  </sc-if>
+                  <sc-if value="{{ r.due }}" hint-placeholder-val="{{ false }}">
+                    <div style="margin-top:var(--space-sm)"><span style="display:inline-block;font-weight:600;padding:.5em 1em;border-radius:var(--radius-subtle);color:var(--color-pill-red-fg);background:var(--color-pill-red-bg-3)">{{ r.due }}</span></div>
+                  </sc-if>
+                  <sc-if value="{{ r.out }}" hint-placeholder-val="{{ false }}">
+                    <div style="margin-top:var(--space-sm)"><span style="display:inline-block;padding:.5em 1em;border-radius:var(--radius-subtle);border:1px solid var(--color-ui-border-subtle);background:var(--color-bg-2);color:var(--color-pill-green-fg)">{{ r.out }}</span></div>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-if>
+          </sc-for>
+        </div>
+      </section>
+
+      <section id="resources" data-screen-label="Resources" style="padding:var(--space-pad);display:grid;grid-template-columns:1fr 1fr;grid-auto-flow:dense;gap:var(--space-pad)">
+        <div style="display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
+          <h3 style="margin:0;padding:0 0 .25em;font-size:1.3125rem;font-weight:600">Related Courses and Credits</h3>
+          <ul style="margin:0;padding:0;list-style:none">
+            <li style="padding-bottom:var(--space-sm)"><a href="https://mhsung.github.io/kaist-cs492d-fall-2024/" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">CS492(D): Diffusion Models and Their Applications</strong></a><br>KAIST, Fall 2024, Prof. Minhyuk Sung</li>
+            <li style="padding-bottom:var(--space-sm)"><a href="https://courses.grainger.illinois.edu/cs598shw/fa2024/" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">CS 598: 3D Vision</strong></a><br>UIUC, Fall 2024, Prof. Shenlong Wang</li>
+            <li style="padding-bottom:var(--space-sm)"><a href="https://geometry.cs.ucl.ac.uk/courses/diffusion4ContentCreation_sigg24/" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">Diffusion Models for Visual Content Generation</strong></a><br>SIGGRAPH 2024 Course</li>
+            <li style="padding-bottom:var(--space-sm)"><a href="https://geometry.cs.ucl.ac.uk/courses/diffusion_ImageVideo_sigg25/" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">Diffusion Models for Image and Video Generation: From Foundations to Emerging Directions</strong></a><br>SIGGRAPH 2025 Course</li>
+            <li style="padding-bottom:var(--space-sm)"><a href="https://www.youtube.com/watch?v=2fq9wYslV0A&amp;list=PLoROMvodv4rOmsNzYBMe0gJY2XS8AQg16" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">CS231N: Deep Learning for Computer Vision</strong></a><br>Stanford, Spring 2025</li>
+          </ul>
+          <h4 style="margin:var(--space-sm) 0 0;font-size:1rem;font-weight:600">Tutorials</h4>
+          <ul style="margin:0;padding:0;list-style:none">
+            <li style="padding-bottom:var(--space-sm)"><a href="https://cvpr2023-tutorial-diffusion-models.github.io/" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">Denoising Diffusion Models: A Generative Learning Big Bang</strong></a><br>CVPR 2023 Tutorial</li>
+            <li style="padding-bottom:var(--space-sm)"><a href="https://snap-research.github.io/3D_4D_modeling_tutorial/" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">3D/4D Generation and Modeling with Generative Priors</strong></a><br>CVPR 2024 Tutorial</li>
+            <li style="padding-bottom:var(--space-sm)"><a href="https://showlab.github.io/cvpr2024-tutorial-video-diffusion-models/" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">Diffusion-based Video Generative Models</strong></a><br>CVPR 2024 Tutorial</li>
+            <li style="padding-bottom:var(--space-sm)"><a href="https://world-model-tutorial.github.io/" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">From Video Generation to World Model</strong></a><br>CVPR 2025 Tutorial</li>
+            <li style="padding-bottom:var(--space-sm)"><a href="https://cvpr26-tutorial-fastgen.github.io/" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">Accelerated Diffusion Models: From Theory to Interactive World Models</strong></a><br>CVPR 2026 Tutorial</li>
+            <li style="padding-bottom:var(--space-sm)"><a href="https://sites.google.com/view/cvpr26-principles-of-diffusion/home" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">The Principles of Diffusion Models: Real-Time Continuous &amp; Discrete Diffusion</strong></a><br>CVPR 2026 Tutorial</li>
+          </ul>
+          <h4 style="margin:var(--space-sm) 0 0;font-size:1rem;font-weight:600">Blogs</h4>
+          <ul style="margin:0;padding:0;list-style:none">
+            <li style="padding-bottom:var(--space-sm)"><a href="https://yang-song.net/blog/2021/score/" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">Generative Modeling by Estimating Gradients of the Data Distribution</strong></a><br>Yang Song</li>
+            <li style="padding-bottom:var(--space-sm)"><a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">What are Diffusion Models?</strong></a><br>Lilian Weng</li>
+            <li style="padding-bottom:var(--space-sm)"><a href="https://arxiv.org/abs/2208.11970" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">Understanding Diffusion Models: A Unified Perspective</strong></a><br>Calvin Luo</li>
+            <li style="padding-bottom:var(--space-sm)"><a href="https://arxiv.org/abs/2403.18103" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">Tutorial on Diffusion Models for Imaging and Vision</strong></a><br>Stanley H. Chan</li>
+            <li style="padding-bottom:var(--space-sm)"><a href="https://arxiv.org/abs/2406.08929" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">Step-by-Step Diffusion: An Elementary Tutorial</strong></a><br>Preetum Nakkiran, Arwen Bradley, Hattie Zhou, Madhu Advani</li>
+          </ul>
+          <h4 style="margin:var(--space-sm) 0 0;font-size:1rem;font-weight:600">Books</h4>
+          <ul style="margin:0;padding:0;list-style:none">
+            <li style="padding-bottom:var(--space-sm)"><a href="https://the-principles-of-diffusion-models.github.io/" target="_blank" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span><strong style="color:var(--color-fg-base)">The Principles of Diffusion Models</strong></a><br>Chieh-Hsin Lai, Yang Song, Dongjun Kim, Yuki Mitsufuji, Stefano Ermon</li>
+          </ul>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
+          <h3 style="margin:0;padding:0 0 .25em;font-size:1.3125rem;font-weight:600">Image Attribution</h3>
+          <p style="margin:0;max-width:65ch">The header image is <em>Th&eacute;&acirc;tre D&rsquo;op&eacute;ra Spatial</em> by Jason Allen, created using the AI software Midjourney.</p>
+          <p style="margin:0;max-width:65ch">Jason Allen won the digital-art competition at the Colorado State Fair last year for his piece &ldquo;Theatre D&rsquo;opera Spatial&rdquo; that he created using the AI software Midjourney. Recently, the US Copyright Office refused to grant him a copyright for his piece, writing, &ldquo;We have decided that we cannot register this copyright claim because the deposit does not contain any human authorship.&rdquo; He plans to appeal.</p>
+          <p style="margin:0;max-width:65ch"><a href="https://en.wikipedia.org/wiki/Th%C3%A9%C3%A2tre_d%27Op%C3%A9ra_Spatial" style="border-bottom:1px solid var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span>Th&eacute;&acirc;tre D&rsquo;op&eacute;ra Spatial on Wikipedia</a></p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer data-screen-label="Footer" style="display:flex;flex-direction:row;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;font-size:1rem;color:var(--color-fg-2);border-top:1px solid var(--color-ui-border-strong);background:var(--color-bg-3);margin-top:auto;padding:var(--space-pad);gap:2rem">
+    <div style="display:flex;flex-wrap:wrap;flex-direction:row;gap:var(--space-pad);align-items:center;max-width:100%">
+      <span>&copy; 2025&thinsp;&ndash;&thinsp;2026 Yu-Lun (Alex) Liu</span>
+      <button id="theme-toggle" onClick="{{ toggleTheme }}" title="Toggle between the light and dark theme." style="cursor:pointer;background:inherit;border:0;padding:0;font:inherit;color:inherit" style-hover="color:var(--color-hl)"><span id="theme-toggle-label"></span></button>
+    </div>
+    <nav style="display:flex;flex-wrap:wrap;flex-direction:row;gap:var(--space-pad);align-items:center;margin-left:auto">
+      <a href="https://www.nycu.edu.tw/" title="Learn more about NYCU" style="white-space:nowrap;border-bottom:1px solid var(--color-hl)" style-hover="color:var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span>About NYCU</a>
+      <a href="https://www.cs.nycu.edu.tw/" title="Learn more about NYCU CS" style="white-space:nowrap;border-bottom:1px solid var(--color-hl)" style-hover="color:var(--color-hl)"><span style="color:var(--color-hl);margin-right:.25rem">&rarr;</span>About NYCU CS</a>
+    </nav>
+    <p style="margin:0;width:100%;font-size:.875rem;color:var(--color-fg-2);text-align:right">Stolen from <a href="https://www.vincentsitzmann.com/" target="_blank" style="border-bottom:1px solid var(--color-hl)">Vincent Sitzmann</a>'s <a href="https://scenerepresentations.org/courses/2026/spring/advances-in-cv/" target="_blank" style="border-bottom:1px solid var(--color-hl)">website</a>.<br>Last updated August 2026.</p>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;theme&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;system&quot;, &quot;light&quot;, &quot;dark&quot;], &quot;default&quot;: &quot;system&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Appearance&quot;},
+  &quot;accentHue&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;min&quot;: 0, &quot;max&quot;: 360, &quot;step&quot;: 1, &quot;default&quot;: 211, &quot;unit&quot;: &quot;\u00b0&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Appearance&quot;}
+}">
+class Component extends DCLogic {
+  static D25 = [["Sep. 4","th"],["Sep. 11","th"],["Sep. 18","th"],["Sep. 25","th"],["Oct. 2","nd"],["Oct. 9","th"],["Oct. 16","th"],["Oct. 23","rd"],["Oct. 30","th"],["Nov. 6","th"],["Nov. 13","th"],["Nov. 20","th"],["Nov. 27","th"],["Dec. 4","th"],["Dec. 11","th"],["Dec. 18","th"],["Dec. 25","th"]];
+  static D26 = [["Sep. 10","th"],["Sep. 17","th"],["Sep. 24","th"],["Oct. 1","st"],["Oct. 8","th"],["Oct. 15","th"],["Oct. 22","nd"],["Oct. 29","th"],["Nov. 5","th"],["Nov. 12","th"],["Nov. 19","th"],["Nov. 26","th"],["Dec. 3","rd"],["Dec. 10","th"],["Dec. 17","th"],["Dec. 24","th"],["Dec. 31","st"]];
+
+  rows = [
+    { module: true, sub: "Module 1:", title: "Foundations of Diffusion Models" },
+    { w: 1, title: "Course Introduction + GAN / VAE", lec25: true, recUrls: ["https://youtu.be/BEZ-t_PdnVM?si=f638HVfVNyYPVPxi", "https://youtu.be/yDOFQv1kFs8?si=haXx9dA5vu8dblzF", "https://youtu.be/hnnGRzCyW5I?si=wDAoSXIrd4XEgr5X", "https://youtu.be/JUmnDWFsPOo?si=TSpKf8wC9hLTt8Yi"], note: "(attending ECCV 2026)", topics: ["GAN", "VAE", { b: "pix2pix" }, { b: "StyleGAN" }, { b: "BigGAN" }] },
+    { w: 2, title: "DDPM", lec25: true, out: "#1 \u2013 DDPM out", recUrls: ["https://youtu.be/gdvWJy2MsLY?si=BVExnd64glz66iwB", "https://youtu.be/9X3Gi0RfFO8?si=HRm-YlNM8C6-TOGX", "https://youtu.be/5neVmB0fxo0?si=eDc2jciB4VNkcqR2"], topics: ["DDPM", "Improved Diffusion", { b: "Diffusion Probabilistic Models" }] },
+    { w: 3, title: "DDIM", lec25: true, recUrls: ["https://youtu.be/xSMyVOevuJc?si=iG8WO0HHSzxl2cSo", "https://youtu.be/P8bGD3a5ITM?si=838FR3r4yhV8kZYB", "https://youtu.be/GU_McSOoGsU?si=JYlzNhx1Rr-Xzmm2"], topics: ["DDIM"] },
+    { w: 4, title: "CFG / Latent Diffusion / ControlNet / LoRA / Zero-Shot Applications", recUrls: ["https://youtu.be/VLkTHmse5iw?si=nijSSb-TpxNIrvCb", "https://youtu.be/A9UZxeuTmcQ?si=3AMvNPhJx0_WTZSJ", "https://youtu.be/fPd7orkkelQ?si=e84owfz3uYC6Yjr2", "https://youtu.be/NKlEXFnc2W4?si=ZVIiIQkH71vN5xfh"],
+      topics: ["Classifier-Free Guidance", "Latent Diffusion", "ControlNet", "LoRA", { b: "GLIDE" }, { b: "RealFill" }, { b: "SDXL" }, { b: "T2I-Adapter" }, { b: "IP-Adapter" }, { b: "Paint by Example" }, "SDEdit", "RePaint", "Blended Latent Diffusion", { b: "FateZero" }, { b: "TokenFlow" }, { b: "Rerender A Video" }, { b: "VidToMe" }, { b: "Fresco" }],
+      lec25: true, due: "#1 \u2013 DDPM due", out: "#2 \u2013 DDIM & LoRA out" },
+    { w: 5, title: "DDIM Inversion / Score Distillation", lec25: true, recUrls: ["https://youtu.be/Axfa9PNG8Cc?si=MxwoMq06s3nA-sfR", "https://youtu.be/WBakuBBKUNI?si=4XgkDNNTh5FEch9B", "https://youtu.be/FLBAKbilCFM?si=-vtdLrAscD_y1LrN", "https://youtu.be/z1U3HVWV3YA?si=5X8z3YiPCaBz-C6G"], topics: ["DDIM Inversion", "Null-Text Inversion", "NeRF", "3DGS", "SDS", "DDS", "VSD", "SDI", { b: "Magic3D" }, { b: "DreamGaussian" }, { b: "Fantasia3D" }, { b: "LucidDreamer" }, { b: "GaussianDreamer" }] },
+    { module: true, sub: "Module 2:", title: "Advanced Diffusion Techniques" },
+    { w: 6, title: "Diffusion Synchronization / Inverse Problems", lec25: true, recUrls: ["https://youtu.be/8ticvfH0118?si=gLmoVEMzdokSadsC", "https://youtu.be/VG4Rp8R3JLA?si=A7fhsYdLVKPZevsg", "https://youtu.be/giniGs2amvc?si=jXapMuhqmKQNzN45", "https://youtu.be/67L9fuHKB4E?si=sxESp_KB1FniDGU7", "https://youtu.be/kwG6qBx52CQ?si=VH-KB7UB1AEztYS2"],
+      topics: ["MultiDiffusion", "SyncTweedies", "SyncDiffusion", "Visual Anagrams", "Generative Powers of Ten", "SyncMVD", "MVDiffusion", { b: "MeDM" }, { b: "SyncDreamer" }, { b: "LookingGlass" }, "\u03a0GDM", "DPS", { b: "DDRM" }, { b: "ILVR" }, { b: "DDNM" }, { b: "Generative Diffusion Prior" }, { b: "MGLD-VSR" }],
+      due: "#2 \u2013 DDIM & LoRA due", out: "#3 \u2013 Distillation out" },
+    { w: 7, title: "Probability Flow ODE / DPM-Solver", lec25: true, recUrls: ["https://youtu.be/TTXRBUASSVA?si=7asD8aW_LhKuIfVW", "https://youtu.be/CTmevfV8aUU?si=XIz4HZ51htd-IjVH"],
+      topics: ["Score SDE", "EDM", "DPM-Solver", "Variational Diffusion Models", { h: "Inference-Time Guided Generation" }, { b: "Test-Time Scaling" }, { b: "Sequential Monte Carlo" }, { b: "Rollover Budget Forcing" }] },
+    { w: 8, title: "Flow Matching", lec25: true, recUrls: ["https://youtu.be/AhSd22QXGYc?si=ZFfBUCxtYyl7cT2F"],
+      topics: ["Flow Matching", "Rectified Flow", "InstaFlow", { b: "Stochastic Interpolants" }, { b: "SiT" }, { b: "2-Rectified Flow++" }],
+      due: "#3 \u2013 Distillation due", out: "#4 \u2013 Flow Matching out" },
+    { w: 9, title: "Video Generation",
+      topics: [{ b: "Make-A-Video" }, { b: "Video Diffusion Models" }, { b: "Imagen Video" }, { b: "Align Your Latents" }, { b: "Stable Video Diffusion" }, { b: "Wan" }, { b: "Self Forcing" }] },
+    { w: 10, title: "3D Generation",
+      topics: [{ b: "Implicit Decoder" }, { b: "LRM" }, { b: "InstantMesh" }, { b: "Direct3D" }, { b: "WonderWorld" }], due: "#4 \u2013 Flow Matching due" },
+    { module: true, sub: "Module 3:", title: "Presentations, Guest Lectures, and Final Project" },
+    { w: 11, title: "Final Project Proposal", kind: "proposal",
+      topics: ["Proposal Presentation\uff08\u7e3d\u6210\u7e3e 10%\uff09"] },
+    { w: 12, title: "Final Project Proposal", kind: "proposal",
+      topics: ["Proposal Presentation\uff08\u7e3d\u6210\u7e3e 10%\uff09"] },
+    { w: 13, title: "Paper Presentation + Guest Lecture", kind: "presentation", rec25only: true, recUrls: ["https://youtu.be/0cx1T5FUmgM?si=euWelqiXo4FbAmrS"], note: "(attending SIGGRAPH Asia 2026)",
+      g25: "2025\uff1aTa-Ying (Tim) Cheng \u2014 Material editing",
+      g26: "Ting-Hsuan Chen\uff08USC\uff09", g26url: "https://koi953215.github.io/",
+      topics: ["\u6bcf\u7d44\u56db\u4f4d\u5b78\u751f", "\u5831\u544a\u8fd1\u4e09\u5e74\u9802\u6703\u8ad6\u6587\uff0bHacker's Deliverables", "\u5176\u4ed6\u7d44\u5225\u554f\u554f\u984c"] },
+    { w: 14, title: "Paper Presentation + Guest Lecture", kind: "presentation", rec25only: true, recUrls: ["https://youtu.be/ZQm29HrTyvg?si=O5SDoQYiOSplM5br", "https://youtu.be/Qb6ml6HQvLU?si=XdoeYunQLhLe-1sT"], note: "(attending NeurIPS 2026)",
+      g25: "2025\uff1aChih-Hao Lin \u2014 Weather synthesis\uff1bChieh (Hubert) Lin \u2014 3D inpainting",
+      g26: "Yao-Chih Lee\uff08UMD\uff09", g26url: "https://yaochih.github.io/",
+      topics: ["\u6bcf\u7d44\u56db\u4f4d\u5b78\u751f", "\u5831\u544a\u8fd1\u4e09\u5e74\u9802\u6703\u8ad6\u6587\uff0bHacker's Deliverables", "\u5176\u4ed6\u7d44\u5225\u554f\u554f\u984c"] },
+    { w: 15, title: "Final Project Presentation", kind: "final presentation",
+      topics: ["Oral & Demo Presentation\uff08\u7e3d\u6210\u7e3e 15%\uff09", "\u5176\u4ed6\u7d44\u5225\u626e\u6f14 reviewer \u554f\u554f\u984c"] },
+    { w: 16, title: "Final Project Presentation", kind: "final presentation",
+      topics: ["Oral & Demo Presentation\uff08\u7e3d\u6210\u7e3e 15%\uff09", "\u5176\u4ed6\u7d44\u5225\u626e\u6f14 reviewer \u554f\u554f\u984c"] }
+  ].map(r => r.module ? r : {
+    ...r,
+    lec: true,
+    week: "Week " + r.w,
+    d25: Component.D25[r.w-1][0], s25: Component.D25[r.w-1][1],
+    d26: Component.D26[r.w-1][0], s26: Component.D26[r.w-1][1],
+    r25: !!(r.lec25 || r.rec25only),
+    recs: (r.recUrls || [r.recUrl || "https://www.youtube.com/watch?v=BEZ-t_PdnVM&list=PLjlJOtsjnNKlJjbG-h3w93fMbVvdV4_cx"]).map((u, i, a) => ({ url: u, label: a.length > 1 ? "Recording " + (i + 1) : "Recording" })),
+    sl25: !!r.lec25,
+    reuse: !!r.lec25,
+    hasTopics: !!(r.topics && r.topics.length),
+    topics: (r.topics || []).map(t => typeof t === "string" ? { text: t, fw: 400, col: "inherit", ls: "square", ml: "0" } : t.h ? { text: t.h, fw: 600, col: "var(--color-fg-base)", ls: "none", ml: "-1.75em" } : { text: t.b, fw: 600, col: "var(--color-fg-base)", ls: "square", ml: "0" }),
+    bg: ({ "presentation": "var(--color-pill-red-bg-3)", "proposal": "var(--color-pill-amber-bg-3)", "final presentation": "var(--color-pill-purple-bg-3)" })[r.kind] || (r.tbd ? "var(--color-bg-3)" : "transparent"),
+    op: r.tbd ? 0.75 : 1,
+    kindFg: ({ "presentation": "var(--color-pill-red-fg)", "proposal": "var(--color-pill-amber-fg)", "final presentation": "var(--color-pill-purple-fg)" })[r.kind] || "var(--color-bg-2)",
+    kindBg: ({ "presentation": "var(--color-pill-red-bg)", "proposal": "var(--color-pill-amber-bg)", "final presentation": "var(--color-pill-purple-bg)" })[r.kind] || "var(--color-fg-2)"
+  });
+
+  componentDidMount() { this.applyTweaks(); }
+  componentDidUpdate() { this.applyTweaks(); }
+
+  applyTweaks() {
+    const h = document.documentElement;
+    h.style.setProperty("--hue", String(this.props.accentHue ?? 211));
+    const mode = this.props.theme ?? "system";
+    if (mode === "light" || mode === "dark") {
+      h.setAttribute("data-theme", mode);
+    } else if (this._lastMode && this._lastMode !== "system") {
+      try {
+        const t = localStorage.getItem("ivg-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        h.setAttribute("data-theme", t);
+      } catch (e) {}
+    }
+    this._lastMode = mode;
+  }
+
+  renderVals() {
+    return {
+      rows: this.rows,
+      toggleTheme: () => {
+        const h = document.documentElement;
+        const t = h.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        h.setAttribute("data-theme", t);
+        try { localStorage.setItem("ivg-theme", t); } catch (e) {}
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
