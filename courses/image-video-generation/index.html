@@ -351,11 +351,11 @@
                         <a href="{{ rc.url }}" target="_blank" style="display:inline-flex;align-items:center;padding:.5em 1em" style-hover="color:var(--color-fg)"><span>{{ rc.label }}</span><svg width="1em" height="1em" viewBox="0 0 24 24" style="margin-left:var(--space-tiny)" aria-hidden="true"><path fill="currentColor" d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v1c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-1h5c1.1 0 1.99-.9 1.99-2L23 5a2 2 0 0 0-2-2m-1 14H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h16c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1m-5.52-5.13-3.98 2.28c-.67.38-1.5-.11-1.5-.87V8.72c0-.77.83-1.25 1.5-.87l3.98 2.28c.67.39.67 1.35 0 1.74"></path></svg></a>
                       </div>
                       </sc-for>
-                      <sc-if value="{{ r.sl25 }}" hint-placeholder-val="{{ false }}">
+                      <sc-for list="{{ r.slides }}" as="sl" hint-placeholder-count="0">
                         <div style="display:inline-flex;border-radius:var(--radius-subtle);border:1px solid var(--color-ui-border-subtle);background:var(--color-bg-2);transition:background-color .25s ease-out,border-color .25s ease-out" style-hover="background:var(--color-bg-2-hover);border-color:var(--color-hl)">
-                          <a href="https://e3.nycu.edu.tw" target="_blank" style="display:inline-flex;align-items:center;padding:.5em 1em" style-hover="color:var(--color-fg)"><span>Slides</span><svg width="0.85em" height="1em" viewBox="0 0 434 512" style="margin-left:var(--space-tiny)" aria-hidden="true"><path fill="currentColor" d="M0 270.382h433.607c-.993 11.851-6.983 19.237-19.13 21.123H15.144C5.813 288.98.068 282.675 0 270.382M207.165 2.71c-11.137-3.494-51.331-4.485-59.175 2.402-7.424 6.519-9.001 9.282-19.532 11.157H86.674c-16.23 0-29.387 13.157-29.387 29.387V72.31H43.44c-12.81-.589-22.577 11.746-23.093 21.898l-8.391 162.226h408.898L413.68 93.433c-.606-11.463-12.399-21.58-23.514-21.123H70.44V44.46c0-8.966 7.269-16.235 16.235-16.235h46.733c11.335 0 7.897 14.34 24.825 14.34H200.4c5.004 0 9.958-1.515 13.875-4.631 9.141-6.387 8.732-30.71-7.11-35.224m29.099 475.813v-178.07H190.83v178.07h-83.805V512H320.07v-33.477z"></path></svg></a>
+                          <a href="{{ sl.url }}" target="_blank" style="display:inline-flex;align-items:center;padding:.5em 1em" style-hover="color:var(--color-fg)"><span>{{ sl.label }}</span><svg width="0.85em" height="1em" viewBox="0 0 434 512" style="margin-left:var(--space-tiny)" aria-hidden="true"><path fill="currentColor" d="M0 270.382h433.607c-.993 11.851-6.983 19.237-19.13 21.123H15.144C5.813 288.98.068 282.675 0 270.382M207.165 2.71c-11.137-3.494-51.331-4.485-59.175 2.402-7.424 6.519-9.001 9.282-19.532 11.157H86.674c-16.23 0-29.387 13.157-29.387 29.387V72.31H43.44c-12.81-.589-22.577 11.746-23.093 21.898l-8.391 162.226h408.898L413.68 93.433c-.606-11.463-12.399-21.58-23.514-21.123H70.44V44.46c0-8.966 7.269-16.235 16.235-16.235h46.733c11.335 0 7.897 14.34 24.825 14.34H200.4c5.004 0 9.958-1.515 13.875-4.631 9.141-6.387 8.732-30.71-7.11-35.224m29.099 475.813v-178.07H190.83v178.07h-83.805V512H320.07v-33.477z"></path></svg></a>
                         </div>
-                      </sc-if>
+                      </sc-for>
                     </div>
                   </sc-if>
                 </div>
@@ -443,22 +443,22 @@ class Component extends DCLogic {
 
   rows = [
     { module: true, sub: "Module 1:", title: "Foundations of Diffusion Models" },
-    { w: 1, title: "Course Introduction + GAN / VAE", lec25: true, recUrls: ["https://youtu.be/BEZ-t_PdnVM?si=f638HVfVNyYPVPxi", "https://youtu.be/yDOFQv1kFs8?si=haXx9dA5vu8dblzF", "https://youtu.be/hnnGRzCyW5I?si=wDAoSXIrd4XEgr5X", "https://youtu.be/JUmnDWFsPOo?si=TSpKf8wC9hLTt8Yi"], note: "(attending ECCV 2026)", topics: ["GAN", "VAE", { b: "pix2pix" }, { b: "StyleGAN" }, { b: "BigGAN" }] },
-    { w: 2, title: "DDPM", lec25: true, out: "#1 \u2013 DDPM out", recUrls: ["https://youtu.be/gdvWJy2MsLY?si=BVExnd64glz66iwB", "https://youtu.be/9X3Gi0RfFO8?si=HRm-YlNM8C6-TOGX", "https://youtu.be/5neVmB0fxo0?si=eDc2jciB4VNkcqR2"], topics: ["DDPM", "Improved Diffusion", { b: "Diffusion Probabilistic Models" }] },
-    { w: 3, title: "DDIM", lec25: true, recUrls: ["https://youtu.be/xSMyVOevuJc?si=iG8WO0HHSzxl2cSo", "https://youtu.be/P8bGD3a5ITM?si=838FR3r4yhV8kZYB", "https://youtu.be/GU_McSOoGsU?si=JYlzNhx1Rr-Xzmm2"], topics: ["DDIM"] },
+    { w: 1, title: "Course Introduction + GAN / VAE", lec25: true, recUrls: ["https://youtu.be/BEZ-t_PdnVM?si=f638HVfVNyYPVPxi", "https://youtu.be/yDOFQv1kFs8?si=haXx9dA5vu8dblzF", "https://youtu.be/hnnGRzCyW5I?si=wDAoSXIrd4XEgr5X", "https://youtu.be/JUmnDWFsPOo?si=TSpKf8wC9hLTt8Yi"], note: "(attending ECCV 2026)", topics: ["GAN", "VAE", { b: "pix2pix" }, { b: "StyleGAN" }, { b: "BigGAN" }], slideUrls: ["slides/2025/lecture_0.pdf", "slides/2025/lecture_1.pdf"] },
+    { w: 2, title: "DDPM", lec25: true, out: "#1 \u2013 DDPM out", recUrls: ["https://youtu.be/gdvWJy2MsLY?si=BVExnd64glz66iwB", "https://youtu.be/9X3Gi0RfFO8?si=HRm-YlNM8C6-TOGX", "https://youtu.be/5neVmB0fxo0?si=eDc2jciB4VNkcqR2"], topics: ["DDPM", "Improved Diffusion", { b: "Diffusion Probabilistic Models" }], slideUrls: ["slides/2025/lecture_2.pdf"] },
+    { w: 3, title: "DDIM", lec25: true, recUrls: ["https://youtu.be/xSMyVOevuJc?si=iG8WO0HHSzxl2cSo", "https://youtu.be/P8bGD3a5ITM?si=838FR3r4yhV8kZYB", "https://youtu.be/GU_McSOoGsU?si=JYlzNhx1Rr-Xzmm2"], topics: ["DDIM"], slideUrls: ["slides/2025/lecture_3.pdf"] },
     { w: 4, title: "CFG / Latent Diffusion / ControlNet / LoRA / Zero-Shot Applications", recUrls: ["https://youtu.be/VLkTHmse5iw?si=nijSSb-TpxNIrvCb", "https://youtu.be/A9UZxeuTmcQ?si=3AMvNPhJx0_WTZSJ", "https://youtu.be/fPd7orkkelQ?si=e84owfz3uYC6Yjr2", "https://youtu.be/NKlEXFnc2W4?si=ZVIiIQkH71vN5xfh"],
       topics: ["Classifier-Free Guidance", "Latent Diffusion", "ControlNet", "LoRA", { b: "GLIDE" }, { b: "RealFill" }, { b: "SDXL" }, { b: "T2I-Adapter" }, { b: "IP-Adapter" }, { b: "Paint by Example" }, "SDEdit", "RePaint", "Blended Latent Diffusion", { b: "FateZero" }, { b: "TokenFlow" }, { b: "Rerender A Video" }, { b: "VidToMe" }, { b: "Fresco" }],
-      lec25: true, due: "#1 \u2013 DDPM due", out: "#2 \u2013 DDIM & LoRA out" },
-    { w: 5, title: "DDIM Inversion / Score Distillation", lec25: true, recUrls: ["https://youtu.be/Axfa9PNG8Cc?si=MxwoMq06s3nA-sfR", "https://youtu.be/WBakuBBKUNI?si=4XgkDNNTh5FEch9B", "https://youtu.be/FLBAKbilCFM?si=-vtdLrAscD_y1LrN", "https://youtu.be/z1U3HVWV3YA?si=5X8z3YiPCaBz-C6G"], topics: ["DDIM Inversion", "Null-Text Inversion", "NeRF", "3DGS", "SDS", "DDS", "VSD", "SDI", { b: "Magic3D" }, { b: "DreamGaussian" }, { b: "Fantasia3D" }, { b: "LucidDreamer" }, { b: "GaussianDreamer" }] },
+      lec25: true, due: "#1 \u2013 DDPM due", out: "#2 \u2013 DDIM & LoRA out", slideUrls: ["slides/2025/lecture_4.pdf", "slides/2025/lecture_5.pdf"] },
+    { w: 5, title: "DDIM Inversion / Score Distillation", lec25: true, recUrls: ["https://youtu.be/Axfa9PNG8Cc?si=MxwoMq06s3nA-sfR", "https://youtu.be/WBakuBBKUNI?si=4XgkDNNTh5FEch9B", "https://youtu.be/FLBAKbilCFM?si=-vtdLrAscD_y1LrN", "https://youtu.be/z1U3HVWV3YA?si=5X8z3YiPCaBz-C6G"], topics: ["DDIM Inversion", "Null-Text Inversion", "NeRF", "3DGS", "SDS", "DDS", "VSD", "SDI", { b: "Magic3D" }, { b: "DreamGaussian" }, { b: "Fantasia3D" }, { b: "LucidDreamer" }, { b: "GaussianDreamer" }], slideUrls: ["slides/2025/lecture_6.pdf"] },
     { module: true, sub: "Module 2:", title: "Advanced Diffusion Techniques" },
     { w: 6, title: "Diffusion Synchronization / Inverse Problems", lec25: true, recUrls: ["https://youtu.be/8ticvfH0118?si=gLmoVEMzdokSadsC", "https://youtu.be/VG4Rp8R3JLA?si=A7fhsYdLVKPZevsg", "https://youtu.be/giniGs2amvc?si=jXapMuhqmKQNzN45", "https://youtu.be/67L9fuHKB4E?si=sxESp_KB1FniDGU7", "https://youtu.be/kwG6qBx52CQ?si=VH-KB7UB1AEztYS2"],
       topics: ["MultiDiffusion", "SyncTweedies", "SyncDiffusion", "Visual Anagrams", "Generative Powers of Ten", "SyncMVD", "MVDiffusion", { b: "MeDM" }, { b: "SyncDreamer" }, { b: "LookingGlass" }, "\u03a0GDM", "DPS", { b: "DDRM" }, { b: "ILVR" }, { b: "DDNM" }, { b: "Generative Diffusion Prior" }, { b: "MGLD-VSR" }],
-      due: "#2 \u2013 DDIM & LoRA due", out: "#3 \u2013 Distillation out" },
+      due: "#2 \u2013 DDIM & LoRA due", out: "#3 \u2013 Distillation out", slideUrls: ["slides/2025/lecture_7.pdf", "slides/2025/lecture_8.pdf"] },
     { w: 7, title: "Probability Flow ODE / DPM-Solver", lec25: true, recUrls: ["https://youtu.be/TTXRBUASSVA?si=7asD8aW_LhKuIfVW", "https://youtu.be/CTmevfV8aUU?si=XIz4HZ51htd-IjVH"],
-      topics: ["Score SDE", "EDM", "DPM-Solver", "Variational Diffusion Models", { h: "Inference-Time Guided Generation" }, { b: "Test-Time Scaling" }, { b: "Sequential Monte Carlo" }, { b: "Rollover Budget Forcing" }] },
+      topics: ["Score SDE", "EDM", "DPM-Solver", "Variational Diffusion Models", { h: "Inference-Time Guided Generation" }, { b: "Test-Time Scaling" }, { b: "Sequential Monte Carlo" }, { b: "Rollover Budget Forcing" }], slideUrls: ["slides/2025/lecture_9.pdf"] },
     { w: 8, title: "Flow Matching", lec25: true, recUrls: ["https://youtu.be/AhSd22QXGYc?si=ZFfBUCxtYyl7cT2F"],
       topics: ["Flow Matching", "Rectified Flow", "InstaFlow", { b: "Stochastic Interpolants" }, { b: "SiT" }, { b: "2-Rectified Flow++" }],
-      due: "#3 \u2013 Distillation due", out: "#4 \u2013 Flow Matching out" },
+      due: "#3 \u2013 Distillation due", out: "#4 \u2013 Flow Matching out", slideUrls: ["slides/2025/lecture_10.pdf"] },
     { w: 9, title: "Video Generation",
       topics: [{ b: "Make-A-Video" }, { b: "Video Diffusion Models" }, { b: "Imagen Video" }, { b: "Align Your Latents" }, { b: "Stable Video Diffusion" }, { b: "Wan" }, { b: "Self Forcing" }] },
     { w: 10, title: "3D Generation",
@@ -487,8 +487,8 @@ class Component extends DCLogic {
     d25: Component.D25[r.w-1][0], s25: Component.D25[r.w-1][1],
     d26: Component.D26[r.w-1][0], s26: Component.D26[r.w-1][1],
     r25: !!(r.lec25 || r.rec25only),
+    slides: !r.lec25 ? [] : (r.slideUrls || [r.slideUrl || "https://e3.nycu.edu.tw"]).map((u, i, a) => ({ url: u, label: a.length > 1 ? "Slides " + (i + 1) : "Slides" })),
     recs: (r.recUrls || [r.recUrl || "https://www.youtube.com/watch?v=BEZ-t_PdnVM&list=PLjlJOtsjnNKlJjbG-h3w93fMbVvdV4_cx"]).map((u, i, a) => ({ url: u, label: a.length > 1 ? "Recording " + (i + 1) : "Recording" })),
-    sl25: !!r.lec25,
     reuse: !!r.lec25,
     hasTopics: !!(r.topics && r.topics.length),
     topics: (r.topics || []).map(t => typeof t === "string" ? { text: t, fw: 400, col: "inherit", ls: "square", ml: "0" } : t.h ? { text: t.h, fw: 600, col: "var(--color-fg-base)", ls: "none", ml: "-1.75em" } : { text: t.b, fw: 600, col: "var(--color-fg-base)", ls: "square", ml: "0" }),
