@@ -52,6 +52,14 @@
     sup{line-height:0}
     #theme-toggle-label:after{content:"Dark Theme"}
     html[data-theme="dark"] #theme-toggle-label:after{content:"Light Theme"}
+    @media (max-width:860px){
+      #details,#resources,#highlights-grid{grid-template-columns:1fr !important}
+      #syllabus-grid{grid-template-columns:minmax(0,1fr) !important}
+      #syllabus-grid > div{grid-template-columns:minmax(0,1fr) !important}
+      #syllabus-grid .syl-head{display:none !important}
+      #syllabus-grid h4 + div + div{margin-bottom:var(--space-tiny)}
+      aside[data-sidebar]{display:none !important}
+    }
     html[data-theme="dark"] #cplab-logo,html[data-theme="dark"] .hdr-logo{filter:invert(1) hue-rotate(180deg)}
   </style>
   <script>
@@ -78,7 +86,7 @@
   </header>
 
   <div style="display:flex;flex-flow:row nowrap;flex-grow:1">
-    <aside style="display:flex;width:min-content;justify-content:center;border-right:1px solid var(--color-ui-border-strong);white-space:nowrap">
+    <aside data-sidebar="1" style="display:flex;width:min-content;justify-content:center;border-right:1px solid var(--color-ui-border-strong);white-space:nowrap">
       <ol style="display:flex;flex-wrap:nowrap;align-self:flex-start;position:sticky;top:var(--space-pad);margin:var(--space-pad) 0;padding:0 var(--space);writing-mode:vertical-rl;font-size:1.3125rem;list-style:none">
         <li style="display:inline-block">Image and Video Generations <span style="font-size:85%;font-weight:400;color:var(--color-fg-2);margin-inline:var(--space-sm)">影像與視訊生成</span> <span style="display:inline-block;border:1px solid var(--color-ui-border-strong);background:var(--color-bg-2);padding:.0625em .5em;border-radius:var(--radius-subtle);text-transform:capitalize;font-size:.75rem">fall 2026</span></li>
       </ol>
@@ -303,10 +311,10 @@
       <section id="syllabus" data-screen-label="Syllabus" style="padding:var(--space-pad);border-bottom:1px solid var(--color-ui-border-strong)">
         <h2 style="margin:0;padding:0 0 var(--space-tiny);font-size:1.5rem;font-weight:600">Syllabus <span style="font-size:.875rem;font-weight:400;color:var(--color-fg-2)">(tentative)</span></h2>
         <p style="margin:0 0 var(--space);max-width:75ch;color:var(--color-fg-2)">2026 年課程直接沿用 2025 年的課程錄影（見 <strong style="color:var(--color-fg-base)">2025</strong> 欄），並於部分週次新增內容；新增部分將另行公告（見 <strong style="color:var(--color-fg-base)">2026</strong> 欄）。主題列表中的<strong style="color:var(--color-fg-base)">粗體項目</strong>為本學期新增的內容。</p>
-        <div style="display:grid;grid-template-columns:24% minmax(0,1fr) max-content max-content;width:100%">
-          <div style="grid-column:1/3;border-bottom:2px solid var(--color-ui-border-strong)"></div>
-          <div style="padding:var(--space-sm);border-bottom:2px solid var(--color-ui-border-strong);font-weight:600;white-space:nowrap">2025 <span style="font-weight:400;font-size:.8125rem;color:var(--color-fg-2)">錄影・教材</span></div>
-          <div style="padding:var(--space-sm);border-bottom:2px solid var(--color-ui-border-strong);font-weight:600;white-space:nowrap">2026 <span style="font-weight:400;font-size:.8125rem;color:var(--color-fg-2)">本學期</span></div>
+        <div id="syllabus-grid" style="display:grid;grid-template-columns:24% minmax(0,1fr) max-content max-content;width:100%">
+          <div class="syl-head" style="grid-column:1/3;border-bottom:2px solid var(--color-ui-border-strong)"></div>
+          <div class="syl-head" style="padding:var(--space-sm);border-bottom:2px solid var(--color-ui-border-strong);font-weight:600;white-space:nowrap">2025 <span style="font-weight:400;font-size:.8125rem;color:var(--color-fg-2)">錄影・教材</span></div>
+          <div class="syl-head" style="padding:var(--space-sm);border-bottom:2px solid var(--color-ui-border-strong);font-weight:600;white-space:nowrap">2026 <span style="font-weight:400;font-size:.8125rem;color:var(--color-fg-2)">本學期</span></div>
           <sc-for list="{{ rows }}" as="r" hint-placeholder-count="6">
             <sc-if value="{{ r.module }}" hint-placeholder-val="{{ false }}">
               <div style="grid-column:1/-1;padding:var(--space-pad) 0 var(--space-sm);border-bottom:3px solid var(--color-hl)">
