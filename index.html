@@ -768,7 +768,7 @@ setTimeout(initNews, 100);
                           </div>
                           <div class="person">
                             <img src="students/chiahanchan.jpg" />
-                            <p>詹佳翰<br>NYCU CS</p>
+                            <p><a href="https://profile-johnchan.me/">詹佳翰</a><br>NYCU CS</p>
                           </div>
                         </div>
                         <p><center><a href="javascript:toggleblock('alumni')"><subheading>Alumni</subheading></a></center></p>
@@ -1152,6 +1152,56 @@ setTimeout(initNews, 100);
                               </td>
                             </tr>
 
+                            <tr onmouseout="Lin2026SCA_stop()" onmouseover="Lin2026SCA_start()"  bgcolor="#ffffd0" class="publication paper-3D-from-Multi-view-and-Sensors paper-Efficient-and-Scalable-Vision paperhi">
+                              <td style="padding:20px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                  <div class="two" id='Lin2026SCA_image'><video  width=100% height=100% muted autoplay loop>
+                                    <source src="images/Lin2026SCA.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                    </video></div>
+                                  <img src='images/Lin2026SCA.jpg' width="160" alt="Description" style="margin-top: 0px;">
+                                </div>
+                                <script type="text/javascript">
+                                  function Lin2026SCA_start() {
+                                    document.getElementById('Lin2026SCA_image').style.opacity = "1";
+                                  }
+
+                                  function Lin2026SCA_stop() {
+                                    document.getElementById('Lin2026SCA_image').style.opacity = "0";
+                                  }
+                                  Lin2026SCA_stop()
+                                </script>
+                              </td>
+                              <td style="padding:20px;width:75%;vertical-align:middle">
+                                <a href="https://linjohnss.github.io/scal3r/">
+                                  <papertitle>Scal3R: Learning Efficient Multi-Relative Pose Query for Scalable Online 3D Reconstruction</papertitle>
+                                </a>
+                                <br>
+                                <a href="https://linjohnss.github.io/">Chin-Yang Lin</a>, 
+                                <a href="https://tw.linkedin.com/in/yang-che-sun-6b9341282">Yang-Che Sun</a>, 
+                                <a href="https://sunset1995.github.io/">Cheng Sun</a>, 
+                                <a href="https://fuenyang1127.github.io/">Fu-En Yang</a>, 
+                                <a href="https://minhungchen.netlify.app/">Min-Hung Chen</a>, 
+                                <a href="https://sites.google.com/site/yylinweb/">Yen-Yu Lin</a>, 
+                                <a href="https://walonchiu.github.io/">Wei-Chen Chiu</a>, 
+                                <strong>Yu-Lun Liu</strong>
+                                <br>
+                                <em>ECCV</em>, 2026
+                                <img src="images/new_animated.gif"\>
+                                <br>
+                                <a href="https://linjohnss.github.io/scal3r/">project page</a>
+                                /
+                                <a href="https://arxiv.org/abs/2609.04201">arXiv</a>
+                                /
+                                <a href="https://github.com/NVlabs/scal3r">code</a>
+                                /
+                                <a href="https://youtu.be/IXfeymLX3iY">video</a>
+                                <p></p>
+                                <p>
+                                  This approach reformulates online reconstruction as multi-reference relative pose querying, which achieves state-of-the-art performance across Virtual KITTI, Sintel, TUM-Dynamic, ScanNet, and 7-Scenes and reaches convergence in 8 hours on a single GPU.
+                              </td>
+                            </tr>
+
                             <tr onmouseout="Zhang2026JMF_stop()" onmouseover="Zhang2026JMF_start()"  bgcolor="#ffffd0" class="publication paper-Image-and-Video-Synthesis-and-Generation paper-Vision--Graphics paperhi">
                               <td style="padding:20px;width:25%;vertical-align:middle">
                                 <div class="one">
@@ -1215,7 +1265,7 @@ setTimeout(initNews, 100);
                                 </script>
                               </td>
                               <td style="padding:20px;width:75%;vertical-align:middle">
-                                <a href="https://arxiv.org/abs/2604.13416">
+                                <a href="https://johnnylu305.github.io/df3dv1k_web/">
                                   <papertitle>DF3DV-1K: A Large-Scale Dataset and Benchmark for Distractor-Free Novel View Synthesis</papertitle>
                                 </a>
                                 <br>
@@ -1228,7 +1278,13 @@ setTimeout(initNews, 100);
                                 <em>ECCV</em>, 2026
                                 <img src="images/new_animated.gif"\>
                                 <br>
+                                <a href="https://johnnylu305.github.io/df3dv1k_web/">project page</a>
+                                /
                                 <a href="https://arxiv.org/abs/2604.13416">arXiv</a>
+                                /
+                                <a href="https://github.com/johnnylu305/DF3DV">code</a>
+                                /
+                                <a href="https://www.youtube.com/watch?v=EAW3rW9vn9w">video</a>
                                 <p></p>
                                 <p>
                                   DF3DV-1K is introduced, a large-scale real-world dataset comprising 1,048 scenes, each providing clean and cluttered image sets for benchmarking, and an application of DF3DV-1K is demonstrated by fine-tuning a diffusion-based 2D enhancer to improve radiance field methods.
@@ -1369,6 +1425,8 @@ setTimeout(initNews, 100);
                                 <a href="https://arxiv.org/abs/2510.15869">arXiv</a>
                                 /
                                 <a href="https://github.com/jayin92/skyfall-gs">code</a>
+                                /
+                                <a href="https://youtu.be/zj2-aGSe6ao">video</a>
                                 <p></p>
                                 <p>
                                   This paper proposes Skyfall-GS, the first city-block scale 3D scene creation framework without costly 3D annotations, also featuring real-time, immersive 3D exploration, and tailor a curriculum-driven iterative refinement strategy to progressively enhance geometric completeness and photorealistic textures.
@@ -1486,7 +1544,6 @@ setTimeout(initNews, 100);
                                 <strong>Yu-Lun Liu</strong>
                                 <br>
                                 <em>SIGGRAPH</em>, 2026
-                                <img src="images/new_animated.gif"\>
                                 <br>
                                 <a href="https://cdfan0627.github.io/LongE2V-page/">project page</a>
                                 /
@@ -1527,7 +1584,6 @@ setTimeout(initNews, 100);
                                 <strong>Yu-Lun Liu</strong>
                                 <br>
                                 <em>SIGGRAPH</em>, 2026
-                                <img src="images/new_animated.gif"\>
                                 <br>
                                 <a href="https://stroke-of-surprise.github.io/">project page</a>
                                 /
@@ -1571,7 +1627,6 @@ setTimeout(initNews, 100);
                                 <a href="https://basiclab.lab.nycu.edu.tw/">Hong-Han Shuai</a>
                                 <br>
                                 <em>SIGGRAPH</em>, 2026
-                                <img src="images/new_animated.gif"\>
                                 <br>
                                 <a href="https://arxiv.org/abs/2602.04349">arXiv</a>
                                 /
