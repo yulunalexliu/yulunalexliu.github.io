@@ -175,7 +175,7 @@
         <div id="assignments" style="display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
           <h3 style="margin:0;padding:0 0 .25em;font-size:1.3125rem;font-weight:600">Programming Assignments</h3>
           <ul style="margin:0;padding-left:1.75em;list-style:square;max-width:65ch">
-            <li>Assignment 1 (DDPM)</li>
+            <li>Assignment 1 (DDPM) &mdash; <a href="https://youtu.be/KO6w21gRGtU" target="_blank" style="border-bottom:1px solid var(--color-hl)">Video</a>、<a href="slides/2026/hw1.pdf" target="_blank" style="border-bottom:1px solid var(--color-hl)">Slides</a>、<a href="https://github.com/shigon255/Lab1-DDPM" target="_blank" style="border-bottom:1px solid var(--color-hl)">GitHub</a></li>
             <li>Assignment 2 (DDIM &amp; LoRA)</li>
             <li>Assignment 3 (Distillation)</li>
             <li>Assignment 4 (Flow Matching)</li>
@@ -384,6 +384,16 @@
                   <sc-if value="{{ r.out }}" hint-placeholder-val="{{ false }}">
                     <div style="margin-top:var(--space-sm)"><span style="display:inline-block;padding:.5em 1em;border-radius:var(--radius-subtle);border:1px solid var(--color-ui-border-subtle);background:var(--color-bg-2);color:var(--color-pill-green-fg)">{{ r.out }}</span></div>
                   </sc-if>
+                  <sc-if value="{{ r.hasHw }}" hint-placeholder-val="{{ false }}">
+                    <div style="margin-top:var(--space-sm);padding:var(--space-sm);border:1px solid var(--color-ui-border-subtle);border-left:3px solid var(--color-pill-green-fg);border-radius:var(--radius-subtle);display:flex;flex-direction:column;gap:var(--space-sm);align-items:flex-start">
+                      <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--color-pill-green-fg)">{{ r.hwTitle }}</div>
+                      <sc-for list="{{ r.hw }}" as="hw" hint-placeholder-count="0">
+                      <div style="display:inline-flex;border-radius:var(--radius-subtle);border:1px solid var(--color-ui-border-subtle);background:var(--color-bg-2);transition:background-color .25s ease-out,border-color .25s ease-out" style-hover="background:var(--color-bg-2-hover);border-color:var(--color-hl)">
+                        <a href="{{ hw.url }}" target="_blank" style="display:inline-flex;align-items:center;padding:.375em .75em" style-hover="color:var(--color-fg)"><span>{{ hw.label }}</span><sc-if value="{{ hw.isRec }}" hint-placeholder-val="{{ false }}"><svg width="1em" height="1em" viewBox="0 0 24 24" style="margin-left:var(--space-tiny)" aria-hidden="true"><path fill="currentColor" d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v1c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-1h5c1.1 0 1.99-.9 1.99-2L23 5a2 2 0 0 0-2-2m-1 14H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h16c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1m-5.52-5.13-3.98 2.28c-.67.38-1.5-.11-1.5-.87V8.72c0-.77.83-1.25 1.5-.87l3.98 2.28c.67.39.67 1.35 0 1.74"></path></svg></sc-if><sc-if value="{{ hw.isSlides }}" hint-placeholder-val="{{ false }}"><svg width="0.85em" height="1em" viewBox="0 0 434 512" style="margin-left:var(--space-tiny)" aria-hidden="true"><path fill="currentColor" d="M0 270.382h433.607c-.993 11.851-6.983 19.237-19.13 21.123H15.144C5.813 288.98.068 282.675 0 270.382M207.165 2.71c-11.137-3.494-51.331-4.485-59.175 2.402-7.424 6.519-9.001 9.282-19.532 11.157H86.674c-16.23 0-29.387 13.157-29.387 29.387V72.31H43.44c-12.81-.589-22.577 11.746-23.093 21.898l-8.391 162.226h408.898L413.68 93.433c-.606-11.463-12.399-21.58-23.514-21.123H70.44V44.46c0-8.966 7.269-16.235 16.235-16.235h46.733c11.335 0 7.897 14.34 24.825 14.34H200.4c5.004 0 9.958-1.515 13.875-4.631 9.141-6.387 8.732-30.71-7.11-35.224m29.099 475.813v-178.07H190.83v178.07h-83.805V512H320.07v-33.477z"></path></svg></sc-if><sc-if value="{{ hw.isGh }}" hint-placeholder-val="{{ false }}"><svg width="1em" height="1em" viewBox="0 0 16 16" style="margin-left:var(--space-tiny)" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"></path></svg></sc-if></a>
+                      </div>
+                      </sc-for>
+                    </div>
+                  </sc-if>
                 </div>
               </div>
             </sc-if>
@@ -457,8 +467,10 @@ class Component extends DCLogic {
 
   rows = [
     { module: true, sub: "Module 1:", title: "Foundations of Diffusion Models" },
-    { w: 1, title: "Course Introduction + GAN / VAE", lec25: true, recUrls26: ["https://youtu.be/lTSsrKxljyI?si=D7228xVGgPPe50XF"], slideUrls26: ["slides/2026/lecture_0.pdf", "slides/2026/lecture_1.pdf"], recUrls: ["https://youtu.be/BEZ-t_PdnVM?si=f638HVfVNyYPVPxi", "https://youtu.be/yDOFQv1kFs8?si=haXx9dA5vu8dblzF", "https://youtu.be/hnnGRzCyW5I?si=wDAoSXIrd4XEgr5X", "https://youtu.be/JUmnDWFsPOo?si=TSpKf8wC9hLTt8Yi"], note: "(attending ECCV 2026)", topics: ["GAN", "VAE", { b: "pix2pix" }, { b: "StyleGAN" }, { b: "BigGAN" }], slideUrls: ["slides/2025/lecture_0.pdf", "slides/2025/lecture_1.pdf"] },
-    { w: 2, title: "DDPM", lec25: true, out: "#1 \u2013 DDPM out", recUrls: ["https://youtu.be/gdvWJy2MsLY?si=BVExnd64glz66iwB", "https://youtu.be/9X3Gi0RfFO8?si=HRm-YlNM8C6-TOGX", "https://youtu.be/5neVmB0fxo0?si=eDc2jciB4VNkcqR2"], topics: ["DDPM", "Improved Diffusion", { b: "Diffusion Probabilistic Models" }], slideUrls: ["slides/2025/lecture_2.pdf"] },
+    { w: 1, title: "Course Introduction + GAN / VAE", lec25: true, recUrls26: ["https://youtu.be/lTSsrKxljyI?si=D7228xVGgPPe50XF", "https://youtu.be/JFaiw4Prt1k"], slideUrls26: ["slides/2026/lecture_0.pdf", "slides/2026/lecture_1.pdf"], recUrls: ["https://youtu.be/BEZ-t_PdnVM?si=f638HVfVNyYPVPxi", "https://youtu.be/yDOFQv1kFs8?si=haXx9dA5vu8dblzF", "https://youtu.be/hnnGRzCyW5I?si=wDAoSXIrd4XEgr5X", "https://youtu.be/JUmnDWFsPOo?si=TSpKf8wC9hLTt8Yi"], note: "(attending ECCV 2026)", topics: ["GAN", "VAE", { b: "pix2pix" }, { b: "StyleGAN" }, { b: "BigGAN" }], slideUrls: ["slides/2025/lecture_0.pdf", "slides/2025/lecture_1.pdf"] },
+    { w: 2, title: "DDPM", lec25: true, out: "#1 \u2013 DDPM out",
+      hwTitle: "HW1 \u2013 DDPM",
+      hw: [{ url: "https://youtu.be/KO6w21gRGtU", label: "Video", kind: "rec" }, { url: "slides/2026/hw1.pdf", label: "Slides", kind: "slides" }, { url: "https://github.com/shigon255/Lab1-DDPM", label: "GitHub", kind: "gh" }], recUrls: ["https://youtu.be/gdvWJy2MsLY?si=BVExnd64glz66iwB", "https://youtu.be/9X3Gi0RfFO8?si=HRm-YlNM8C6-TOGX", "https://youtu.be/5neVmB0fxo0?si=eDc2jciB4VNkcqR2"], topics: ["DDPM", "Improved Diffusion", { b: "Diffusion Probabilistic Models" }], slideUrls: ["slides/2025/lecture_2.pdf"] },
     { w: 3, title: "DDIM", lec25: true, recUrls: ["https://youtu.be/xSMyVOevuJc?si=iG8WO0HHSzxl2cSo", "https://youtu.be/P8bGD3a5ITM?si=838FR3r4yhV8kZYB", "https://youtu.be/GU_McSOoGsU?si=JYlzNhx1Rr-Xzmm2"], topics: ["DDIM"], slideUrls: ["slides/2025/lecture_3.pdf"] },
     { w: 4, title: "CFG / Latent Diffusion / ControlNet / LoRA / Zero-Shot Applications", recUrls: ["https://youtu.be/VLkTHmse5iw?si=nijSSb-TpxNIrvCb", "https://youtu.be/A9UZxeuTmcQ?si=3AMvNPhJx0_WTZSJ", "https://youtu.be/fPd7orkkelQ?si=e84owfz3uYC6Yjr2", "https://youtu.be/NKlEXFnc2W4?si=ZVIiIQkH71vN5xfh"],
       topics: ["Classifier-Free Guidance", "Latent Diffusion", "ControlNet", "LoRA", { b: "GLIDE" }, { b: "RealFill" }, { b: "SDXL" }, { b: "T2I-Adapter" }, { b: "IP-Adapter" }, { b: "Paint by Example" }, "SDEdit", "RePaint", "Blended Latent Diffusion", { b: "FateZero" }, { b: "TokenFlow" }, { b: "Rerender A Video" }, { b: "VidToMe" }, { b: "Fresco" }],
@@ -505,6 +517,8 @@ class Component extends DCLogic {
     has26: !!((r.recUrls26 && r.recUrls26.length) || (r.slideUrls26 && r.slideUrls26.length)),
     recs26: (r.recUrls26 || []).map((u, i, a) => ({ url: u, label: a.length > 1 ? "Recording " + (i + 1) : "Recording" })),
     slides26: (r.slideUrls26 || []).map((u, i, a) => ({ url: u, label: a.length > 1 ? "Slides " + (i + 1) : "Slides" })),
+    hw: (r.hw || []).map(h => ({ ...h, isRec: h.kind === "rec", isSlides: h.kind === "slides", isGh: h.kind === "gh" })),
+    hasHw: !!(r.hw && r.hw.length),
     recs: (r.recUrls || [r.recUrl || "https://www.youtube.com/watch?v=BEZ-t_PdnVM&list=PLjlJOtsjnNKlJjbG-h3w93fMbVvdV4_cx"]).map((u, i, a) => ({ url: u, label: a.length > 1 ? "Recording " + (i + 1) : "Recording" })),
     reuse: !!r.lec25,
     hasTopics: !!(r.topics && r.topics.length),
