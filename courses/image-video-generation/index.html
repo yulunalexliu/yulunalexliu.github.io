@@ -177,8 +177,8 @@
           <ul style="margin:0;padding-left:1.75em;list-style:square;max-width:65ch">
             <li>Assignment 1 (DDPM) &mdash; <a href="https://youtu.be/KO6w21gRGtU" target="_blank" style="border-bottom:1px solid var(--color-hl)">Video</a>、<a href="slides/2026/hw1.pdf" target="_blank" style="border-bottom:1px solid var(--color-hl)">Slides</a>、<a href="https://github.com/shigon255/Lab1-DDPM" target="_blank" style="border-bottom:1px solid var(--color-hl)">GitHub</a></li>
             <li>Assignment 2 (DDIM &amp; LoRA) &mdash; <a href="https://youtu.be/ifw3GfbHWko" target="_blank" style="border-bottom:1px solid var(--color-hl)">Video</a>、<a href="slides/2026/hw2.pdf" target="_blank" style="border-bottom:1px solid var(--color-hl)">Slides</a>、<a href="https://github.com/Jing-En-Huang/Lab2-DDIM-LoRA" target="_blank" style="border-bottom:1px solid var(--color-hl)">GitHub</a></li>
-            <li>Assignment 3 (Distillation)</li>
-            <li>Assignment 4 (Flow Matching)</li>
+            <li>Assignment 3 (Distillation) &mdash; <a href="https://youtu.be/9qofXn6GtpY" target="_blank" style="border-bottom:1px solid var(--color-hl)">Video</a>、<a href="slides/2026/hw3.pdf" target="_blank" style="border-bottom:1px solid var(--color-hl)">Slides</a>、<a href="https://github.com/Sytwu/Lab3-Distillation" target="_blank" style="border-bottom:1px solid var(--color-hl)">GitHub</a></li>
+            <li>Assignment 4 (Flow Matching) &mdash; <a href="https://youtu.be/b75jjfvBqnY" target="_blank" style="border-bottom:1px solid var(--color-hl)">Video</a>、<a href="slides/2026/hw4.pdf" target="_blank" style="border-bottom:1px solid var(--color-hl)">Slides</a>、<a href="https://github.com/ben13579/Lab4-FlowMatching" target="_blank" style="border-bottom:1px solid var(--color-hl)">GitHub</a></li>
           </ul>
           <p style="margin:0;max-width:65ch">Each programming assignment is due <strong style="color:var(--color-fg-base)">two weeks after the assignment session</strong>. Submit your solutions on E3.</p>
           <p style="margin:0;max-width:65ch">No late submissions allowed. I.e., you will get <strong style="color:var(--color-fg-base)">zero credit</strong> even with only 1 minute late submitting deliverables on E3.</p>
@@ -487,6 +487,8 @@ class Component extends DCLogic {
     { w: 7, title: "Probability Flow ODE / DPM-Solver", lec25: true, recUrls: ["https://youtu.be/TTXRBUASSVA?si=7asD8aW_LhKuIfVW", "https://youtu.be/CTmevfV8aUU?si=XIz4HZ51htd-IjVH"],
       topics: ["Score SDE", "EDM", "DPM-Solver", "Variational Diffusion Models", { h: "Inference-Time Guided Generation" }, { b: "Test-Time Scaling" }, { b: "Sequential Monte Carlo" }, { b: "Rollover Budget Forcing" }], slideUrls: ["slides/2025/lecture_9.pdf"], slideUrls26: ["slides/2026/lecture_8.pdf"], recUrls26: ["https://youtu.be/VtxHmOktufs"] },
     { w: 8, title: "Flow Matching", lec25: true, recUrls: ["https://youtu.be/AhSd22QXGYc?si=ZFfBUCxtYyl7cT2F"],
+      hwTitle: "HW4 \u2013 Flow Matching",
+      hw: [{ url: "https://youtu.be/b75jjfvBqnY", label: "Video", kind: "rec" }, { url: "slides/2026/hw4.pdf", label: "Slides", kind: "slides" }, { url: "https://github.com/ben13579/Lab4-FlowMatching", label: "GitHub", kind: "gh" }],
       topics: ["Flow Matching", "Rectified Flow", "InstaFlow", { b: "Stochastic Interpolants" }, { b: "SiT" }, { b: "2-Rectified Flow++" }],
       due: "#3 \u2013 Distillation due", out: "#4 \u2013 Flow Matching out", slideUrls: ["slides/2025/lecture_10.pdf"] },
     { w: 9, title: "Video Generation",
